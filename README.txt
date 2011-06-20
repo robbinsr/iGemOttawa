@@ -17,3 +17,5 @@ I'm learning the language as I go so it's entirely possible that my code is shit
 
 I'll get the basic graphics and interface going this week.
 -Daniel
+
+EDIT: Damn, I mucked up that last commit lol that message is everywhere
