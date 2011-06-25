@@ -6,7 +6,7 @@
 	public class ScreenHandler extends Sprite{
 		private var splashScreen:SplashScreen;
 		private var mainMenu:MainMenu;
-		private var levelSelect:LevelSelect;
+		private var tutorial:Tutorial;
 		
 		private var newScreenName:String = "";
 		
@@ -65,9 +65,9 @@
 					mainMenu = new MainMenu();
 					screenLayer.addChild(mainMenu);
 				break;
-				case "LevelSelect":
-					levelSelect = new LevelSelect();
-					screenLayer.addChild(levelSelect);
+				case "Tutorial":
+					tutorial = new Tutorial();
+					screenLayer.addChild(tutorial);
 				break;
 				default:
 					mainMenu = new MainMenu();
@@ -76,5 +76,26 @@
 			}
 			newScreenName = "";
 		}
+		
+
+		/*private function makeNewScreen():void {
+			trace(newScreenName);
+		   var firstLetter:String = newScreenName.substring(0,1);
+		   var restLetters:String = newScreenName.substring(1,newScreenName.length);
+		   var screenNameLowerCase:String = firstLetter.toLowerCase() + restLetters;
+			trace(screenNameLowerCase);
+
+			// It doesn't like how I use the "new" keyword infront of this[newScreenName]()
+			// this[newScreenName]() can be used to call a function, but
+			// new this[newScreenName](); won't initialize
+			// Look into it later.
+			
+		   this[screenNameLowerCase] = new this[newScreenName]();
+		   screenLayer.addChild(this[screenNameLowerCase]);
+
+		   newScreenName = "";
+		}*/
+
+		
 	}
 }
