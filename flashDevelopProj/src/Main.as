@@ -2,11 +2,7 @@ package
 {
 	import flash.display.Sprite;
 	import flash.events.Event;
-	
-	/**
-	 * ...
-	 * @author richard
-	 */
+
 	public class Main extends Sprite 
 	{
 		public static var screens:ScreenHandler = new ScreenHandler();

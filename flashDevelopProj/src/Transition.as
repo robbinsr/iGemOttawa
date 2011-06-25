@@ -8,7 +8,6 @@
 		public var exitFrames:Number = 10;
 		private var timer:Number = 0;
 	
-		// Initialization:
 		public function Transition() {
 			
 			this.addEventListener(Event.ENTER_FRAME, remove);
