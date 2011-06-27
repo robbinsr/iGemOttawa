@@ -1,5 +1,5 @@
-﻿package  {
-	
+﻿package  
+{
 	import flash.display.Bitmap;
 	import flash.display.InteractiveObject;
 	import flash.display.MovieClip;
@@ -8,14 +8,9 @@
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
-	public class MainMenu extends MovieClip {
-		
-		
-		[Embed(source='../lib/bg.jpg')]
-		private var layer0Class:Class;
-		private var layer0:Bitmap = new layer0Class();
-		
-		[Embed(source='../lib/logo.gif')]
+	public class MainMenu extends General 
+	{	
+		[Embed(source='../lib/igem.png')]
 		private var logoClass:Class;
 		private var logo:Bitmap = new logoClass();
 		
@@ -29,29 +24,29 @@
 		
 		private var playBtn:SimpleButton = new SimpleButton(playBtnImg, playBtnHImg, playBtnHImg, playBtnImg);
 		
-		public function MainMenu() {
+		public function MainMenu()
+		{
+			// Testing out background change
+			Main.backgroundImage.changeBackground(2);
 			
-			this.addChild(layer0);
-			
-			logo.x = 190;
 			logo.y = 100;
+			hCentre(logo);
 			this.addChild(logo);
 			
-			playBtn.x = 235;
 			playBtn.y = 300;
+			hCentre(playBtn);
 			playBtn.addEventListener(MouseEvent.CLICK, playFunction);
 			this.addEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 			this.addChild(playBtn);
 		}
 		
-		private function playFunction(e:MouseEvent):void{
-				
+		private function playFunction(e:MouseEvent):void
+		{
 			Main.screens.switchTo("Tutorial");
-
 		}
 		
-		private function removeListeners(e:Event):void{
-			
+		private function removeListeners(e:Event):void 
+		{
 			playBtn.removeEventListener(MouseEvent.CLICK, playFunction);
 			this.removeEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 			
