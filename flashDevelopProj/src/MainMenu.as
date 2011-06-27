@@ -22,7 +22,8 @@
 		private var playBtnHClass:Class;
 		private var playBtnHImg:Bitmap = new playBtnHClass();
 		
-		private var playBtn:SimpleButton = new SimpleButton(playBtnImg, playBtnHImg, playBtnHImg, playBtnImg);
+		private var playBtn:SimpleButton = new SimpleButton(
+		playBtnImg, playBtnHImg, playBtnHImg, playBtnImg);
 		
 		public function MainMenu()
 		{
