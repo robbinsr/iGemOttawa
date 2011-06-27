@@ -26,10 +26,7 @@
 		playBtnImg, playBtnHImg, playBtnHImg, playBtnImg);
 		
 		public function MainMenu()
-		{
-			// Testing out background change
-			Main.backgroundImage.changeBackground(2);
-			
+		{	
 			logo.y = 100;
 			hCentre(logo);
 			this.addChild(logo);

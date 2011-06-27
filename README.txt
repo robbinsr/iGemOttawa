@@ -1,3 +1,1 @@
-Got the background animation going, and background change function 
-for the levels. There's gotta be a better way to do the animation though.
-Let me know if you come across anything.
+I won't be able commit anything else to the project until wednesday, maybe thursday.
