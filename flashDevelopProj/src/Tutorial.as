@@ -114,7 +114,7 @@ package
 		
 		private function skipFunction(e:MouseEvent):void
 		{
-			//Main.screens.switchTo("");
+			Main.screens.switchTo("Level1");
 		}
 		
 		private function removeListeners(e:Event):void 
