@@ -1,9 +1,11 @@
-﻿package  {
+﻿package  
+{
 	import flash.display.Sprite;
 	import flash.display.MovieClip;
 	import flash.events.Event;
 
-	public class ScreenHandler extends Sprite{
+	public class ScreenHandler extends Sprite
+	{
 		private var splashScreen:SplashScreen;
 		private var mainMenu:MainMenu;
 		private var tutorial:Tutorial;
@@ -16,20 +18,23 @@
 		private var transTimer:Number = 0;
 		private var makeTransition:Boolean;
 		
-		public function ScreenHandler() {
+		public function ScreenHandler() 
+		{
 			this.addChild(screenLayer);
 			this.addChild(transitionLayer);
 			splashScreen = new SplashScreen();
 			screenLayer.addChild(splashScreen);
 		}
 		
-		public function switchTo(screenName:String, trans:Boolean = true):void{
+		public function switchTo(screenName:String, trans:Boolean = true):void
+		{
 			newScreenName = screenName;
 			makeTransition = trans;
 			this.addEventListener(Event.ENTER_FRAME, switchScreens);
 		}
 		
-		private function switchScreens(e:Event):void{
+		private function switchScreens(e:Event):void
+		{
 			if(makeTransition){
 				transTimer++;
 				if(transTimer == 1 && transitionLayer.numChildren < 1){
@@ -49,13 +54,15 @@
 			}
 		}
 		
-		private function removeOldScreen():void{
+		private function removeOldScreen():void
+		{
 			var oldScreen:MovieClip;
 			oldScreen = screenLayer.getChildAt(0) as MovieClip;
 			screenLayer.removeChild(oldScreen);
 		}
 		
-		private function makeNewScreen():void{
+		private function makeNewScreen():void
+		{
 			switch(newScreenName){
 				case "SplashScreen":
 					splashScreen = new SplashScreen();
@@ -78,7 +85,8 @@
 		}
 		
 
-		/*private function makeNewScreen():void {
+		/*private function makeNewScreen():void 
+		  {
 			trace(newScreenName);
 		   var firstLetter:String = newScreenName.substring(0,1);
 		   var restLetters:String = newScreenName.substring(1,newScreenName.length);
