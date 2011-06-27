@@ -1,6 +1,5 @@
 package  
 {
-
 	import flash.display.Bitmap;
 	import flash.display.MovieClip;
 	import flash.text.TextField;
@@ -9,11 +8,7 @@ package
 	import flash.text.StyleSheet;
 	
 	public class Tutorial extends MovieClip
-	{
-		[Embed(source='../lib/bg.jpg')]
-		private var layer0Class:Class;
-		private var layer0:Bitmap = new layer0Class();
-		
+	{		
 		[Embed(source='../lib/logo.png')]
 		private var gameLogoClass:Class;
 		private var gameLogo:Bitmap = new gameLogoClass();
@@ -34,10 +29,7 @@ package
 		// and DropShadowFilter won't work in this instance. So we're doing it ourselves
 		
 		public function Tutorial() 
-		{
-			
-			this.addChild(layer0);
-			
+		{	
 			var style:StyleSheet = new StyleSheet();
 			var css:String = "p {font-size: 11pt; color: #ebebeb; font-family: Tahoma;}" +
 			"strong { font-weight: bold; display: inline; }";
@@ -75,8 +67,6 @@ package
 			textField.width = 350;
 			textField.height = 110;
 			addChild(textField);
-			
-			
 		}
 		
 	}
