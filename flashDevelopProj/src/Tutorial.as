@@ -20,12 +20,6 @@ package
 		private var gameLogoClass:Class;
 		private var gameLogo:Bitmap = new gameLogoClass();
 		
-		// We use htmlText to parse strong tags. Unfortunately, Flash doesn't handle text-shadow, 
-		// and DropShadowFilter won't work in this instance. So we're doing it ourselves
-		
-		private var textField:TextField = new TextField();
-		private var shadow:TextField = new TextField();
-		
 		private var slide1:String = "<p>Welcome to the <strong>uOttawa 2010 iGem Game</strong>." +
 		"The following is a basic tutorial detailing the general gameplay. If at any time " +
 		"you’d like to skip this tutorial, press the skip button to proceed directly to the " + 
@@ -37,22 +31,12 @@ package
 		
 		private var slide4:String = "<p>Slide 4 - Another test string</p>";
 		
+		private var tutorialText:TextShadow = new TextShadow(slide1);
+		
 		private static var slideState:int = 1;
 		
 		public function Tutorial() 
 		{	
-			var style:StyleSheet = new StyleSheet();
-			var css:String = "p {font-size: 11pt; color: #ebebeb; font-family: Tahoma;}" +
-			"strong { font-weight: bold; display: inline; }";
-			style.parseCSS(css);
-			textField.styleSheet = style;
-			
-			var shadowStyle:StyleSheet = new StyleSheet();
-			var css2:String = "p {font-size: 11pt; color: #101010; font-family: Tahoma;}" +
-			"strong { font-weight: bold; display: inline; }";
-			shadowStyle.parseCSS(css2);
-			shadow.styleSheet = shadowStyle;
-			
 			hCentre(content);
 			content.y = 35;
 			this.addChild(content);
@@ -60,24 +44,8 @@ package
 			gameLogo.x = 127;
 			gameLogo.y = 60;
 			this.addChild(gameLogo);
-			
-			shadow.mouseEnabled = false;
-			shadow.wordWrap = true;
-			shadow.htmlText = slide1;
-			shadow.x = 125;
-			shadow.y = 96;
-			shadow.width = 350;
-			shadow.height = 110;
-			addChild(shadow);
-			
-			textField.mouseEnabled = false;
-			textField.wordWrap = true;
-			textField.htmlText = slide1;
-			textField.x = 126;
-			textField.y = 97;
-			textField.width = 350;
-			textField.height = 110;
-			addChild(textField);
+
+			this.addChild(tutorialText);
 			
 			nextBtn.y = 213;
 			nextBtn.x = 345;
@@ -101,8 +69,7 @@ package
 			if (slideState < 4) 
 			{
 				slideState += 1;
-				this.shadow.htmlText = this["slide" + slideState];
-				this.textField.htmlText = this["slide" + slideState];
+				tutorialText.setText(this["slide" + slideState]);
 				
 				if (slideState == 4) {
 					this.removeChild(skipBtn);
