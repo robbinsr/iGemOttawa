@@ -7,9 +7,23 @@ package
 	import flash.display.SimpleButton;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.text.TextField;
+	import flash.text.TextFormat;
+	import flash.text.AntiAliasType;
+	import flash.text.StyleSheet;
+	import flash.display.InteractiveObject;
+	import com.greensock.TweenLite;
+	import com.greensock.*;
+	import com.greensock.easing.*;
 	
 	public class Level extends General
 	{
+		[Embed(source='../lib/darken.png')]
+		private var darkenClass:Class;
+		private var darken:Bitmap = new darkenClass();
+		
+		// Embed interface images
+		
 		[Embed(source='../lib/bottommenu.png')]
 		private var bottomMenuClass:Class;
 		private var bottomMenu:Bitmap = new bottomMenuClass();
@@ -142,16 +156,46 @@ package
 		public var terminatorBtnG:SimpleButton = new SimpleButton(
 		terminatorBtnGImg, terminatorBtnGImg, terminatorBtnGImg, terminatorBtnGImg);
 		
+		private var introText:TextShadow = new TextShadow("Level");
+		
 		public function Level() 
 		{
 			bottomMenu.x = 0;
 			bottomMenu.y = 318;
 			this.addChild(bottomMenu);
+			
+			goBtn.y = 213;
+			goBtn.x = 415;
+			goBtn.addEventListener(MouseEvent.CLICK, goFunction);
+			
+			this.addEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 		}
 		
-		public function intro(scenario:String):void
+		public function runIntro(title:String, scenario:String):void
 		{
-			// Do intro animation
+			darken.alpha = 0;
+			TweenLite.to(darken, 1, { x:0, y:0, alpha:1 } );
+			this.addChild(darken);
+			hCentre(content);
+			content.y = 35;
+			this.addChild(content);
+			introText.setText(scenario);
+			this.addChild(introText);
+			this.addChild(goBtn);
+		}
+		
+		private function goFunction(e:MouseEvent):void
+		{
+			this.removeChild(goBtn);
+			this.removeChild(content);
+			this.removeChild(introText);
+			this.removeChild(darken);
+		}
+		
+		private function removeListeners(e:Event):void 
+		{
+			goBtn.removeEventListener(MouseEvent.CLICK, goFunction);
+			this.removeEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 		}
 		
 	}
