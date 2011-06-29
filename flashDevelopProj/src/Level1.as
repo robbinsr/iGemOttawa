@@ -14,7 +14,8 @@ package
 	import flash.display.InteractiveObject;
 	
 	public class Level1 extends Level
-	{
+	{	
+		
 		private var validInput:String = "";
 		
 		private var levelName:String = "Level 1";
@@ -23,8 +24,11 @@ package
 		
 		public function Level1()
 		{
+			this.currentSequence = new Array(0)
+			this.winningSequence = new Array(componentArray[0][0])
+				
 			Main.backgroundImage.changeBackground(2);
-			runIntro(levelName,scenario);
+			runIntro(levelName, scenario);
 		}
 	}
 }

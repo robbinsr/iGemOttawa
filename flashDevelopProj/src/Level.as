@@ -160,6 +160,7 @@ package
 		
 		public function Level() 
 		{
+			
 			bottomMenu.x = 0;
 			bottomMenu.y = 318;
 			this.addChild(bottomMenu);
@@ -198,6 +199,36 @@ package
 			this.removeEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 		}
 		
+		/***
+		  Generic level logic
+		***/
+		protected var winningSequence:Array;
+			
+		protected var currentSequence:Array;
+		
+		private function checkWinConditions():Boolean
+		{
+			if (currentSequence == winningSequence)
+			{
+				return true;
+			}
+			return false;
+		}
+			
+		private function playerMove(choice:int, place:int):void
+		{
+			currentSequence[place] = choice;
+		}
+		
+		private var codingSequences:Array = new Array("exampleCodingSequence");
+		private var operators:Array = new Array();
+		private var promoters:Array = new Array();
+		private var reporters:Array = new Array();
+		private var repressors:Array = new Array();
+		private var resGenes:Array = new Array();
+		private var terminators:Array = new Array();
+		
+		protected var componentArray:Array = new Array(codingSequences, operators, promoters, reporters, repressors, resGenes, terminators);
 	}
 
 }

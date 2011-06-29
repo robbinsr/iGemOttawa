@@ -1,1 +1,1 @@
-I won't be able commit anything else to the project until wednesday, maybe thursday.
+Here's a quick commit, with a basic outline of where the logic will be. I'm going with your 2d array Idea.
