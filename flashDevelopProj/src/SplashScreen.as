@@ -25,7 +25,7 @@
 			this.addChild(logo);
 			
 			timer++;
-			if(timer == 80){
+			if(timer == 60){
 				Main.screens.switchTo("MainMenu");
 			}
 			
