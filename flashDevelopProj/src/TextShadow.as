@@ -9,7 +9,7 @@ package
 	import flash.display.Bitmap;
 	
 	// Use:
-	// private var tutorialText:TextShadow = new TextShadow("");
+	// private var tutorialText:TextShadow = new TextShadow(string,x,y,width,height);
 	//
 	// text.setText(scenario);
 	// this.addChild(rext);
@@ -19,7 +19,7 @@ package
 		private var textField:TextField = new TextField();
 		private var shadow:TextField = new TextField();
 		
-		public function TextShadow(text:String) 
+		public function TextShadow(text:String, textX:int, textY:int, textWidth:int, textHeight:int) 
 		{
 			var style:StyleSheet = new StyleSheet();
 			var css:String = "p {font-size: 11pt; color: #ebebeb; font-family: Tahoma;}" +
@@ -36,19 +36,19 @@ package
 			shadow.mouseEnabled = false;
 			shadow.wordWrap = true;
 			shadow.htmlText = text;
-			shadow.x = 125;
-			shadow.y = 96;
-			shadow.width = 350;
-			shadow.height = 110;
+			shadow.x = textX - 1;
+			shadow.y = textY - 1;
+			shadow.width = textWidth;
+			shadow.height = textHeight;
 			addChild(shadow);
 			
 			textField.mouseEnabled = false;
 			textField.wordWrap = true;
 			textField.htmlText = text;
-			textField.x = 126;
-			textField.y = 97;
-			textField.width = 350;
-			textField.height = 110;
+			textField.x = textX;
+			textField.y = textY;
+			textField.width = textWidth;
+			textField.height = textHeight;
 			addChild(textField);
 		}
 		

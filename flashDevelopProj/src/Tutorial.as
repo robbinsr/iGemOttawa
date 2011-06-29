@@ -31,7 +31,7 @@ package
 		
 		private var slide4:String = "<p>Slide 4 - Another test string</p>";
 		
-		private var tutorialText:TextShadow = new TextShadow(slide1);
+		private var tutorialText:TextShadow = new TextShadow(slide1,126,97,350,110);
 		
 		private static var slideState:int = 1;
 		
