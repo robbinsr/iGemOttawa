@@ -156,12 +156,13 @@ package
 		public var terminatorBtnG:SimpleButton = new SimpleButton(
 		terminatorBtnGImg, terminatorBtnGImg, terminatorBtnGImg, terminatorBtnGImg);
 		
-		private var introText:TextShadow = new TextShadow("Level");
+		private var introText:TextShadow = new TextShadow("Level", 126, 97, 350, 110);
+		
 		
 		public function Level() 
 		{
 			bottomMenu.x = 0;
-			bottomMenu.y = 318;
+			bottomMenu.y = 328;
 			this.addChild(bottomMenu);
 			
 			goBtn.y = 213;
@@ -174,8 +175,8 @@ package
 		public function runIntro(title:String, scenario:String):void
 		{
 			darken.alpha = 0;
-			TweenLite.to(darken, 1, { x:0, y:0, alpha:1 } );
 			this.addChild(darken);
+			TweenLite.to(darken, 1, { x:0, y:0, alpha:1 } );
 			hCentre(content);
 			content.y = 35;
 			this.addChild(content);
@@ -193,15 +194,19 @@ package
 			
 			codingseqBtn.x = 10;
 			codingseqBtn.y = 350;
+			codingseqBtn.alpha = 0;
 			codingseqBtn.name = "codingSequence";
 			codingseqBtn.addEventListener(MouseEvent.CLICK, popupMenuFunction);
 			this.addChild(codingseqBtn);
+			TweenLite.to(codingseqBtn, 1, { delay:0, alpha:1 } );
 			
 			operatorBtn.x = 95;
 			operatorBtn.y = 350;
+			operatorBtn.alpha = 0;
 			operatorBtn.name = "operator";
 			operatorBtn.addEventListener(MouseEvent.CLICK, popupMenuFunction);
 			this.addChild(operatorBtn);
+			TweenLite.to(operatorBtn, 2, { delay:1, alpha:1 } );
 		}
 		
 		private function popupMenuFunction(e:MouseEvent):void

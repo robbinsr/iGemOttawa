@@ -9,15 +9,15 @@ package
 	public class PopupMenu extends Sprite
 	{
 		
-		[Embed(source = '../lib/popupMenu.PNG')]
+		[Embed(source = '../lib/popup.png')]
 		private var popupMenuClass:Class;
 		private var _popupMenu:Bitmap = new popupMenuClass();
 		
 		public function PopupMenu(components:Array) 
 		{
 			this.name = "PopupMenu";
-			_popupMenu.x = 15
-			_popupMenu.y = 15;
+			_popupMenu.x = 10
+			_popupMenu.y = 20;
 			this.addChild(_popupMenu);
 			this.populate(components);
 		}
@@ -26,10 +26,8 @@ package
 		{
 			//testing menu populate
 			for (var i:Number = 0; i < components.length; i++) {
-				var testText:TextField = new TextField();
-				testText.text = components[i];
-				testText.x = _popupMenu.x + 25;
-				testText.y = _popupMenu.y + i * 15;
+				var testText:TextShadow = new TextShadow(
+					"<p>"+components[i]+"</p>",_popupMenu.x + 12,_popupMenu.y + (i * 15) + 10,100,100);
 				this.addChild(testText);
 			}
 		}
