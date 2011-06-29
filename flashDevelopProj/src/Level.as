@@ -160,7 +160,6 @@ package
 		
 		public function Level() 
 		{
-			
 			bottomMenu.x = 0;
 			bottomMenu.y = 318;
 			this.addChild(bottomMenu);
@@ -191,6 +190,27 @@ package
 			this.removeChild(content);
 			this.removeChild(introText);
 			this.removeChild(darken);
+			
+			codingseqBtn.x = 10;
+			codingseqBtn.y = 350;
+			codingseqBtn.name = "codingSequence";
+			codingseqBtn.addEventListener(MouseEvent.CLICK, popupMenuFunction);
+			this.addChild(codingseqBtn);
+			
+			operatorBtn.x = 95;
+			operatorBtn.y = 350;
+			operatorBtn.name = "operator";
+			operatorBtn.addEventListener(MouseEvent.CLICK, popupMenuFunction);
+			this.addChild(operatorBtn);
+		}
+		
+		private function popupMenuFunction(e:MouseEvent):void
+		{
+			if (this.getChildByName("PopupMenu") != null) {
+				this.removeChild (this.getChildByName("PopupMenu"));
+			}
+			var popup:PopupMenu = new PopupMenu(components.getComponentButtonArray(e.target.name));
+			this.addChild(popup);
 		}
 		
 		private function removeListeners(e:Event):void 
@@ -199,9 +219,10 @@ package
 			this.removeEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 		}
 		
-		/***
-		  Generic level logic
-		***/
+		//Generic logic: (incomplete)
+		 
+		protected var components:Components = new Components();
+		
 		protected var winningSequence:Array;
 			
 		protected var currentSequence:Array;
@@ -215,20 +236,9 @@ package
 			return false;
 		}
 			
-		private function playerMove(choice:int, place:int):void
+		private function playerMove(choice:String, place:int):void
 		{
 			currentSequence[place] = choice;
 		}
-		
-		private var codingSequences:Array = new Array("exampleCodingSequence");
-		private var operators:Array = new Array();
-		private var promoters:Array = new Array();
-		private var reporters:Array = new Array();
-		private var repressors:Array = new Array();
-		private var resGenes:Array = new Array();
-		private var terminators:Array = new Array();
-		
-		protected var componentArray:Array = new Array(codingSequences, operators, promoters, reporters, repressors, resGenes, terminators);
 	}
-
 }

@@ -72,6 +72,8 @@
     <asset path="lib\levelselectpage.PNG" />
     <asset path="lib\splashpage.PNG" />
     <asset path="lib\menupage.PNG" />
+    <asset path="lib\levelInterface\popupMenu.PNG" />
+    <asset path="lib\popupMenu.PNG" update="..\..\My Documents\My Pictures\popupMenu.PNG" />
   </library>
   <!-- Class files to compile (other referenced classes will automatically be included) -->
   <compileTargets>
