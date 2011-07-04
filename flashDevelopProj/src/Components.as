@@ -1,20 +1,19 @@
 package  
 {
-	import com.greensock.layout.AlignMode;
 	import flash.display.SimpleButton;
+	
 	public class Components 
 	{
-		private var codingSequences:Array = new Array("exampleCodingSequence");
-		private var operators:Array = new Array();
-		private var promoters:Array = new Array();
-		private var reporters:Array = new Array();
-		private var repressors:Array = new Array();
-		private var resGenes:Array = new Array();
-		private var terminators:Array = new Array();
+		private var codingSequences:Array = new Array("CodingSequence1","CodingSequence2","CodingSequence3");
+		private var operators:Array = new Array("Operator1","Operator2","Operator3");
+		private var promoters:Array = new Array("Promoter1","Promoter2","Promoter3");
+		private var reporters:Array = new Array("Reporter1","Reporter2","Reporter3");
+		private var repressors:Array = new Array("Repressor1","Repressor2","Repressor3");
+		private var resGenes:Array = new Array("ResGene1","ResGene2","ResGene3");
+		private var terminators:Array = new Array("Terminator1","Terminator2","Terminator3");
 		
-		
-		
-		protected var componentArray:Array = new Array(codingSequences, operators, promoters, reporters, repressors, resGenes, terminators);
+		protected var componentArray:Array = new Array(
+		codingSequences, operators, promoters, reporters, repressors, resGenes, terminators);
 		
 		public function Components() 
 		{
@@ -27,20 +26,17 @@ package
 		}
 		
 		
-		public function getComponentButtonArray(type:String):Array
+		public function getComponentButtonArray(type:String,availableComponents:Array):Array
 		{	
-			//test, work in progress
-			switch(type)
-			{
-				case("codingSequence"):
-					return new Array("codingSequence ", "one, ", "two, ", "three, ");
-					break;
-				case("operator"):
-					return new Array("operator ", "one, ", "two, ", "three, ");
-					break;
+			var componentList:Array = new Array();
+			
+			for each ( var i:String in availableComponents) {
+				if (i.indexOf(type + ".") != -1) {
+					componentList.push(componentArray[int(type)][int(i.substr(2,2))]);
+				}
 			}
-			//this will never happen, but the compiler seems to think it might.
-			return new Array();
+			
+			return componentList;
 		}
 
 		//I'll iterate through this class to populate the popupMenu with the embedded buttons.

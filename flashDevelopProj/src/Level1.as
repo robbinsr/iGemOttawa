@@ -23,8 +23,10 @@ package
 		
 		public function Level1()
 		{
-			this.currentSequence = new Array(0)
-			this.winningSequence = new Array()
+			this.availableComponents = new Array("0.0", "0.1", "0.2", "2.0", "2.1", "2.2");
+			this.componentCategories = new Array(0, 2);
+			this.currentSequence = new Array();
+			this.winningSequence = new Array("0.0", "2.0");
 				
 			Main.backgroundImage.changeBackground(2);
 			runIntro(levelName, scenario);
