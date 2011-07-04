@@ -1,25 +1,23 @@
-A few changes:
+More changes:
 
--Added a Component class, we'll define all the components here, including their buttons, should keep things tidy.
+I don't think there's all that much point to showing all the available components 
+in every level - just keep it to so many options. No point throwing all content at 
+them to see right off the bat, as it'll potentially give away future scenarios.
+Anyway, those options can be defined via:
+this.availableComponents = new Array("0.0", "0.1", "0.2", "2.0", "2.1", "2.2");
+The period serves as a delimiter to differentiate between first dimension index 
+and second of the componentArray.
 
--Added a PopupMenu class that will appear when you click on a button from the level interface. 
-	-I added a couple buttons and tested it, works fine. 
-	
--The general flow of logic for the popup:
-	-Clicking a button on the bottom menu triggers the popupFunction, calls the Components class and gets an array of components for that type
-	-Check that no popup menus already exist, if so remove it
-	-Create new popup menu and pass the components array into it. The PopupMenu class will handle populating itself with the array of buttons. 
-	-While populating itself, it'll grey out unavaible choices
+For drawing the buttons on the bottom, we list which categories of components will 
+be used for the level. The rest won't be drawn. The greying out of buttons to 
+encourage a particular order of component placement can be done later.
+this.componentCategories = new Array(0, 2);
 
+We can store the winning sequence as such:
+this.winningSequence = new Array("0.0", "2.0");
+With 0-6 corresponding to the 7 different categories of components.
 
-As usual my intermediate programming art is THE BEST. 
-
-
-
-Future(as in possibly tommorow, or tonight if i can't sleep):
-	-mock up some shitty component buttons with wonderful mspaint skills.
-
-	-the Level# classes will define wich components are available (not greyed out) by supplying an array during construction
-
-It should be okay for the Level# class to define up to which button to render.
-	-ex: Level1 (1,0,0,0,0,0,0), when being populated the PopupMenu will render one functional button, then render 19 greyed out, unclickable components. 
+With this way of doing things, we can also order the components as we'd like 
+for each individual level. Using this order as well as number of components, 
+we can make things easier or even more difficult just through how things
+are organized in the popup.
