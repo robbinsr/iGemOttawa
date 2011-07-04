@@ -192,21 +192,43 @@ package
 			this.removeChild(introText);
 			this.removeChild(darken);
 			
-			codingseqBtn.x = 10;
-			codingseqBtn.y = 350;
-			codingseqBtn.alpha = 0;
-			codingseqBtn.name = "codingSequence";
-			codingseqBtn.addEventListener(MouseEvent.CLICK, popupMenuFunction);
-			this.addChild(codingseqBtn);
-			TweenLite.to(codingseqBtn, 1, { delay:0, alpha:1 } );
+			var categoryId:int;
+			var buttonName:String;
 			
-			operatorBtn.x = 95;
-			operatorBtn.y = 350;
-			operatorBtn.alpha = 0;
-			operatorBtn.name = "operator";
-			operatorBtn.addEventListener(MouseEvent.CLICK, popupMenuFunction);
-			this.addChild(operatorBtn);
-			TweenLite.to(operatorBtn, 2, { delay:1, alpha:1 } );
+			for (var i:String in this.componentCategories) {
+				categoryId = this.componentCategories[i];
+				switch(categoryId)
+				{
+					case(0):
+						buttonName = "codingseqBtn";
+						break;
+					case(1):
+						buttonName = "operatorBtn";
+						break;
+					case(2):
+						buttonName = "promoterBtn";
+						break;
+					case(3):
+						buttonName = "reporterBtn";
+						break;
+					case(4):
+						buttonName = "repressorBtn";
+						break;
+					case(5):
+						buttonName = "regenesBtn";
+						break;
+					case(6):
+						buttonName = "terminatorBtn";
+						break;
+				}
+				this[buttonName].x = 85 * int(i) + 10;
+				this[buttonName].y = 350;
+				this[buttonName].alpha = 0;
+				this[buttonName].name = categoryId;
+				this[buttonName].addEventListener(MouseEvent.CLICK, popupMenuFunction);
+				this.addChild(this[buttonName]);
+				TweenLite.to(this[buttonName], 1, { delay:i, alpha:1 } );
+			}
 		}
 		
 		private function popupMenuFunction(e:MouseEvent):void
@@ -214,7 +236,7 @@ package
 			if (this.getChildByName("PopupMenu") != null) {
 				this.removeChild (this.getChildByName("PopupMenu"));
 			}
-			var popup:PopupMenu = new PopupMenu(components.getComponentButtonArray(e.target.name));
+			var popup:PopupMenu = new PopupMenu(components.getComponentButtonArray(e.target.name,this.availableComponents));
 			this.addChild(popup);
 		}
 		
@@ -228,9 +250,13 @@ package
 		 
 		protected var components:Components = new Components();
 		
+		protected var componentCategories:Array;
+		
 		protected var winningSequence:Array;
 			
 		protected var currentSequence:Array;
+		
+		protected var availableComponents:Array;
 		
 		private function checkWinConditions():Boolean
 		{
