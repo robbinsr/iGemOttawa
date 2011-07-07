@@ -1,17 +1,35 @@
-I did a bit of work on the pop-up menu, I'm still working on it, just thought I'd push some of what I've done.
+Couple more changes and I'm done for tonight:
 
--So I created some buttons in the components class for the coding sequences, they're all done individually which means 
-we can mix up the colors or something to add a bit of variety.
+-So the reason the buttons weren't all displaying is as3's nature. I asked around a
+ bit on IRC and it turns out when you assign a bitmap to a particular object the
+the draw routine tell that particular bitmap where to display itself so it cant
+be in more than one place at once. I fixed that by cloning the bitmapdata for each button.
 
--The buttons automatically populate in the right place when a popupMenu is created. The spacing can be tweaked so if 
-the buttons end up being smaller or larger we can worry about that later. Also it only adds buttons based on the parameters
-given by the level.
+-there's a nice little hover over now for the buttons. Right now it just displays
+the instance name of that button object, which is fine because it means we have a 
+hook to grab onto for getting the description text later when we add it
 
--For some reason though the buttons aren't constantly visible. I'm not sure why this is, maybe you can look into it? As it is
-all the buttons should be visible all the time, but only the most recently highlighted one is showing.
 
--I'll add a mouse-over event that displays a little textfield or something when you hover over a button so you can get a brief
-description. 
+
+--------
+I did a bit of work on the pop-up menu, I'm still working on it, just thought 
+I'd push some of what I've done.
+
+-So I created some buttons in the components class for the coding sequences, 
+they're all done individually which means we can mix up the colors or 
+something to add a bit of variety.
+
+-The buttons automatically populate in the right place when a popupMenu is 
+created. The spacing can be tweaked so if the buttons end up being smaller 
+or larger we can worry about that later. Also it only adds buttons based on 
+the parameters given by the level.
+
+-For some reason though the buttons aren't constantly visible. I'm not sure
+ why this is, maybe you can look into it? As it isall the buttons should be
+ visible all the time, but only the most recently highlighted one is showing.
+
+-I'll add a mouse-over event that displays a little textfield or something 
+when you hover over a button so you can get a brief description. 
 
 
 
