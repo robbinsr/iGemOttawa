@@ -1,3 +1,24 @@
+I did a bit of work on the pop-up menu, I'm still working on it, just thought I'd push some of what I've done.
+
+-So I created some buttons in the components class for the coding sequences, they're all done individually which means 
+we can mix up the colors or something to add a bit of variety.
+
+-The buttons automatically populate in the right place when a popupMenu is created. The spacing can be tweaked so if 
+the buttons end up being smaller or larger we can worry about that later. Also it only adds buttons based on the parameters
+given by the level.
+
+-For some reason though the buttons aren't constantly visible. I'm not sure why this is, maybe you can look into it? As it is
+all the buttons should be visible all the time, but only the most recently highlighted one is showing.
+
+-I'll add a mouse-over event that displays a little textfield or something when you hover over a button so you can get a brief
+description. 
+
+
+
+
+
+
+------
 More changes:
 
 I don't think there's all that much point to showing all the available components 
