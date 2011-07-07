@@ -23,7 +23,12 @@ package
 		
 		public function Level1()
 		{
-			this.availableComponents = new Array("0.0", "0.1", "0.2", "2.0", "2.1", "2.2");
+			this.availableComponents = new Array(
+			"0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9",
+			//"0.10", "0.11", "0.12", "0.13", "0.14", "0.15", "0.16", "0.17", "0.18", "0.19",
+			"2.0", "2.1", "2.2"
+			);
+			
 			this.componentCategories = new Array(0, 2);
 			this.currentSequence = new Array();
 			this.winningSequence = new Array("0.0", "2.0");
