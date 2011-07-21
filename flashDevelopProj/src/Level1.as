@@ -23,9 +23,10 @@ package
 		
 		public function Level1()
 		{
+			//Limit, 5 per type
 			this.availableComponents = new Array(
-			"0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9","0.10", "0.11", "0.12", "0.13", "0.14", "0.15", "0.16", "0.17",
-			"2.0", "2.1", "2.2"
+			"0.0", "0.1", "0.2", "0.3", "0.4",
+			"2.0", "2.2", "2.4"
 			);
 			
 			this.componentCategories = new Array(0, 2);

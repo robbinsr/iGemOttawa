@@ -247,8 +247,10 @@ package
 		}
 		
 		//Generic logic: (incomplete)
-		 
-		protected var components:Components = new Components();
+		
+		//public static for several reasons; so it's visible to popupMenu class and 
+		//also so that the components aren't reinstantiated everytime a new popup is generated
+		public static var components:Components = new Components();
 		
 		protected var componentCategories:Array;
 		
