@@ -4,43 +4,34 @@ package
 	import flash.display.SimpleButton;
 	
 	public class Components 
-	{			
-		[Embed(source = '../lib/levelInterface/optionTile56x48.PNG')]
-		private var componentClass:Class;
-		private var _component:Bitmap = new componentClass();
+	{		
 		
-		//Here's a ton of buttons used to populate the menu. Functional? Yes. Ugly? Extremely.
-		//But at least this gives us the ability to differentiate between the components, by maybe chaing the color or something
-		
-		//Coding sequences:
-		private var cs1:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs2:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs3:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs4:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs5:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs6:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs7:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs8:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs9:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs10:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs11:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs12:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs13:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs14:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs15:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs16:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs17:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs18:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs19:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		private var cs20:SimpleButton = new SimpleButton(new Bitmap(_component.bitmapData), _component, _component, _component);
-		
-		private var codingSequences:Array = new Array(cs1,cs2,cs3,cs4,cs5,cs6,cs7,cs8,cs9,cs10,cs11,cs12,cs13,cs14,cs15,cs16,cs17,cs18,cs19,cs20);				
-		private var operators:Array = new Array("Operator1","Operator2","Operator3");
-		private var promoters:Array = new Array("Promoter1","Promoter2","Promoter3");
+		private var codingSequences:Array = new Array("CodingSequence1", "CodingSequence2", "CodingSequence3","CodingSequence4","CodingSequence5");
+		private var operators:Array = new Array("Operator1", "Operator2", "Operator3", "Operator4", "Operator5");
+		private var promoters:Array = new Array("Promoter1", "Promoter2", "Promoter3", "Promoter4", "Promoter5");
 		private var reporters:Array = new Array("Reporter1","Reporter2","Reporter3");
 		private var repressors:Array = new Array("Repressor1","Repressor2","Repressor3");
 		private var resGenes:Array = new Array("ResGene1","ResGene2","ResGene3");
-		private var terminators:Array = new Array("Terminator1","Terminator2","Terminator3");
+		private var terminators:Array = new Array("Terminator1", "Terminator2", "Terminator3");
+		
+		/* Component Descriptions */
+		
+		private var CodingSequence1_desc:String = "this is coding sequence 1";
+		private var CodingSequence2_desc:String = "Very long string to test that wrapping works properly asdfasklhf asd fas df sdf asdf as dfa sd asdf sadf asd fas df asdf asdf"+
+		"sad fa sdf asdf asd fas df asd fas df asd fas df asdf asd fa sdf asd fas df asdf ";
+		private var CodingSequence3_desc:String = "something something something";
+		private var CodingSequence4_desc:String = "CS 4";
+		private var CodingSequence5_desc:String = "Coding sequence 5";
+		
+		private var Promoter1_desc:String = "1";
+		private var Promoter2_desc:String = "2";
+		private var Promoter3_desc:String = "3";
+		private var Promoter4_desc:String = "4";
+		private var Promoter5_desc:String = "5";
+		
+		//More to come. Stay tuned, same bat channel...
+		
+		/* End of Component Descriptions */
 		
 		protected var componentArray:Array = new Array(
 		codingSequences, operators, promoters, reporters, repressors, resGenes, terminators);
@@ -50,11 +41,10 @@ package
 			
 		}
 		
-		public function getComponentName(type:Number, index:Number):String
+		public function getComponentDescription(name:String):String
 		{
-			return componentArray[type][index];
+			return this[name+"_desc"];
 		}
-		
 		
 		public function getComponentButtonArray(type:String,availableComponents:Array):Array
 		{	
@@ -65,8 +55,7 @@ package
 					componentList.push(componentArray[int(type)][int(i.substr(2, 2))]);
 				}
 			}
-			
 			return componentList;
-		}
+		}		
 	}
 }
