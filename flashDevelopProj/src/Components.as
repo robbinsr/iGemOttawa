@@ -5,45 +5,83 @@ package
 	
 	public class Components 
 	{		
+		// Component Names
 		
-		private var codingSequences:Array = new Array("CodingSequence1", "CodingSequence2", "CodingSequence3","CodingSequence4","CodingSequence5");
-		private var operators:Array = new Array("Operator1", "Operator2", "Operator3", "Operator4", "Operator5");
-		private var promoters:Array = new Array("Promoter1", "Promoter2", "Promoter3", "Promoter4", "Promoter5");
-		private var reporters:Array = new Array("Reporter1","Reporter2","Reporter3");
-		private var repressors:Array = new Array("Repressor1","Repressor2","Repressor3");
-		private var resGenes:Array = new Array("ResGene1","ResGene2","ResGene3");
-		private var terminators:Array = new Array("Terminator1", "Terminator2", "Terminator3");
+		private var codingSequences:Array = new Array("");
+		private var operators:Array = new Array("");
+		private var promoters:Array = new Array("High", "Medium", "Low");
+		private var reporters:Array = new Array("");
+		private var repressors:Array = new Array("");
+		private var resGenes:Array = new Array("AmpR","ChlR","KanR");
+		private var terminators:Array = new Array("Terminator");
 		
-		/* Component Descriptions */
+		// Component Descriptions
 		
-		private var CodingSequence1_desc:String = "this is coding sequence 1";
-		private var CodingSequence2_desc:String = "Very long string to test that wrapping works properly asdfasklhf asd fas df sdf asdf as dfa sd asdf sadf asd fas df asdf asdf"+
-		"sad fa sdf asdf asd fas df asd fas df asd fas df asdf asd fa sdf asd fas df asdf ";
-		private var CodingSequence3_desc:String = "something something something";
-		private var CodingSequence4_desc:String = "CS 4";
-		private var CodingSequence5_desc:String = "Coding sequence 5";
+		private var High_desc:String = "1";
+		private var Medium_desc:String = "2";
+		private var Low_desc:String = "3";
 		
-		private var Promoter1_desc:String = "1";
-		private var Promoter2_desc:String = "2";
-		private var Promoter3_desc:String = "3";
-		private var Promoter4_desc:String = "4";
-		private var Promoter5_desc:String = "5";
+		private var AmpR_desc:String = "1";
+		private var ChlR_desc:String = "2";
+		private var KanR_desc:String = "3";
 		
-		//More to come. Stay tuned, same bat channel...
+		private var Terminator_desc:String = "3";
 		
-		/* End of Component Descriptions */
+		// General Component Array
 		
 		protected var componentArray:Array = new Array(
-		codingSequences, operators, promoters, reporters, repressors, resGenes, terminators);
+			codingSequences, 
+			operators, 
+			promoters, 
+			reporters, 
+			repressors, 
+			resGenes, 
+			terminators
+		);
+		
+		// Component Methods
 		
 		public function Components() 
 		{
 			
 		}
 		
+		public function getComponentCategoryFromBtn(name:String):int
+		{
+			if (name == "codingseqBtn")
+				return 0
+			else if (name == "operatorBtn")
+				return 1	
+			else if (name == "promoterBtn")
+				return 2
+			else if (name == "reporterBtn")
+				return 3
+			else if (name == "repressorBtn")
+				return 4
+			else if (name == "resgenesBtn")
+				return 5
+			else if (name == "terminatorBtn")
+				return 6
+			else
+				return 6
+		}
+		
 		public function getComponentDescription(name:String):String
 		{
 			return this[name+"_desc"];
+		}
+		
+		public function getComponentId(category:int, name:String):String
+		{
+			trace(name);
+			var subId:String = "";
+			for (var i:int = 0; i < componentArray[category].length; i++) {
+				if (name == componentArray[category][i]) {
+					subId = String(i);
+				}
+			}
+			var partId:String = String(category) + "." + String(subId);
+			return partId;
 		}
 		
 		public function getComponentButtonArray(type:String,availableComponents:Array):Array
