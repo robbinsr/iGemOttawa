@@ -10,6 +10,7 @@
 		private var mainMenu:MainMenu;
 		private var tutorial:Tutorial;
 		private var level1:Level1;
+		private var level2:Level2;
 		
 		private var newScreenName:String = "";
 		
@@ -80,6 +81,10 @@
 				case "Level1":
 					level1 = new Level1();
 					screenLayer.addChild(level1);
+				break;
+				case "Level2":
+					level2 = new Level2();
+					screenLayer.addChild(level2);
 				break;
 				default:
 					mainMenu = new MainMenu();
