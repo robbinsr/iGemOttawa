@@ -13,15 +13,15 @@ package
 	import flash.text.StyleSheet;
 	import flash.display.InteractiveObject;
 	
-	public class Level1 extends Level
+	public class Level2 extends Level
 	{	
 		private var validInput:String = "";
 		
-		private var levelName:String = "Level 1";
+		private var levelName:String = "Level 2";
 		
 		private var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
 		
-		public function Level1()
+		public function Level2()
 		{
 			this.levelEndText = "<p>Level ending text</p>";
 			
@@ -32,8 +32,8 @@ package
 			this.componentCategories = new Array(5,6);
 			this.winningSequence = new Array("5.1", "6.0");
 			
-			Main.backgroundImage.changeBackground(2);
-			runIntroSlowDarken(levelName, scenario);
+			Main.backgroundImage.changeBackground(3);
+			runIntro(levelName, scenario);
 		}
 	}
 }

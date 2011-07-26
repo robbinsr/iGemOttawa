@@ -18,11 +18,17 @@ package
 	
 	public class Level extends General
 	{
+		// General Bitmaps
+		
+		[Embed(source='../lib/bacteria1.png')]
+		private var bacteriaClass:Class;
+		private var bacteria:Bitmap = new bacteriaClass();
+		
 		[Embed(source='../lib/darken.png')]
 		private var darkenClass:Class;
 		private var darken:Bitmap = new darkenClass();
 		
-		// Embed interface images
+		// Bottom Menu Button Bitmaps
 		
 		[Embed(source='../lib/bottommenu.png')]
 		private var bottomMenuClass:Class;
@@ -112,7 +118,7 @@ package
 		public var terminatorBtnGClass:Class;
 		public var terminatorBtnGImg:Bitmap = new terminatorBtnGClass();
 		
-		// All buttons, BtnG = Greyed-out version
+		// Simple Buttons, including Greyed versions
 		
 		public var codingseqBtn:SimpleButton = new SimpleButton(
 		codingseqBtnImg, codingseqBtnHImg, codingseqBtnHImg, codingseqBtnImg);
@@ -156,24 +162,42 @@ package
 		public var terminatorBtnG:SimpleButton = new SimpleButton(
 		terminatorBtnGImg, terminatorBtnGImg, terminatorBtnGImg, terminatorBtnGImg);
 		
-		private var introText:TextShadow = new TextShadow("Level", 126, 97, 350, 110);
+		// Other variables
 		
+		private var introText:TextShadow = new TextShadow("Level", 126, 97, 350, 110, 0);
+		private var outroText:TextShadow = new TextShadow("Level", 126, 97, 350, 110, 0);
+		public var levelEndText:String = "";
+		
+		// Intro sequence functions
 		
 		public function Level() 
 		{
 			bottomMenu.x = 0;
-			bottomMenu.y = 328;
+			bottomMenu.y = 348;
 			this.addChild(bottomMenu);
-			
-			goBtn.y = 213;
-			goBtn.x = 415;
-			goBtn.addEventListener(MouseEvent.CLICK, goFunction);
 			
 			this.addEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 		}
 		
 		public function runIntro(title:String, scenario:String):void
 		{
+			goBtn.y = 213;
+			goBtn.x = 415;
+			goBtn.addEventListener(MouseEvent.CLICK, goFunction);
+			this.addChild(darken);
+			hCentre(content);
+			content.y = 35;
+			this.addChild(content);
+			introText.setText(scenario);
+			this.addChild(introText);
+			this.addChild(goBtn);
+		}
+
+		public function runIntroSlowDarken (title:String, scenario:String):void
+		{
+			goBtn.y = 213;
+			goBtn.x = 415;
+			goBtn.addEventListener(MouseEvent.CLICK, goFunction);
 			darken.alpha = 0;
 			this.addChild(darken);
 			TweenLite.to(darken, 1, { x:0, y:0, alpha:1 } );
@@ -187,10 +211,29 @@ package
 		
 		private function goFunction(e:MouseEvent):void
 		{
+			goBtn.removeEventListener(MouseEvent.CLICK, goFunction);
 			this.removeChild(goBtn);
 			this.removeChild(content);
 			this.removeChild(introText);
 			this.removeChild(darken);
+			
+			bacteria.alpha = 0;
+			bacteria.x = 287;
+			bacteria.y = 77;
+			this.addChild(bacteria);
+			TweenLite.to(bacteria, 1, { delay:i, alpha:1 } );
+			
+			createBtn.y = 20;
+			createBtn.x = 530;
+			createBtn.addEventListener(MouseEvent.CLICK, createFunction);
+			this.addChild(createBtn);
+			TweenLite.to(createBtn, 1, { delay:i, alpha:1 } );
+			
+			undoBtn.y = 20;
+			undoBtn.x = 460;
+			undoBtn.addEventListener(MouseEvent.CLICK, undoFunction);
+			this.addChild(undoBtn);
+			TweenLite.to(undoBtn, 1, { delay:i, alpha:1 } );
 			
 			var categoryId:int;
 			var buttonName:String;
@@ -215,14 +258,14 @@ package
 						buttonName = "repressorBtn";
 						break;
 					case(5):
-						buttonName = "regenesBtn";
+						buttonName = "resgenesBtn";
 						break;
 					case(6):
 						buttonName = "terminatorBtn";
 						break;
 				}
 				this[buttonName].x = 85 * int(i) + 10;
-				this[buttonName].y = 350;
+				this[buttonName].y = 360;
 				this[buttonName].alpha = 0;
 				this[buttonName].name = categoryId;
 				this[buttonName].addEventListener(MouseEvent.CLICK, popupMenuFunction);
@@ -231,47 +274,96 @@ package
 			}
 		}
 		
+		public function runOutro(levelEndText:String):void
+		{
+			darken.alpha = 0;
+			this.addChild(darken);
+			TweenLite.to(darken, 1, { x:0, y:0, alpha:1 } );
+			hCentre(content);
+			content.y = 35;
+			this.addChild(content);
+			outroText.setText(levelEndText);
+			this.addChild(outroText);
+			this.addChild(goBtn);
+			goBtn.addEventListener(MouseEvent.CLICK, goToNextLevel);
+		}
+		
+		public function createFunction(e:MouseEvent):void
+		{
+			if (checkWinConditions()) {
+				runOutro(levelEndText);
+			}
+			else {
+				
+			}
+		}
+		
+		private function undoFunction(e:MouseEvent):void
+		{
+			var removedId:int = removeComponent();
+		}
+		
+		// Popup Menu events
+		
 		private function popupMenuFunction(e:MouseEvent):void
 		{
 			if (this.getChildByName("PopupMenu") != null) {
 				this.removeChild (this.getChildByName("PopupMenu"));
 			}
-			var popup:PopupMenu = new PopupMenu(components.getComponentButtonArray(e.target.name,this.availableComponents));
+			var popup:PopupMenu = new PopupMenu(components.getComponentButtonArray(e.target.name,this.availableComponents),e.target.name);
+			popup.currentCategory = e.target.name;
 			this.addChild(popup);
+		}
+		
+		private function goToNextLevel(e:MouseEvent):void
+		{
+			Main.screens.switchTo("Level2");
 		}
 		
 		private function removeListeners(e:Event):void 
 		{
-			goBtn.removeEventListener(MouseEvent.CLICK, goFunction);
+			goBtn.removeEventListener(MouseEvent.CLICK, goToNextLevel);
+			createBtn.removeEventListener(MouseEvent.CLICK, createFunction);
+			undoBtn.removeEventListener(MouseEvent.CLICK, undoFunction);
 			this.removeEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 		}
 		
-		//Generic logic: (incomplete)
+		// General Logic
 		
-		//public static for several reasons; so it's visible to popupMenu class and 
-		//also so that the components aren't reinstantiated everytime a new popup is generated
 		public static var components:Components = new Components();
 		
 		protected var componentCategories:Array;
 		
 		protected var winningSequence:Array;
 			
-		protected var currentSequence:Array;
+		public static var currentSequence:Array = new Array();
 		
 		protected var availableComponents:Array;
 		
 		private function checkWinConditions():Boolean
-		{
-			if (currentSequence == winningSequence)
-			{
-				return true;
+		{	
+			if (currentSequence.length != winningSequence.length) {
+				return false;
 			}
-			return false;
-		}
 			
-		private function playerMove(choice:String, place:int):void
+			for (var i:int = 0; i < winningSequence.length; i++ ) {
+				if (currentSequence[i] != winningSequence[i]) {
+					return false;
+				}
+			}
+			
+			return true;
+		}
+		
+		public static function addComponent(id:String):void
 		{
-			currentSequence[place] = choice;
+			currentSequence.push(id);
+			trace(currentSequence);
+		}
+		
+		public static function removeComponent():int
+		{
+			return currentSequence.pop();
 		}
 	}
 }

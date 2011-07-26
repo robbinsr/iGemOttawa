@@ -29,6 +29,28 @@ package
 		public var goBtn:SimpleButton = new SimpleButton(
 		goBtnImg, goBtnHImg, goBtnHImg, goBtnImg);
 		
+		[Embed(source='../lib/create.png')]
+		public var createBtnClass:Class;
+		public var createBtnImg:Bitmap = new createBtnClass();
+		
+		[Embed(source='../lib/create_h.png')]
+		public var createBtnHClass:Class;
+		public var createBtnHImg:Bitmap = new createBtnHClass();
+		
+		public var createBtn:SimpleButton = new SimpleButton(
+		createBtnImg, createBtnHImg, createBtnHImg, createBtnImg);
+		
+		[Embed(source='../lib/undo.png')]
+		public var undoBtnClass:Class;
+		public var undoBtnImg:Bitmap = new undoBtnClass();
+		
+		[Embed(source='../lib/undo_h.png')]
+		public var undoBtnHClass:Class;
+		public var undoBtnHImg:Bitmap = new undoBtnHClass();
+		
+		public var undoBtn:SimpleButton = new SimpleButton(
+		undoBtnImg, undoBtnHImg, undoBtnHImg, undoBtnImg);
+		
 		[Embed(source='../lib/skip.png')]
 		public var skipBtnClass:Class;
 		public var skipBtnImg:Bitmap = new skipBtnClass();
