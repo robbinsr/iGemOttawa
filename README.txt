@@ -1,9 +1,13 @@
-Latest update:
+First commit for the vector drawing:
 
-Refactored the components and popupMenu generation. Makes much more sense now. 
-Not sure what I was thinking with my original implementation, I might have 
-been drunk at the time.
+It's about half done, I need to implement the actual drawing part. 
+Believe it or not it's actually quite complicated, "circular" 
+curves don't actually exist in as3, only parabolic bezier curves.
+But if you cut the circular curve down into enough segments (I'm
+just using 4) it approximates to a circular curve. I have it all
+laid out, I'll work on it more tonight and possibly finish it off
+tommorow. 
 
-A new popupMenu has 5 buttons, which are then given names, etc, based 
-on their type. This makes it really easy to get the proper text description.
-The flow of logic is a little convoluted but it works.
+Hopefully I can control the thickness of the curve and make it 
+wide enough, otherwise I'm going to have to hack together some 
+sort of double curve with a fill between.
