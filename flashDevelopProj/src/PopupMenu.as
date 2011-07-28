@@ -100,7 +100,7 @@ package
 		
 		public function buttonClick(e:MouseEvent):void {
 			var id:String = Level.components.getComponentId(currentCategory, e.target.name);
-			Level.addComponent(id);
+			Level.addComponent(id,currentCategory);
 		}
 		
 	}

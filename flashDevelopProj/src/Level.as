@@ -168,14 +168,15 @@ package
 		private var outroText:TextShadow = new TextShadow("Level", 126, 97, 350, 110, 0);
 		public var levelEndText:String = "";
 		
-		// Intro sequence functions
+		public static var sequenceVector:SequenceVector = new SequenceVector();
 		
+		// Intro sequence functions
 		public function Level() 
 		{
 			bottomMenu.x = 0;
 			bottomMenu.y = 348;
 			this.addChild(bottomMenu);
-			
+			this.addChild(sequenceVector);
 			this.addEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 		}
 		
@@ -355,14 +356,17 @@ package
 			return true;
 		}
 		
-		public static function addComponent(id:String):void
+		public static function addComponent(id:String, currentCategory:int):void
 		{
+			//Commented out, since it's incomplete, so you can work on other things without crashing
+			//sequenceVector.add(currentCategory);
 			currentSequence.push(id);
-			trace(currentSequence);
 		}
 		
 		public static function removeComponent():int
-		{
+		{	
+			//Commented out, since it's incomplete, so you can work on other things without crashing
+			//sequenceVector.remove();
 			return currentSequence.pop();
 		}
 	}
