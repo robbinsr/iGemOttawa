@@ -10,28 +10,28 @@ package
 	
 	public class Background extends MovieClip
 	{
-		[Embed(source='../lib/bg1.jpg')]
+		[Embed(source='../lib/bg/bg1.jpg')]
 		private var bg1Class:Class;
 		private var bg1:Bitmap = new bg1Class();
 		
-		[Embed(source='../lib/bg2.jpg')]
+		[Embed(source='../lib/bg/bg2.jpg')]
 		private var bg2Class:Class;
 		private var bg2:Bitmap = new bg2Class();
 		
-		[Embed(source='../lib/bg3.jpg')]
+		[Embed(source='../lib/bg/bg3.jpg')]
 		private var bg3Class:Class;
 		private var bg3:Bitmap = new bg3Class();
 		
-		[Embed(source='../lib/bg4.jpg')]
+		[Embed(source='../lib/bg/bg4.jpg')]
 		private var bg4Class:Class;
 		private var bg4:Bitmap = new bg4Class();
 		
-		[Embed(source='../lib/scroll1.png')]
+		[Embed(source='../lib/bg/scroll1.png')]
 		private var scrollBG:Class;
 		private var bgs1:Bitmap = new scrollBG();
 		private var bgs2:Bitmap = new scrollBG();
 		
-		[Embed(source='../lib/scroll2.png')]
+		[Embed(source='../lib/bg/scroll2.png')]
 		private var scrollBG2:Class;
 		private var bgs3:Bitmap = new scrollBG2();
 		private var bgs4:Bitmap = new scrollBG2();

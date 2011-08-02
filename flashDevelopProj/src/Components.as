@@ -27,7 +27,7 @@ package
 		
 		private var Terminator_desc:String = "3";
 		
-		// General Component Array
+		// General Component Arrays
 		
 		protected var componentArray:Array = new Array(
 			codingSequences, 
@@ -38,6 +38,16 @@ package
 			resGenes, 
 			terminators
 		);
+		
+		public var componentColors:Array = new Array(
+			0xFFFFFF, 
+			0xFFFFFF, 
+			0xFFFFFF, 
+			0xFFFFFF, 
+			0xFFFFFF, 
+			0xFFFFFF, 
+			0xFFFFFF
+		);	
 		
 		// Component Methods
 		
