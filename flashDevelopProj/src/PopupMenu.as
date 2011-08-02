@@ -4,11 +4,13 @@ package
 	import flash.display.Sprite;
 	import flash.display.SimpleButton;
 	import flash.events.MouseEvent;
+	import flash.geom.ColorTransform;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	import flash.text.AntiAliasType;
     import flash.text.GridFitType;
     import flash.text.TextFormat;
+	import com.greensock.TweenLite;
 	
 	public class PopupMenu extends Sprite
 	{
@@ -100,7 +102,14 @@ package
 		
 		public function buttonClick(e:MouseEvent):void {
 			var id:String = Level.components.getComponentId(currentCategory, e.target.name);
-			Level.addComponent(id,currentCategory);
+			var sequenceLength:int = Level.getSequenceLength();
+			var color:uint = Level.components.componentColors[currentCategory];
+				
+			if (sequenceLength < 8) {
+				Level.addComponent(id, currentCategory);
+				var arrowNum:int = sequenceLength + 1;
+				Level.drawArrow(arrowNum, color);
+			}
 		}
 		
 	}
