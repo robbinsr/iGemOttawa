@@ -15,8 +15,6 @@ package
 	
 	public class Level1 extends Level
 	{	
-		private var validInput:String = "";
-		
 		private var levelName:String = "Level 1";
 		
 		private var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
@@ -24,15 +22,15 @@ package
 		public function Level1()
 		{
 			this.levelEndText = "<p>Level ending text</p>";
+			this.hint = "<p>Try doing this instead</p>";
 			
-			this.availableComponents = new Array(
-				"5.0", "5.1", "5.2", "6.0"
-			);
+			this.availableComponents = new Array("5.0", "5.1", "5.2", "6.0");
 			
 			this.componentCategories = new Array(5,6);
 			this.winningSequence = new Array("5.1", "6.0");
 			
 			Main.backgroundImage.changeBackground(2);
+			plasmid.changePlasmid(1);
 			runIntroSlowDarken(levelName, scenario);
 		}
 	}

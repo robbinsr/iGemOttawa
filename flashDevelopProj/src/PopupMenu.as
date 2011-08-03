@@ -11,6 +11,7 @@ package
     import flash.text.GridFitType;
     import flash.text.TextFormat;
 	import com.greensock.TweenLite;
+	import flash.events.*;
 	
 	public class PopupMenu extends Sprite
 	{
@@ -104,11 +105,15 @@ package
 			var id:String = Level.components.getComponentId(currentCategory, e.target.name);
 			var sequenceLength:int = Level.getSequenceLength();
 			var color:uint = Level.components.componentColors[currentCategory];
-				
+			// var newEvent:Event = new Event(Event.COMPLETE);
+            
 			if (sequenceLength < 8) {
 				Level.addComponent(id, currentCategory);
 				var arrowNum:int = sequenceLength + 1;
-				Level.drawArrow(arrowNum, color);
+				// dispatchEvent(newEvent);
+				
+				// methods called from here should eventually call
+				// addArrow(id, arrowNum, color);
 			}
 		}
 		
