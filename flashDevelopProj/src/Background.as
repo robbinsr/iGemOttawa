@@ -54,9 +54,6 @@ package
 			this.addEventListener(Event.ENTER_FRAME, scrollIMG2); 
 		}
 		
-		// Animation seems to almost hiccup a bit at first.
-		// Will find a better way to do this.
-		
 		public function scrollIMG(e:Event):void 
 		{
 			bgs1.x -= 2; 
