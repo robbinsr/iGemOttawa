@@ -83,13 +83,14 @@ package
 		
 		public function getComponentId(category:int, name:String):String
 		{
-			trace(name);
 			var subId:String = "";
+			
 			for (var i:int = 0; i < componentArray[category].length; i++) {
 				if (name == componentArray[category][i]) {
 					subId = String(i);
 				}
 			}
+			
 			var partId:String = String(category) + "." + String(subId);
 			return partId;
 		}
@@ -103,6 +104,7 @@ package
 					componentList.push(componentArray[int(type)][int(i.substr(2, 2))]);
 				}
 			}
+			
 			return componentList;
 		}		
 	}
