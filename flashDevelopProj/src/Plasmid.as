@@ -72,12 +72,24 @@ package
 		public var arrow8Class:Class;
 		public var arrow8:Bitmap = new arrow8Class();
 		
+		private var currentArrowIndex:Number;
+		
+		//Hardcoded to begin with bacteria1, then changePlasmid is hardcoded to remove bacteria1 and replace it with a variable?
+		//I'm assuming you have plans for this so I won't touch it
 		public function Plasmid() 
 		{
 			bacteria1.alpha = 1;
 			bacteria1.x = 287;
 			bacteria1.y = 77;
 			this.addChild(bacteria1);
+			
+			currentArrowIndex = 1;
+			for (var i:Number = 1; i < 9; i++) {
+				this["arrow" + i].y = 66;
+				this["arrow" + i].x = 277;
+				this["arrow" + i].alpha = 0;
+				this.addChild(this["arrow" + i])
+			}
 		}
 		
 		public function changePlasmid(i:int):void
@@ -91,21 +103,16 @@ package
 			this.addChild(this[name]);
 		}
 		
-		public function addArrow(id:String, arrowNum:int, color:uint):void
-		{
-			var arrowName:String = "arrow" + arrowNum;
-			var newColour:ColorTransform = new ColorTransform(0, 0, 
-				0, 1, color >> 16 & 0xff, color >> 8 & 0xff, color & 0xff, 0);
-			this[arrowName].bitmapData.colorTransform(new Rectangle(0, 0, 
-				this[arrowName].width, this[arrowName].height), newColour);
-				
-			this[arrowName].alpha = 0;
-			this[arrowName].y = 66;
-			this[arrowName].x = 277;
-			this.addChild(this[arrowName]);
+		public function addArrow(color:uint):void {
+			var arrowName:String = "arrow" + currentArrowIndex++;
+			var newColour:ColorTransform = new ColorTransform(0, 0, 0, 1, color >> 16 & 0xff, color >> 8 & 0xff, color & 0xff, 0);
+			this[arrowName].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName].width, this[arrowName].height), newColour);
 			TweenLite.to(this[arrowName], 1, { alpha:1 } );
 		}
 		
+		public function removeArrow():void {
+			TweenLite.to(this["arrow" + --currentArrowIndex], 1, { alpha:0 } );
+		}
 	}
 
 }

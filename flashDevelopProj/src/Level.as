@@ -169,7 +169,7 @@ package
 		protected var levelEndText:String = "";
 		protected var hint:String = "";
 		
-		public var plasmid:Plasmid = new Plasmid();
+		public static var plasmid:Plasmid = new Plasmid();
 		
 		// Intro sequence functions
 		
@@ -225,12 +225,11 @@ package
 			this.removeChild(introText);
 			this.removeChild(darken);
 			
+			plasmid.name = "plasmid";
 			plasmid.alpha = 1;
 			plasmid.x = 0;
 			plasmid.y = 0;
-			// plasmid.addEventListener(Event.COMPLETE, plasmid.addArrow);
-			// No way for me to get id:String, arrowNum:int, color:uint from instance of PopupMenu
-			// So I can force the event, but I can't pass the data that's needed
+
 			this.addChild(plasmid);
 			
 			createBtn.y = 20;
@@ -380,22 +379,19 @@ package
 			var arrowNum:int = getSequenceLength();
 			
 			if (arrowNum > 0) {
-				var removedId:int = removeComponent();
+				removeComponent();
 			}
 		}
 		
-		// Popup Menu events
+		// Popup Menu	
+		private var popupMenu:PopupMenu = new PopupMenu();
 		
 		private function popupMenuFunction(e:MouseEvent):void
 		{
-			if (this.getChildByName("PopupMenu") != null) {
-				this.removeChild (this.getChildByName("PopupMenu"));
+			this.popupMenu.populate(components.getComponentButtonArray(e.target.name,this.availableComponents),e.target.name);
+			if (this.getChildByName("PopupMenu") == null) {
+				this.addChild(popupMenu);
 			}
-			
-			var popup:PopupMenu = new PopupMenu(components.getComponentButtonArray(
-				e.target.name,this.availableComponents),e.target.name);
-			popup.currentCategory = e.target.name;
-			this.addChild(popup);
 		}
 		
 		// Working with components
@@ -410,14 +406,21 @@ package
 		
 		protected var availableComponents:Array;
 		
-		public static function addComponent(id:String, currentCategory:int):void
+		public static function addComponent(currentCategory:int,buttonName:String):void
 		{
-			currentSequence.push(id);
+			if ( currentSequence.length < 8) {
+				var id:String = components.getComponentId(currentCategory, buttonName);
+				var color:uint = components.componentColors[currentCategory]
+				
+				currentSequence.push(id);
+				plasmid.addArrow(color);
+			}
 		}
 		
-		public static function removeComponent():int
+		public static function removeComponent():void
 		{	
-			return currentSequence.pop();
+			currentSequence.pop();
+			plasmid.removeArrow();
 		}
 		
 		public static function getSequenceLength():int
