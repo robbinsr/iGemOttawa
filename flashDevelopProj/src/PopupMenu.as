@@ -50,7 +50,7 @@ package
 		
 		// Creating and populating popup
 		
-		public function PopupMenu(components:Array, buttonCategoryName:String ) 
+		public function PopupMenu() 
 		{
 			componentDescription.name = "Description_Text";
 			componentDescription.x = 10;
@@ -64,28 +64,40 @@ package
 			_popupMenu.x = 10
 			_popupMenu.y = 20;
 			this.addChild(_popupMenu);
-			this.populate(components); 
-		}
-		
-		public function populate(components:Array):void
-		{
-			for (var i:Number = 0; i < components.length; i++) {
-				
+			
+			for (var i:Number = 0; i < 5; i++) {
 				this["button" + i].x = _popupMenu.x + 10;
-				this["button" + i].y = _popupMenu.y + 10 + (i*30);
+				this["button" + i].y = _popupMenu.y + 10 + (i * 30);
 				
-				this["button" + i].name = components[i];
-				
-				this["buttonText" + i].setText("<p>"+components[i]+"</p>");
 				this["buttonText" + i].setPosition(_popupMenu.x + 15, _popupMenu.y + 11 + (i * 30));
-				
-				this.addChild(this["button" + i]);
-				this.addChild(this["buttonText" + i]);
 				this["buttonText" + i].mouseEnabled = false;
 				
 				this["button" + i].addEventListener(MouseEvent.ROLL_OVER, showDescription);
 				this["button" + i].addEventListener(MouseEvent.ROLL_OUT, hideDescription);
 				this["button" + i].addEventListener(MouseEvent.CLICK, buttonClick);
+				
+				this.addChild(this["button" + i]);
+				this.addChild(this["buttonText" + i]);
+			}
+		}
+		
+		public function populate(components:Array, currentCategory:int):void
+		{
+			this.currentCategory = currentCategory;
+			
+			var i:Number = 0;
+			for (i = 0; i < 5; i++) {
+				this["button" + i].visible = false;
+				this["buttonText" + i].visible = false;
+			}
+			
+			for (i = 0; i < components.length; i++) {
+				
+				this["button" + i].name = components[i];
+				this["buttonText" + i].setText("<p>"+components[i]+"</p>");
+
+				this["button" + i].visible = true;
+				this["buttonText" + i].visible = true;
 			}
 		}
 		
@@ -102,20 +114,7 @@ package
 		}
 		
 		public function buttonClick(e:MouseEvent):void {
-			var id:String = Level.components.getComponentId(currentCategory, e.target.name);
-			var sequenceLength:int = Level.getSequenceLength();
-			var color:uint = Level.components.componentColors[currentCategory];
-			// var newEvent:Event = new Event(Event.COMPLETE);
-            
-			if (sequenceLength < 8) {
-				Level.addComponent(id, currentCategory);
-				var arrowNum:int = sequenceLength + 1;
-				// dispatchEvent(newEvent);
-				
-				// methods called from here should eventually call
-				// addArrow(id, arrowNum, color);
-			}
+			Level.addComponent(currentCategory, e.target.name)
 		}
-		
 	}
 }

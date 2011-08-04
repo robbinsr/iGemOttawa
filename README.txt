@@ -1,13 +1,24 @@
-First commit for the vector drawing:
+So the plasmid should display correctly now.
 
-It's about half done, I need to implement the actual drawing part. 
-Believe it or not it's actually quite complicated, "circular" 
-curves don't actually exist in as3, only parabolic bezier curves.
-But if you cut the circular curve down into enough segments (I'm
-just using 4) it approximates to a circular curve. I have it all
-laid out, I'll work on it more tonight and possibly finish it off
-tommorow. 
+In the popup class we were doing stupid things like removing all 
+button children, destroying all references to them, creating new
+buttons with the same positions/listeners/etc and then adding them
+back as children everytime we change menus. The only difference
+between the old button and the new button is the .name ...
 
-Hopefully I can control the thickness of the curve and make it 
-wide enough, otherwise I'm going to have to hack together some 
-sort of double curve with a fill between.
+This doesn't make sense. 
+
+Instead, now they're all instantiated and added as children once 
+(during the construction of the popupMenu), then we control them 
+by changing the names, and toggling their .visible property.
+
+Similar for the arrows, they're all instantiated and added as 
+children with 0 alpha, then we just adjust the colors and tween
+them in and out. This way the Plasmid class can keep track of 
+it's own arrows, and we don't pass it redundant information.
+
+There's still alot of room for refactoring though. I'll keep going on
+that for a while longer tonight. 
+
+I didn't really take a look at how the colors will be applied to 
+the arrows, I'll do that as well tonight.
