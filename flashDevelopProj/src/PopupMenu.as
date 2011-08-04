@@ -59,6 +59,7 @@ package
 			componentDescription.width = 160;
 			componentDescription.height = 300;
 			componentDescription.textColor = 0x111111;
+			this.addChild(componentDescription);
 			
 			this.name = "PopupMenu";
 			_popupMenu.x = 10
@@ -104,13 +105,12 @@ package
 		// Button event handlers
 		
 		public function showDescription(e:MouseEvent):void {			
-			var _Description:TextField = new TextField();	
 			componentDescription.text = Level.components.getComponentDescription(e.target.name);
-			this.addChild(componentDescription);
+			this.componentDescription.visible = true;
 		}
 		
 		public function hideDescription(e:MouseEvent):void {
-			this.removeChild(this.getChildByName("Description_Text"));
+			this.componentDescription.visible = false;
 		}
 		
 		public function buttonClick(e:MouseEvent):void {

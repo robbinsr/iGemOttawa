@@ -13,7 +13,8 @@ package
 	import flash.text.StyleSheet;
 	import flash.display.InteractiveObject;
 	import com.greensock.TweenLite;
-	import com.greensock.*;
+	import com.greensock.plugins.TweenPlugin; 
+	import com.greensock.plugins.VisiblePlugin; 
 	import com.greensock.easing.*;
 	import flash.geom.ColorTransform;
 	import flash.geom.Rectangle;
@@ -78,6 +79,8 @@ package
 		//I'm assuming you have plans for this so I won't touch it
 		public function Plasmid() 
 		{
+			TweenPlugin.activate([VisiblePlugin]);
+			
 			bacteria1.alpha = 1;
 			bacteria1.x = 287;
 			bacteria1.y = 77;
@@ -107,11 +110,12 @@ package
 			var arrowName:String = "arrow" + currentArrowIndex++;
 			var newColour:ColorTransform = new ColorTransform(0, 0, 0, 1, color >> 16 & 0xff, color >> 8 & 0xff, color & 0xff, 0);
 			this[arrowName].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName].width, this[arrowName].height), newColour);
-			TweenLite.to(this[arrowName], 1, { alpha:1 } );
+			this[arrowName].visible = true;
+			TweenLite.to(this[arrowName], 0.75, {alpha:1} );
 		}
 		
 		public function removeArrow():void {
-			TweenLite.to(this["arrow" + --currentArrowIndex], 1, { alpha:0 } );
+			TweenLite.to(this["arrow" + --currentArrowIndex], 0.75, {alpha:0, visible:false});
 		}
 	}
 

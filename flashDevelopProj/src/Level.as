@@ -13,7 +13,6 @@ package
 	import flash.text.StyleSheet;
 	import flash.display.InteractiveObject;
 	import com.greensock.TweenLite;
-	import com.greensock.*;
 	import com.greensock.easing.*;
 	import flash.geom.ColorTransform;
 	import flash.geom.Rectangle;
