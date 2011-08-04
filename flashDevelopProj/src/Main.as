@@ -7,13 +7,12 @@ package
 
 	public class Main extends Sprite 
 	{
-		public static var screens:ScreenHandler = new ScreenHandler();
+		public static var backgroundImage:Background;
 		
-		public static var backgroundImage:Background = new Background(1);
+		public static var screens:ScreenHandler;
 		
 		public function Main():void 
 		{
-			this.addChild(backgroundImage);
 			if (stage) init();
 			else addEventListener(Event.ADDED_TO_STAGE, init);
 		}
@@ -21,6 +20,9 @@ package
 		private function init(e:Event = null):void 
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
+			backgroundImage = new Background(1);
+			screens = new ScreenHandler();
+			addChild(backgroundImage);
 			addChild(screens);
 		}
 		

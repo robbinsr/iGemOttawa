@@ -40,13 +40,13 @@ package
 		);
 		
 		public var componentColors:Array = new Array(
-			0xFFFFFF, 
-			0xFFFFFF, 
-			0xFFFFFF, 
-			0xFFFFFF, 
-			0xFFFFFF, 
-			0xFFFFFF, 
-			0xFFFFFF
+			0xFF0000, 
+			0x00FF00, 
+			0x0000FF, 
+			0x0FF000, 
+			0x000FF0, 
+			0xAA1133, 
+			0x2299BB
 		);	
 		
 		// Component Methods
