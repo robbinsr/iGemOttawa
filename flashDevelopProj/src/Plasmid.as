@@ -74,9 +74,8 @@ package
 		public var arrow8:Bitmap = new arrow8Class();
 		
 		private var currentArrowIndex:Number;
+		private var lastPlasmid:String = "bacteria1";
 		
-		//Hardcoded to begin with bacteria1, then changePlasmid is hardcoded to remove bacteria1 and replace it with a variable?
-		//I'm assuming you have plans for this so I won't touch it
 		public function Plasmid() 
 		{
 			TweenPlugin.activate([VisiblePlugin]);
@@ -97,13 +96,15 @@ package
 		
 		public function changePlasmid(i:int):void
 		{
-			this.removeChild(bacteria1);
+			var index:int = this.getChildIndex(this[lastPlasmid]);
+			this.removeChild(this[lastPlasmid]);
 			
-			var name:String = "bacteria" + i;
-			this[name].alpha = 1;
-			this[name].x = 287;
-			this[name].y = 77;
-			this.addChild(this[name]);
+			lastPlasmid = "bacteria" + i;
+			this[lastPlasmid].alpha = 1;
+			this[lastPlasmid].x = 287;
+			this[lastPlasmid].y = 77;
+			this.addChild(this[lastPlasmid]);
+			this.setChildIndex(this[lastPlasmid],index);
 		}
 		
 		public function addArrow(color:uint):void {
@@ -115,7 +116,16 @@ package
 		}
 		
 		public function removeArrow():void {
-			TweenLite.to(this["arrow" + --currentArrowIndex], 0.75, {alpha:0, visible:false});
+			TweenLite.to(this["arrow" + --currentArrowIndex], 0, {alpha:0, visible:false});
+		}
+		
+		public function resetArrows():void {
+			currentArrowIndex = 1;
+			for (var i:Number = 1; i < 9; i++) {
+				this["arrow" + i].y = 66;
+				this["arrow" + i].x = 277;
+				this["arrow" + i].alpha = 0;
+			}
 		}
 	}
 

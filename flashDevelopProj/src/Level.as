@@ -430,6 +430,7 @@ package
 		public static function resetSequence():void
 		{	
 			currentSequence = [];
+			plasmid.resetArrows();
 		}
 
 	}

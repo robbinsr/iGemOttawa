@@ -30,7 +30,6 @@ package
 			this.winningSequence = new Array("5.1", "6.0");
 			
 			Main.backgroundImage.changeBackground(2);
-			plasmid.changePlasmid(1);
 			runIntroSlowDarken(levelName, scenario);
 		}
 	}
