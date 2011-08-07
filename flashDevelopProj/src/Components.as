@@ -7,19 +7,31 @@ package
 	{		
 		// Component Names
 		
-		private var codingSequences:Array = new Array("");
-		private var operators:Array = new Array("");
-		private var promoters:Array = new Array("High", "Medium", "Low");
+		private var codingSequences:Array = new Array("-galactosidase", "BFP", "GFP");
+		private var operators:Array = new Array("tetO", "FILLER", "lacO");
+		private var promoters:Array = new Array("High-exp", "Medium-exp", "Low-exp");
 		private var reporters:Array = new Array("");
-		private var repressors:Array = new Array("");
-		private var resGenes:Array = new Array("AmpR","ChlR","KanR");
+		private var repressors:Array = new Array("lacI", "c1 rep", "c2 rep");
+		private var resGenes:Array = new Array("AmpR", "ChlR", "KanR");
 		private var terminators:Array = new Array("Terminator");
 		
 		// Component Descriptions
 		
-		private var High_desc:String = "1";
-		private var Medium_desc:String = "2";
-		private var Low_desc:String = "3";
+		private var galactosidase_desc:String = "1";
+		private var BFP_desc:String = "1";
+		private var GFP_desc:String = "1";
+		
+		private var tetO_desc:String = "1";
+		private var FILLER_desc:String = "1";
+		private var lacO_desc:String = "1";
+		
+		private var Highexp_desc:String = "1";
+		private var Mediumexp_desc:String = "2";
+		private var Lowexp_desc:String = "3";
+		
+		private var lacI_desc:String = "1";
+		private var c1rep_desc:String = "2";
+		private var c2rep_desc:String = "3";
 		
 		private var AmpR_desc:String = "1";
 		private var ChlR_desc:String = "2";
@@ -78,7 +90,11 @@ package
 		
 		public function getComponentDescription(name:String):String
 		{
-			return this[name+"_desc"];
+			var descriptionName:String = name + "_desc";
+			var pattern:RegExp = /[-]|\s/g;
+			descriptionName = descriptionName.replace(pattern, "");
+			
+			return this[descriptionName];
 		}
 		
 		public function getComponentId(category:int, name:String):String

@@ -13,25 +13,25 @@ package
 	import flash.text.StyleSheet;
 	import flash.display.InteractiveObject;
 	
-	public class Level2 extends Level
+	public class Level3 extends Level
 	{
-		public function Level2()
+		public function Level3()
 		{
-			this.levelName = "Level 2";
-			this.nextLevel = "Level3";
+			this.levelName = "Level 3";
+			this.nextLevel = "Level4";
 			
 			var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
 			
 			this.levelEndText = "<p>Level ending text</p>";
 			this.hint = "<p>Try doing this instead</p>";
 			
-			this.availableComponents = new Array("2.0", "2.1", "2.2", "6.0");
+			this.availableComponents = new Array("0.0", "0.1", "0.2", "6.0");
 			
-			this.componentCategories = new Array(2,6);
-			this.winningSequence = new Array("2.2", "6.0");
+			this.componentCategories = new Array(0,6);
+			this.winningSequence = new Array("0.0", "6.0");
 			
-			Main.backgroundImage.changeBackground(3);
-			plasmid.changePlasmid(2);
+			Main.backgroundImage.changeBackground(4);
+			plasmid.changePlasmid(4);
 			runIntro(levelName, scenario);
 		}
 	}

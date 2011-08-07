@@ -14,13 +14,14 @@ package
 	import flash.display.InteractiveObject;
 	
 	public class Level1 extends Level
-	{	
-		private var levelName:String = "Level 1";
-		
-		private var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
-		
+	{
 		public function Level1()
 		{
+			this.levelName = "Level 1";
+			this.nextLevel = "Level2";
+			
+			var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
+			
 			this.levelEndText = "<p>Level ending text</p>";
 			this.hint = "<p>Try doing this instead</p>";
 			
