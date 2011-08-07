@@ -167,6 +167,8 @@ package
 		
 		protected var levelEndText:String = "";
 		protected var hint:String = "";
+		protected var levelName:String = "";
+		protected var nextLevel:String = "";
 		
 		public static var plasmid:Plasmid = new Plasmid();
 		
@@ -329,7 +331,7 @@ package
 		private function goToNextLevel(e:MouseEvent):void
 		{
 			resetSequence();
-			Main.screens.switchTo("Level2");
+			Main.screens.switchTo(nextLevel);
 		}
 		
 		private function removeListeners(e:Event):void 
