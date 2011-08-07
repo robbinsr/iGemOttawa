@@ -13,12 +13,12 @@ package
 	import flash.text.StyleSheet;
 	import flash.display.InteractiveObject;
 	
-	public class Level2 extends Level
+	public class Level6 extends Level
 	{
-		public function Level2()
+		public function Level6()
 		{
-			this.levelName = "Level 2";
-			this.nextLevel = "Level3";
+			this.levelName = "Level 6";
+			this.nextLevel = "Level7";
 			
 			var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
 			

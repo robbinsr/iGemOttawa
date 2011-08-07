@@ -13,12 +13,12 @@ package
 	import flash.text.StyleSheet;
 	import flash.display.InteractiveObject;
 	
-	public class Level2 extends Level
+	public class Level5 extends Level
 	{
-		public function Level2()
+		public function Level5()
 		{
-			this.levelName = "Level 2";
-			this.nextLevel = "Level3";
+			this.levelName = "Level 5";
+			this.nextLevel = "Level6";
 			
 			var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
 			
@@ -31,7 +31,7 @@ package
 			this.winningSequence = new Array("2.2", "6.0");
 			
 			Main.backgroundImage.changeBackground(3);
-			plasmid.changePlasmid(2);
+			plasmid.changePlasmid(1);
 			runIntro(levelName, scenario);
 		}
 	}
