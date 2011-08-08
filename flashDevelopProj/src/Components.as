@@ -14,6 +14,7 @@ package
 		private var repressors:Array = new Array("lacI", "c1 rep", "c2 rep");
 		private var resGenes:Array = new Array("AmpR", "ChlR", "KanR");
 		private var terminators:Array = new Array("Terminator");
+		private var activators:Array = new Array("VP16", "ToxR", "appY");
 		
 		// Component Descriptions
 		
@@ -39,6 +40,10 @@ package
 		
 		private var Terminator_desc:String = "3";
 		
+		private var VP16_desc:String = "1";
+		private var ToxR_desc:String = "2";
+		private var appY_desc:String = "3";
+		
 		// General Component Arrays
 		
 		protected var componentArray:Array = new Array(
@@ -48,7 +53,8 @@ package
 			reporters, 
 			repressors, 
 			resGenes, 
-			terminators
+			terminators,
+			activators
 		);
 		
 		public var componentColors:Array = new Array(
@@ -58,7 +64,8 @@ package
 			0x0FF000, 
 			0x000FF0, 
 			0xAA1133, 
-			0x2299BB
+			0x2299BB,
+			0xFFFFFF
 		);	
 		
 		// Component Methods
@@ -84,6 +91,8 @@ package
 				return 5
 			else if (name == "terminatorBtn")
 				return 6
+			else if (name == "activatorBtn")
+				return 7
 			else
 				return 6
 		}
