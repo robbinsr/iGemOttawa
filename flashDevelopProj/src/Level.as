@@ -115,6 +115,18 @@ package
 		private var terminatorBtnGClass:Class;
 		private var terminatorBtnGImg:Bitmap = new terminatorBtnGClass();
 		
+		[Embed(source='../lib/levelInterface/activator.png')]
+		private var activatorBtnClass:Class;
+		private var activatorBtnImg:Bitmap = new activatorBtnClass();
+		
+		[Embed(source='../lib/levelInterface/activator_h.png')]
+		private var activatorBtnHClass:Class;
+		private var activatorBtnHImg:Bitmap = new activatorBtnHClass();
+		
+		[Embed(source='../lib/levelInterface/activator_g.png')]
+		private var activatorBtnGClass:Class;
+		private var activatorBtnGImg:Bitmap = new activatorBtnGClass();
+		
 		// Simple Buttons, including Greyed versions
 		
 		private var codingseqBtn:SimpleButton = new SimpleButton(
@@ -158,6 +170,12 @@ package
 		
 		private var terminatorBtnG:SimpleButton = new SimpleButton(
 		terminatorBtnGImg, terminatorBtnGImg, terminatorBtnGImg, terminatorBtnGImg);
+		
+		private var activatorBtn:SimpleButton = new SimpleButton(
+		activatorBtnImg, activatorBtnHImg, activatorBtnHImg, activatorBtnImg);
+		
+		private var activatorBtnG:SimpleButton = new SimpleButton(
+		activatorBtnGImg, activatorBtnGImg, activatorBtnGImg, activatorBtnGImg);
 		
 		// Other variables
 		
@@ -272,6 +290,9 @@ package
 						break;
 					case(6):
 						buttonName = "terminatorBtn";
+						break;
+					case(7):
+						buttonName = "activatorBtn";
 						break;
 				}
 				this[buttonName].x = 85 * int(i) + 10;
