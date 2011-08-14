@@ -87,8 +87,8 @@ package
 			
 			currentArrowIndex = 1;
 			for (var i:Number = 1; i < 9; i++) {
-				this["arrow" + i].y = 66;
-				this["arrow" + i].x = 277;
+				this["arrow" + i].y = 30;
+				this["arrow" + i].x = 240;
 				this["arrow" + i].alpha = 0;
 				this.addChild(this["arrow" + i])
 			}
