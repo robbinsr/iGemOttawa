@@ -73,6 +73,42 @@ package
 		public var arrow8Class:Class;
 		public var arrow8:Bitmap = new arrow8Class();
 		
+		// Plasmid Arrows on Hover
+		
+		[Embed(source='../lib/plasmid/1h.png')]
+		public var arrow1hClass:Class;
+		public var arrow1h:Bitmap = new arrow1hClass();
+		
+		[Embed(source='../lib/plasmid/2h.png')]
+		public var arrow2hClass:Class;
+		public var arrow2h:Bitmap = new arrow2hClass();
+		
+		[Embed(source='../lib/plasmid/3h.png')]
+		public var arrow3hClass:Class;
+		public var arrow3h:Bitmap = new arrow3hClass();
+		
+		[Embed(source='../lib/plasmid/4h.png')]
+		public var arrow4hClass:Class;
+		public var arrow4h:Bitmap = new arrow4hClass();
+		
+		[Embed(source='../lib/plasmid/5h.png')]
+		public var arrow5hClass:Class;
+		public var arrow5h:Bitmap = new arrow5hClass();
+		
+		[Embed(source='../lib/plasmid/6h.png')]
+		public var arrow6hClass:Class;
+		public var arrow6h:Bitmap = new arrow6hClass();
+		
+		[Embed(source='../lib/plasmid/7h.png')]
+		public var arrow7hClass:Class;
+		public var arrow7h:Bitmap = new arrow7hClass();
+		
+		[Embed(source='../lib/plasmid/8h.png')]
+		public var arrow8hClass:Class;
+		public var arrow8h:Bitmap = new arrow8hClass();
+		
+		// Tracking
+		
 		private var currentArrowIndex:Number;
 		private var lastPlasmid:String = "bacteria1";
 		
