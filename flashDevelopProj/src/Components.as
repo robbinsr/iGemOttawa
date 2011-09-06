@@ -7,9 +7,9 @@ package
 	{		
 		// Component Names
 		
-		private var codingSequences:Array = new Array("-galactosidase", "BFP", "GFP");
+		private var codingSequences:Array = new Array("-galactosidase", "BFP", "GFP", "GlpF", "ArsR", "GVP");
 		private var operators:Array = new Array("tetO", "FILLER", "lacO");
-		private var promoters:Array = new Array("High-exp", "Medium-exp", "Low-exp");
+		private var promoters:Array = new Array("High-exp", "Medium-exp", "Low-exp", "pArsR");
 		private var reporters:Array = new Array("");
 		private var repressors:Array = new Array("lacI", "c1 rep", "c2 rep");
 		private var resGenes:Array = new Array("AmpR", "ChlR", "KanR");
@@ -21,6 +21,9 @@ package
 		private var galactosidase_desc:String = "1";
 		private var BFP_desc:String = "1";
 		private var GFP_desc:String = "1";
+		private var GlpF_desc:String = "1";
+		private var ArsR_desc:String = "1";
+		private var GVP_desc:String = "1";
 		
 		private var tetO_desc:String = "1";
 		private var FILLER_desc:String = "1";
@@ -29,6 +32,7 @@ package
 		private var Highexp_desc:String = "1";
 		private var Mediumexp_desc:String = "2";
 		private var Lowexp_desc:String = "3";
+		private var pArsR_desc:String = "3";
 		
 		private var lacI_desc:String = "1";
 		private var c1rep_desc:String = "2";

@@ -20,16 +20,30 @@ package
 		private var gameLogoClass:Class;
 		private var gameLogo:Bitmap = new gameLogoClass();
 		
-		private var slide1:String = "<p>Welcome to the <strong>uOttawa 2010 iGem Game</strong>." +
-		"The following is a basic tutorial detailing the general gameplay. If at any time " +
-		"you’d like to skip this tutorial, press the skip button to proceed directly to the " + 
-		"menu. To continue reading this brief guide, press the next button.</p>";
+		private var slide1:String = "<p>Welcome to \"The E. coli Diaries,\" a game imagined and created by the iGEM uOttawa team. " +
+		"This game aims to provide an interactive, educational medium for those interested in augmenting their knowledge of the" +
+		" basic principles of Synthetic Biology. The iGEM uOttawa team hopes that you would enjoy helping E.C. past his adversaries" +
+		" and we would welcome all your feedback. Thank you for playing \"The E. coli Diaries.\"</p>";
 		
-		private var slide2:String = "<p>Slide 2 - Testing the slides</p>";
+		private var slide2:String = "<p>E.C. is a generic laboratory strain E. coli individual who has been unfortunate enough " + 
+		"to be picked by the mad scientist, Dr. Power. In addition to his propensity to oppress helpless bacteria, Dr. Power " +
+		"wants to observe how E.C. would deal with various conditions, most of which are characterized by a form of environmental " +
+		"stress. It is your task to help E.C. to survive and prosper despite Dr. Power’s evil schemes.</p>";
 		
-		private var slide3:String = "<p>Slide 3 - More content can go here</p>";
+		private var slide3:String = "<p>In order for E.C. to survive, we will first need to provide him with a circular piece of " +
+		"DNA that can replicate independently of his chromosomal DNA called a plasmid. This plasmid will be a way of introducing " +
+		"E.C. to foreign genetic material that will aid him in his survival. Specifically, we will be inserting special pieces of " + 
+		"DNA called BioBricks into this plasmid.</p>";
 		
-		private var slide4:String = "<p>Slide 4 - Another test string</p>";
+		private var slide4:String = "<p>BioBricks are fragments of DNA with a predefined function that are standardized in such a " + 
+		"way that they can be connected to one another in their construction. However, only certain combinations of BioBricks " +
+		"constructed in tandem will end up being functional and will produce a desired function. When we construct a viable " +
+		"combination of these BioBricks in tandem, we call this a device.</p>";
+		
+		private var slide5:String = "<p>These BioBricks will have many different functions and within the context of this game " +
+		"we will classify them into 7 different categories: antibiotic resistance genes, promoters, terminators, coding " +
+		"sequences, operators, repressors and activators. If you wish to assist E.C. you will have to build viable devices out " + 
+		"of these BioBricks in order to foil Dr. Power’s plans of bacterial oppression.</p>";
 		
 		private var tutorialText:TextShadow = new TextShadow(slide1,126,97,350,110,0);
 		
@@ -66,12 +80,12 @@ package
 		
 		private function nextFunction(e:MouseEvent):void
 		{
-			if (slideState < 4) 
+			if (slideState < 5) 
 			{
 				slideState += 1;
 				tutorialText.setText(this["slide" + slideState]);
 				
-				if (slideState == 4) {
+				if (slideState == 5) {
 					this.removeChild(skipBtn);
 					this.removeChild(nextBtn);
 					this.addChild(goBtn);

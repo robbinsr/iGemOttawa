@@ -265,8 +265,8 @@ package
 			
 			var categoryId:int;
 			var buttonName:String;
-			
-			for (var i:String in this.componentCategories) {
+			trace(this.componentCategories.length);
+			for (var i:int = 0; i < this.componentCategories.length; i++) {
 				categoryId = this.componentCategories[i];
 				switch(categoryId)
 				{
