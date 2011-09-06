@@ -20,15 +20,20 @@ package
 			this.levelName = "Level 1";
 			this.nextLevel = "Level2";
 			
-			var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
+			var scenario:String = "<p>Dr. Power has plated our bacterial friend E.C. onto a Petri " +
+			"dish containing the antibiotic ampicillin, a drug that is toxic to E.C. In order for " +
+			"E.C. to survive, he will need to express a gene that would confer ampicillin " +
+			"resistance to him. Select the correct gene by going to the resistance gene icon on the " +
+			"bottom menu and clicking on it. This will now give ampicillin resistance to E.C.!</p>";
 			
-			this.levelEndText = "<p>Level ending text</p>";
-			this.hint = "<p>Try doing this instead</p>";
+			this.levelEndText = "<p>Great! E.C. has thwarted Dr. Power’s plans!</p>";
+			this.hint = "<p>E.C. needs a resistance gene that is specific to the " +
+			"antibiotic ampicillin. Which resistance gene would fulfill this role best?</p>";
 			
-			this.availableComponents = new Array("5.0", "5.1", "5.2", "6.0");
+			this.availableComponents = new Array("5.0", "5.1", "5.2");
 			
-			this.componentCategories = new Array(5,6);
-			this.winningSequence = new Array("5.1", "6.0");
+			this.componentCategories = new Array("5");
+			this.winningSequence = new Array("5.0");
 			
 			Main.backgroundImage.changeBackground(2);
 			runIntroSlowDarken(levelName, scenario);

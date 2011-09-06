@@ -25,10 +25,10 @@ package
 			this.levelEndText = "<p>Level ending text</p>";
 			this.hint = "<p>Try doing this instead</p>";
 			
-			this.availableComponents = new Array("0.0", "0.1", "0.2", "6.0");
+			this.availableComponents = new Array("0.0", "0.1", "0.2");
 			
-			this.componentCategories = new Array(0,6);
-			this.winningSequence = new Array("0.0", "6.0");
+			this.componentCategories = new Array("0");
+			this.winningSequence = new Array("0.0");
 			
 			Main.backgroundImage.changeBackground(4);
 			plasmid.changePlasmid(4);
