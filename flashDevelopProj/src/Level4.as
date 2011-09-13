@@ -17,7 +17,7 @@ package
 	{
 		public function Level4()
 		{
-			this.levelName = "Level 4";
+			this.levelName = "<p>Level 4</p>";
 			this.nextLevel = "Level5";
 			
 			var scenario:String = "<p>Bacteria, and other organism, regulate the expression of various " +

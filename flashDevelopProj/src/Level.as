@@ -179,6 +179,7 @@ package
 		
 		// Other variables
 		
+		protected var introTitleText:TextShadow = new TextShadow("Level", 126, 60, 350, 110, 2);
 		protected var introText:TextShadow = new TextShadow("Intro", 126, 97, 350, 110, 0);
 		protected var outroText:TextShadow = new TextShadow("Outro", 126, 97, 350, 110, 0);
 		protected var errorText:TextShadow = new TextShadow("Error", 126, 97, 350, 110, 0);
@@ -208,6 +209,9 @@ package
 			content.y = 35;
 			this.addChild(content);
 			
+			introTitleText.setText(title);
+			this.addChild(introTitleText);
+			
 			introText.setText(scenario);
 			this.addChild(introText);
 			
@@ -227,6 +231,9 @@ package
 			content.y = 35;
 			this.addChild(content);
 			
+			introTitleText.setText(title);
+			this.addChild(introTitleText);
+			
 			introText.setText(scenario);
 			this.addChild(introText);
 			
@@ -242,6 +249,7 @@ package
 			this.removeChild(goBtn);
 			this.removeChild(content);
 			this.removeChild(introText);
+			this.removeChild(introTitleText);
 			this.removeChild(darken);
 			
 			plasmid.name = "plasmid";

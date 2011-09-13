@@ -23,26 +23,30 @@ package
 		private var color2:String;
 		
 		public function TextShadow(text:String, textX:int, textY:int, textWidth:int, textHeight:int, textStyle:int) 
-		{
+		{	
 			// Add new styles as required
 			if (textStyle == 1) {
-				color1 = "#dddddd";
-				color2 = "#555555";
+				var css:String = "p {font-size: 11pt; color: #dddddd; font-family: Tahoma;}" +
+				"strong { font-weight: bold; display: inline; }";
+				var css2:String = "p {font-size: 11pt; color: #555555; font-family: Tahoma;}" +
+				"strong { font-weight: bold; display: inline; }";
+			}
+			else if (textStyle == 2) {
+				var css:String = "p {font-size: 14pt; color: #efefef; font-family: Helvetica, Arial; font-weight: bold;}";
+				var css2:String = "p {font-size: 14pt; color: #101010; font-family: Helvetica, Arial; font-weight: bold;}";
 			}
 			else {
-				color1 = "#ebebeb";
-				color2 = "#101010";
+				var css:String = "p {font-size: 11pt; color: #ebebeb; font-family: Tahoma;}" +
+				"strong { font-weight: bold; display: inline; }";
+				var css2:String = "p {font-size: 11pt; color: #101010; font-family: Tahoma;}" +
+				"strong { font-weight: bold; display: inline; }";
 			}
 			
 			var style:StyleSheet = new StyleSheet();
-			var css:String = "p {font-size: 11pt; color: "+color1+"; font-family: Tahoma;}" +
-			"strong { font-weight: bold; display: inline; }";
 			style.parseCSS(css);
 			textField.styleSheet = style;
 			
 			var shadowStyle:StyleSheet = new StyleSheet();
-			var css2:String = "p {font-size: 11pt; color: "+color2+"; font-family: Tahoma;}" +
-			"strong { font-weight: bold; display: inline; }";
 			shadowStyle.parseCSS(css2);
 			shadow.styleSheet = shadowStyle;
 			

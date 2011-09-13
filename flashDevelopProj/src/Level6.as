@@ -17,7 +17,7 @@ package
 	{
 		public function Level6()
 		{
-			this.levelName = "Level 6";
+			this.levelName = "<p>Level 6</p>";
 			this.nextLevel = "Level7";
 			
 			var scenario:String = "<p>Although bacteria usually do not mate, E.C. has a weak heart and " +

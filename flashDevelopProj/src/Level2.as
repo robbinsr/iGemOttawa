@@ -17,7 +17,7 @@ package
 	{
 		public function Level2()
 		{
-			this.levelName = "Level 2";
+			this.levelName = "<p>Level 2</p>";
 			this.nextLevel = "Level3";
 			
 			var scenario:String = "<p>Promoters are pieces of DNA that help recruit the " +
