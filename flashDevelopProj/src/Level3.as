@@ -17,7 +17,7 @@ package
 	{
 		public function Level3()
 		{
-			this.levelName = "Level 3";
+			this.levelName = "<p>Level 3</p>";
 			this.nextLevel = "Level4";
 			
 			var scenario:String = "<p>There is usually more than one transcriptional unit on a plasmid. " +

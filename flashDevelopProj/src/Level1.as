@@ -17,7 +17,7 @@ package
 	{
 		public function Level1()
 		{
-			this.levelName = "Level 1";
+			this.levelName = "<p>Level 1</p>";
 			this.nextLevel = "Level2";
 			
 			var scenario:String = "<p>Dr. Power has plated our bacterial friend E.C. onto a Petri " +
