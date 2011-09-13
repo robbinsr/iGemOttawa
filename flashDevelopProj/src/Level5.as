@@ -17,7 +17,7 @@ package
 	{
 		public function Level5()
 		{
-			this.levelName = "Level 5";
+			this.levelName = "<p>Level 5</p>";
 			this.nextLevel = "Level6";
 			
 			var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
