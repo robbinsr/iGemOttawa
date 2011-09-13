@@ -20,10 +20,20 @@ package
 			this.levelName = "Level 4";
 			this.nextLevel = "Level5";
 			
-			var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
+			var scenario:String = "<p>Bacteria, and other organism, regulate the expression of various " +
+			"genes using various strategies. One of the most prevalent regulatory classes of proteins is " +
+			"the class of repressors. Repressors bind to short DNA sequences called operators. In fact, " +
+			"an operator is a part of the promoter for the gene and it may bind repressors and/or activators. " +
+			"At this point, Dr. Power has added some more glucose to E.C.’s medium. It is more energy " +
+			"consuming to digest lactose than glucose. However, it is useful to keep the -galactosidase gene " +
+			"around in case it is needed again. Therefore, to control its expression, and conserve E.C.’s " +
+			"energy, you can add an operator and its corresponding repressor. Keep in mind that when lactose " +
+			"is present it will bind to the lacI repressor and allow the expression of the gene that it regulates.</p>";
 			
-			this.levelEndText = "<p>Level ending text</p>";
-			this.hint = "<p>Try doing this instead</p>";
+			this.levelEndText = "<p>Great! Now E.C. can conserve energy by using glucose while keeping its options open.</p>";
+			
+			this.hint = "<p>Keep in mind that each repressor has a specific binding sequence, i.e. operator, to " +
+			"itself. You have to match the correct repressor to its corresponding operator.</p>";
 			
 			this.availableComponents = new Array("1.0", "1.1", "1.2", "4.0", "4.1", "4.2");
 			

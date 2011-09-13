@@ -20,10 +20,18 @@ package
 			this.levelName = "Level 3";
 			this.nextLevel = "Level4";
 			
-			var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
+			var scenario:String = "<p>There is usually more than one transcriptional unit on a plasmid. " +
+			"Each of these transcriptional units contains its own promoter, coding sequence, and " +
+			"terminator. In order to study E.C.’s ability to adapt to various metabolic conditions, Dr. " +
+			"Power has exhausted all the energy sources in E.C.’s medium except for lactose. Since E.C.’s " +
+			"intrinsic lactose processing machinery is deficient, you need to help him out. -galactosidase " +
+			"codes for a protein that breaks lactose down into useful subunits. Choose the right coding " +
+			"sequence so that E.C. can digest lactose and survive.</p>";
 			
-			this.levelEndText = "<p>Level ending text</p>";
-			this.hint = "<p>Try doing this instead</p>";
+			this.levelEndText = "<p>Well done! E.C. will live for one more day!</p>";
+			
+			this.hint = "<p>E.C. needs to bread lactose down into useful subunits that it can use for energy. " +
+			"You need the correct protein, coded by the correct gene, to accomplish this.</p>";
 			
 			this.availableComponents = new Array("0.0", "0.1", "0.2");
 			

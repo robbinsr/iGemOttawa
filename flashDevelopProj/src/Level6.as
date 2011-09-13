@@ -20,10 +20,17 @@ package
 			this.levelName = "Level 6";
 			this.nextLevel = "Level7";
 			
-			var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
+			var scenario:String = "<p>Although bacteria usually do not mate, E.C. has a weak heart and " +
+			"easily falls for other bacteria around. Recently, E.C.’ has found her way into the media. " +
+			"Interestingly, E.C.’ is fond of the colour blue. Luckily, some proteins emit at certain " +
+			"wavelengths when they are excited with higher energy light waves. Choose the correct gene " +
+			"that would make E.C. glow a shiny blue and allure E.C.’ to him.</p>";
 			
-			this.levelEndText = "<p>Level ending text</p>";
-			this.hint = "<p>Try doing this instead</p>";
+			this.levelEndText = "<p>Fantastic; you have given E.C. the gift of companionship!</p>";
+			
+			this.hint = "<p>-Remember that we always need a promoter in front of a gene and in this case " +
+			"it has to produce a lot of the protein to make E.C. shine. <br />" +
+			"-Also ensure that you have used the right colour to interest E.C.</p>";
 			
 			this.availableComponents = new Array("2.0", "2.1", "2.2", "0.0", "0.1", "0.2");
 			
