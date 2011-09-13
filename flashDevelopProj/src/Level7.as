@@ -20,10 +20,17 @@ package
 			this.levelName = "Level 7";
 			this.nextLevel = "Level8";
 			
-			var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
+			var scenario:String = "<p>E.C. has noticed that E.C.’ produces a peculiar compound, called " +
+			"IPTG. IPTG structurally resembles allolactose which binds lacI repressor and changes its 3 " +
+			"dimensional shape in such a way that it can no more attach to its respective operator. " +
+			"Knowing that you added lacI to E.C. previously, devise a way so that E.C. only expresses the " +
+			"blue colour when E.C.’ is in the vicinity. This way, not only E.C. keeps his companion, he " +
+			"can save his energy by ceasing the production of BFP when its presence is not needed.</p>";
 			
-			this.levelEndText = "<p>Level ending text</p>";
-			this.hint = "<p>Try doing this instead</p>";
+			this.levelEndText = "<p>Great! You’ve made E.C. the luckiest bacteria alive.</p>";
+			
+			this.hint = "<p>You have to match the right repressor to the correct operator. Also, you " +
+			"want to make sure that when IPTG is present E.C. glows brightly!</p>";
 			
 			this.availableComponents = new Array("1.0", "1.1", "1.2", "2.0", "2.1", "2.2", "4.0", "4.1", "4.2");
 			
