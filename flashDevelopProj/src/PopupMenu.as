@@ -43,9 +43,7 @@ package
 		private var buttonText3:TextShadow = new TextShadow("", 0, 0, 100, 20, 1);
 		private var buttonText4:TextShadow = new TextShadow("", 0, 0, 100, 20, 1);
 		
-		private var componentDescription:TextField = new TextField();
-		private var format:TextFormat = new TextFormat();
-		
+		private var componentDescription:TextField = new TextField();		
 		public var currentCategory:int;
 		
 		// Creating and populating popup

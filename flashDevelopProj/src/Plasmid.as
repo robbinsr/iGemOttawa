@@ -107,7 +107,6 @@ package
 		public var arrow8hClass:Class;
 		public var arrow8h:Bitmap = new arrow8hClass();
 		
-		//SimpleButton(up,over,down,hit)
 		private var arrowBtn1:SimpleButton = new SimpleButton(arrow1, arrow1h, arrow1h, arrow1);
 		private var arrowBtn2:SimpleButton = new SimpleButton(arrow2, arrow2h, arrow2h, arrow2);
 		private var arrowBtn3:SimpleButton = new SimpleButton(arrow3, arrow3h, arrow3h, arrow3);
@@ -117,14 +116,27 @@ package
 		private var arrowBtn7:SimpleButton = new SimpleButton(arrow7, arrow7h, arrow7h, arrow7);
 		private var arrowBtn8:SimpleButton = new SimpleButton(arrow8, arrow8h, arrow8h, arrow8);
 		
+		private var componentDescription:TextField = new TextField();
+		
 		// Tracking
 		
 		private var currentArrowIndex:Number;
 		private var lastPlasmid:String = "bacteria1";
 		
 		public function Plasmid() 
-		{
+		{	
 			TweenPlugin.activate([VisiblePlugin]);
+			
+			componentDescription.name = "Description_Text";
+			componentDescription.x = 510;
+			componentDescription.y = 100;
+			componentDescription.wordWrap = true;
+			componentDescription.width = 160;
+			componentDescription.height = 300;
+			componentDescription.textColor = 0x111111;
+			componentDescription.visible = false;
+			this.addChild(componentDescription);
+			
 			
 			bacteria1.alpha = 1;
 			bacteria1.x = 287;
@@ -157,6 +169,7 @@ package
 			
 			currentArrowIndex = 1;
 			for (var i:Number = 1; i < 9; i++) {
+				this["arrowBtn" + i].visible = false;
 				this["arrowBtn" + i].alpha = 0;
 				this.addChild(this["arrowBtn" + i])
 			}
@@ -175,29 +188,39 @@ package
 			this.setChildIndex(this[lastPlasmid],index);
 		}
 		
-		public function addArrow(color:uint):void {
+		public function addArrow(color:uint, name:String):void {
 			var arrowNum:int = currentArrowIndex++;
 			var arrowName:String = "arrow" + arrowNum;
 			var newColour:ColorTransform = new ColorTransform(0, 0, 0, 1, color >> 16 & 0xff, color >> 8 & 0xff, color & 0xff, 0);
 			this[arrowName].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName].width, this[arrowName].height), newColour);
 			this[arrowName + "h"].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName + "h"].width, this[arrowName + "h"].height), newColour);
+			this["arrowBtn" + arrowNum].name = name;
 			this["arrowBtn" + arrowNum].visible = true;
 			TweenLite.to(this["arrowBtn" + arrowNum], 0.75, {alpha:1} );
+			this["arrowBtn" + arrowNum].addEventListener(MouseEvent.ROLL_OVER, showDescription);
+			this["arrowBtn" + arrowNum].addEventListener(MouseEvent.ROLL_OUT, hideDescription);
 		}
 		
 		public function removeArrow():void {
-			TweenLite.to(this["arrowBtn" + --currentArrowIndex], 0, {alpha:0, visible:false});
+			var arrowNum:int = --currentArrowIndex;
+			this["arrowBtn" + arrowNum].removeEventListener(MouseEvent.ROLL_OVER, showDescription);
+			this["arrowBtn" + arrowNum].addEventListener(MouseEvent.ROLL_OUT, hideDescription);
+			TweenLite.to(this["arrowBtn" + arrowNum], 0.25, {alpha:0, visible:false});
 		}
 		
 		public function resetArrows():void {
-			currentArrowIndex = 1;
-			for (var i:Number = 1; i < 9; i++) {
-				//this["arrow" + i].y = 66;
-				//this["arrow" + i].x = 277;
-				this["arrow" + i].y = 30;
-				this["arrow" + i].x = 240;
-				this["arrow" + i].alpha = 0;
+			while (currentArrowIndex > 1 ) {
+				removeArrow();
 			}
+		}
+		
+		public function showDescription(e:MouseEvent):void {
+			componentDescription.text = e.target.name;
+			this.componentDescription.visible = true;
+		}
+		
+		public function hideDescription(e:MouseEvent):void {
+			this.componentDescription.visible = false;
 		}
 	}
 
