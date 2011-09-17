@@ -443,7 +443,7 @@ package
 				var color:uint = components.componentColors[currentCategory]
 				
 				currentSequence.push(id);
-				plasmid.addArrow(color);
+				plasmid.addArrow(color,buttonName);
 			}
 		}
 		
