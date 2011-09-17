@@ -107,6 +107,16 @@ package
 		public var arrow8hClass:Class;
 		public var arrow8h:Bitmap = new arrow8hClass();
 		
+		//SimpleButton(up,over,down,hit)
+		private var arrowBtn1:SimpleButton = new SimpleButton(arrow1, arrow1h, arrow1h, arrow1);
+		private var arrowBtn2:SimpleButton = new SimpleButton(arrow2, arrow2h, arrow2h, arrow2);
+		private var arrowBtn3:SimpleButton = new SimpleButton(arrow3, arrow3h, arrow3h, arrow3);
+		private var arrowBtn4:SimpleButton = new SimpleButton(arrow4, arrow4h, arrow4h, arrow4);
+		private var arrowBtn5:SimpleButton = new SimpleButton(arrow5, arrow5h, arrow5h, arrow5);
+		private var arrowBtn6:SimpleButton = new SimpleButton(arrow6, arrow6h, arrow6h, arrow6);
+		private var arrowBtn7:SimpleButton = new SimpleButton(arrow7, arrow7h, arrow7h, arrow7);
+		private var arrowBtn8:SimpleButton = new SimpleButton(arrow8, arrow8h, arrow8h, arrow8);
+		
 		// Tracking
 		
 		private var currentArrowIndex:Number;
@@ -121,34 +131,34 @@ package
 			bacteria1.y = 77;
 			this.addChild(bacteria1);
 			
-			arrow1.x = 389;
-			arrow1.y = 71;
+			arrowBtn1.x = 389;
+			arrowBtn1.y = 71;
 			
-			arrow2.x = 454;
-			arrow2.y = 101;
+			arrowBtn2.x = 454;
+			arrowBtn2.y = 101;
 			
-			arrow3.x = 458;
-			arrow3.y = 177;
+			arrowBtn3.x = 458;
+			arrowBtn3.y = 177;
 			
-			arrow4.x = 391;
-			arrow4.y = 242;
+			arrowBtn4.x = 391;
+			arrowBtn4.y = 242;
 			
-			arrow5.x = 321;
-			arrow5.y = 247;
+			arrowBtn5.x = 321;
+			arrowBtn5.y = 247;
 			
-			arrow6.x = 276;
-			arrow6.y = 177;
+			arrowBtn6.x = 276;
+			arrowBtn6.y = 177;
 			
-			arrow7.x = 283;
-			arrow7.y = 109;
+			arrowBtn7.x = 283;
+			arrowBtn7.y = 109;
 			
-			arrow8.x = 315;
-			arrow8.y = 65;
+			arrowBtn8.x = 315;
+			arrowBtn8.y = 65;
 			
 			currentArrowIndex = 1;
 			for (var i:Number = 1; i < 9; i++) {
-				this["arrow" + i].alpha = 0;
-				this.addChild(this["arrow" + i])
+				this["arrowBtn" + i].alpha = 0;
+				this.addChild(this["arrowBtn" + i])
 			}
 		}
 		
@@ -166,15 +176,17 @@ package
 		}
 		
 		public function addArrow(color:uint):void {
-			var arrowName:String = "arrow" + currentArrowIndex++;
+			var arrowNum:int = currentArrowIndex++;
+			var arrowName:String = "arrow" + arrowNum;
 			var newColour:ColorTransform = new ColorTransform(0, 0, 0, 1, color >> 16 & 0xff, color >> 8 & 0xff, color & 0xff, 0);
 			this[arrowName].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName].width, this[arrowName].height), newColour);
-			this[arrowName].visible = true;
-			TweenLite.to(this[arrowName], 0.75, {alpha:1} );
+			this[arrowName + "h"].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName + "h"].width, this[arrowName + "h"].height), newColour);
+			this["arrowBtn" + arrowNum].visible = true;
+			TweenLite.to(this["arrowBtn" + arrowNum], 0.75, {alpha:1} );
 		}
 		
 		public function removeArrow():void {
-			TweenLite.to(this["arrow" + --currentArrowIndex], 0, {alpha:0, visible:false});
+			TweenLite.to(this["arrowBtn" + --currentArrowIndex], 0, {alpha:0, visible:false});
 		}
 		
 		public function resetArrows():void {
