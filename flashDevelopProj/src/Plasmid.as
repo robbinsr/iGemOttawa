@@ -121,10 +121,32 @@ package
 			bacteria1.y = 77;
 			this.addChild(bacteria1);
 			
+			arrow1.x = 389;
+			arrow1.y = 71;
+			
+			arrow2.x = 454;
+			arrow2.y = 101;
+			
+			arrow3.x = 458;
+			arrow3.y = 177;
+			
+			arrow4.x = 391;
+			arrow4.y = 242;
+			
+			arrow5.x = 321;
+			arrow5.y = 247;
+			
+			arrow6.x = 276;
+			arrow6.y = 177;
+			
+			arrow7.x = 283;
+			arrow7.y = 109;
+			
+			arrow8.x = 315;
+			arrow8.y = 65;
+			
 			currentArrowIndex = 1;
 			for (var i:Number = 1; i < 9; i++) {
-				this["arrow" + i].y = 30;
-				this["arrow" + i].x = 240;
 				this["arrow" + i].alpha = 0;
 				this.addChild(this["arrow" + i])
 			}
