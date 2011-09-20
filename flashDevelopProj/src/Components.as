@@ -81,6 +81,17 @@ package
 			0xFFFFFF
 		);	
 		
+		public var componentHColors:Array = new Array(
+			0xFFFFFF,
+			0xFFFFFF,
+			0xFFFFFF,
+			0xFFFFFF,
+			0xFFFFFF, 
+			0xFFFFFF,
+			0xFFFFFF,
+			0xFFFFFF
+		);	
+		
 		// Component Methods
 		
 		public function Components() 
