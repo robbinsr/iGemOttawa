@@ -8,13 +8,13 @@ package
 		// Component Names
 		
 		private var codingSequences:Array = new Array("-galactosidase", "BFP", "GFP", "GlpF", "ArsR", "GVP");
-		private var operators:Array = new Array("tetO", "FILLER", "lacO");
+		private var operators:Array = new Array("tetO", "TRE", "lacO", "LasO", "CinO", "CIO");
 		private var promoters:Array = new Array("High-exp", "Medium-exp", "Low-exp", "pArsR");
 		private var reporters:Array = new Array("");
-		private var repressors:Array = new Array("lacI", "c1 rep", "c2 rep");
+		private var repressors:Array = new Array("lacI", "c1 rep", "c2 rep", "TetR", "CI");
 		private var resGenes:Array = new Array("AmpR", "ChlR", "KanR");
 		private var terminators:Array = new Array("Terminator");
-		private var activators:Array = new Array("VP16", "ToxR", "appY");
+		private var activators:Array = new Array("VP16", "ToxR", "appY", "LasR", "CinR", "TetR-VP16");
 		
 		// Component Descriptions
 		
@@ -24,19 +24,24 @@ package
 		private var GlpF_desc:String = "1";
 		private var ArsR_desc:String = "1";
 		private var GVP_desc:String = "1";
-		
-		private var tetO_desc:String = "1";
-		private var FILLER_desc:String = "1";
-		private var lacO_desc:String = "1";
+
+		private var tetO_desc:String = "Operator site responsive to TetR";
+		private var TRE_desc:String = "operator site responsive to TetR-VP16";
+		private var lacO_desc:String = "Operator site responsive to Lac";
+		private var LasO_desc:String = "Operator site responsive to LasR";
+		private var CinO_desc:String = "Operator site responsive to CinR";
+		private var CIO_desc:String = "Operator site responsive to CI";
 		
 		private var Highexp_desc:String = "1";
 		private var Mediumexp_desc:String = "2";
 		private var Lowexp_desc:String = "3";
 		private var pArsR_desc:String = "3";
 		
-		private var lacI_desc:String = "1";
+		private var lacI_desc:String = "Lactose induced repressor from <i>E. coli</i>";
 		private var c1rep_desc:String = "2";
 		private var c2rep_desc:String = "3";
+		private var TetR_desc:String = "Tetracycline induced repressor from transposon Tn10";
+		private var CI_desc:String = "Repressor from E.coli phage lambda";
 		
 		private var AmpR_desc:String = "1";
 		private var ChlR_desc:String = "2";
@@ -47,6 +52,10 @@ package
 		private var VP16_desc:String = "1";
 		private var ToxR_desc:String = "2";
 		private var appY_desc:String = "3";
+		private var LasR_desc:String = "Inducible activator from <i>P. aeruginosa</i>";
+		private var CinR_desc:String = "Inducible activator from <i>Rhizobium leguminosarum</i>";
+		private var TetRVP16_desc:String = "Tetracycline induced repressor fused with the activation " + 
+		"domain VP16. Will behave as an activator";
 		
 		// General Component Arrays
 		

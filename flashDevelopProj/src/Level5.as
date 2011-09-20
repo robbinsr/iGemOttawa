@@ -20,15 +20,23 @@ package
 			this.levelName = "<p>Level 5</p>";
 			this.nextLevel = "Level6";
 			
-			var scenario:String = "<p>Scenario introduction, telling user to grab the right promoter</p>";
+			var scenario:String = "<p>Another regulatory class of proteins that can bind to operators " +
+			"are called activators. An activator will greatly increase the rate of transcription of a " +
+			"downstream coding sequence. Some activators must be induced by the presence of an " +
+			"antibiotic. Dr. Power has added a large volume of the antibiotic tetracycline to the " +
+			"media in which E.C. is growing which is also deadly. E.C. has a gene called tetA that " +
+			"will help confer resistance to tetracycline but it is not being actively transcribed. " +
+			"How could we enable transcription of this gene using activators and operators? Assume " +
+			"that the operator will be added to a pre-existing promoter.</p>";
 			
-			this.levelEndText = "<p>Level ending text</p>";
-			this.hint = "<p>Try doing this instead</p>";
+			this.levelEndText = "<p>Great, now E.C. can actively transcribe the tetA gene!</p>";
+			this.hint = "<p> Activators are sometimes inducible by a certain drug, which activator " +
+			"is best suited to the current conditions and which operator best corresponds to it?</p>";
 			
-			this.availableComponents = new Array("7.0", "7.1", "7.2");
+			this.availableComponents = new Array("1.0", "1.1", "1.2", "4.0", "4.1", "4.2", "7.5");
 			
-			this.componentCategories = new Array("7");
-			this.winningSequence = new Array("7.2");
+			this.componentCategories = new Array("1","4", "7");
+			this.winningSequence = new Array("7.5", "1.1");
 			
 			Main.backgroundImage.changeBackground(3);
 			plasmid.changePlasmid(1);
