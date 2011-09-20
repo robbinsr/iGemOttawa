@@ -480,10 +480,11 @@ package
 		{
 			if ( currentSequence.length < 8) {
 				var id:String = components.getComponentId(currentCategory, buttonName);
-				var color:uint = components.componentColors[currentCategory]
+				var color:uint = components.componentColors[currentCategory];
+				var colorH:uint = components.componentHColors[currentCategory];
 				
 				currentSequence.push(id);
-				plasmid.addArrow(color,buttonName);
+				plasmid.addArrow(color,colorH,buttonName);
 			}
 		}
 		

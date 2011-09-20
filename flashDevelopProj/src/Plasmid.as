@@ -188,12 +188,13 @@ package
 			this.setChildIndex(this[lastPlasmid],index);
 		}
 		
-		public function addArrow(color:uint, name:String):void {
+		public function addArrow(color:uint, colorH:uint, name:String):void {
 			var arrowNum:int = currentArrowIndex++;
 			var arrowName:String = "arrow" + arrowNum;
 			var newColour:ColorTransform = new ColorTransform(0, 0, 0, 1, color >> 16 & 0xff, color >> 8 & 0xff, color & 0xff, 0);
+			var newColourHover:ColorTransform = new ColorTransform(0, 0, 0, 1, colorH >> 16 & 0xff, colorH >> 8 & 0xff, colorH & 0xff, 0);
 			this[arrowName].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName].width, this[arrowName].height), newColour);
-			this[arrowName + "h"].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName + "h"].width, this[arrowName + "h"].height), newColour);
+			this[arrowName + "h"].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName + "h"].width, this[arrowName + "h"].height), newColourHover);
 			this["arrowBtn" + arrowNum].name = name;
 			this["arrowBtn" + arrowNum].visible = true;
 			TweenLite.to(this["arrowBtn" + arrowNum], 0.75, {alpha:1} );
