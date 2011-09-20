@@ -181,6 +181,7 @@ package
 		
 		protected var introTitleText:TextShadow = new TextShadow("Level", 126, 60, 350, 110, 2);
 		protected var introText:TextShadow = new TextShadow("Intro", 126, 97, 350, 110, 0);
+		protected var introText2:TextShadow = new TextShadow("Intro", 126, 97, 350, 110, 0);
 		protected var outroText:TextShadow = new TextShadow("Outro", 126, 97, 350, 110, 0);
 		protected var errorText:TextShadow = new TextShadow("Error", 126, 97, 350, 110, 0);
 		
@@ -188,6 +189,7 @@ package
 		protected var hint:String = "";
 		protected var levelName:String = "";
 		protected var nextLevel:String = "";
+		protected var hasSlides:Boolean = false;
 		
 		public static var plasmid:Plasmid = new Plasmid();
 		
@@ -220,6 +222,32 @@ package
 			this.addChild(goBtn);
 			goBtn.addEventListener(MouseEvent.CLICK, goFunction);
 		}
+		
+		protected function runIntroWithSlides(title:String, scenario:String, scenario2:String):void
+		{	
+			this.addChild(darken);
+			
+			hCentre(content);
+			content.y = 35;
+			this.addChild(content);
+			
+			introTitleText.setText(title);
+			this.addChild(introTitleText);
+			
+			introText.setText(scenario);
+			introText2.setText(scenario2);
+			this.addChild(introText);
+			
+			goBtn.y = 213;
+			goBtn.x = 415;
+			this.addChild(goBtn);
+			goBtn.addEventListener(MouseEvent.CLICK, goFunction);
+			
+			nextBtn.y = 213;
+			nextBtn.x = 345;
+			nextBtn.addEventListener(MouseEvent.CLICK, nextFunction);
+			this.addChild(nextBtn);
+		}
 
 		protected function runIntroSlowDarken (title:String, scenario:String):void
 		{
@@ -248,7 +276,12 @@ package
 			goBtn.removeEventListener(MouseEvent.CLICK, goFunction);
 			this.removeChild(goBtn);
 			this.removeChild(content);
-			this.removeChild(introText);
+			
+			if(hasSlides)
+				this.removeChild(introText2);
+			else
+				this.removeChild(introText);
+				
 			this.removeChild(introTitleText);
 			this.removeChild(darken);
 			
@@ -311,6 +344,13 @@ package
 				this.addChild(this[buttonName]);
 				TweenLite.to(this[buttonName], 1, { delay:i, alpha:1 } );
 			}
+		}
+		
+		private function nextFunction(e:MouseEvent):void
+		{
+			this.removeChild(nextBtn);
+			this.removeChild(introText);
+			this.addChild(introText2);
 		}
 		
 		// Create button functions

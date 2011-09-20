@@ -44,9 +44,11 @@ package
 			this.componentCategories = new Array("2");
 			this.winningSequence = new Array("2.2");
 			
+			this.hasSlides = true;
+			
 			Main.backgroundImage.changeBackground(3);
 			plasmid.changePlasmid(2);
-			runIntro(levelName, scenario);
+			runIntroWithSlides(levelName, scenario, scenario2);
 		}
 	}
 }
