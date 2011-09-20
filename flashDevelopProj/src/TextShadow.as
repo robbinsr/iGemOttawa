@@ -21,24 +21,27 @@ package
 		private var shadow:TextField = new TextField();
 		private var color1:String;
 		private var color2:String;
+		private var css:String;
+		private var css2:String;
 		
 		public function TextShadow(text:String, textX:int, textY:int, textWidth:int, textHeight:int, textStyle:int) 
 		{	
+			
 			// Add new styles as required
 			if (textStyle == 1) {
-				var css:String = "p {font-size: 11pt; color: #dddddd; font-family: Tahoma;}" +
+				css = "p {font-size: 11pt; color: #dddddd; font-family: Tahoma;}" +
 				"strong { font-weight: bold; display: inline; }";
-				var css2:String = "p {font-size: 11pt; color: #555555; font-family: Tahoma;}" +
+				css2 = "p {font-size: 11pt; color: #555555; font-family: Tahoma;}" +
 				"strong { font-weight: bold; display: inline; }";
 			}
 			else if (textStyle == 2) {
-				var css:String = "p {font-size: 14pt; color: #efefef; font-family: Helvetica, Arial; font-weight: bold;}";
-				var css2:String = "p {font-size: 14pt; color: #101010; font-family: Helvetica, Arial; font-weight: bold;}";
+				css = "p {font-size: 14pt; color: #efefef; font-family: Helvetica, Arial; font-weight: bold;}";
+				css2 = "p {font-size: 14pt; color: #101010; font-family: Helvetica, Arial; font-weight: bold;}";
 			}
 			else {
-				var css:String = "p {font-size: 11pt; color: #ebebeb; font-family: Tahoma;}" +
+				css = "p {font-size: 11pt; color: #ebebeb; font-family: Tahoma;}" +
 				"strong { font-weight: bold; display: inline; }";
-				var css2:String = "p {font-size: 11pt; color: #101010; font-family: Tahoma;}" +
+				css2 = "p {font-size: 11pt; color: #101010; font-family: Tahoma;}" +
 				"strong { font-weight: bold; display: inline; }";
 			}
 			
