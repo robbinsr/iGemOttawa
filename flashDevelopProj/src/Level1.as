@@ -37,6 +37,10 @@ package
 			
 			Main.backgroundImage.changeBackground(2);
 			runIntroSlowDarken(levelName, scenario);
+			
+			componentOrder = new Array(0,2,4,6,1,3,5,7);
+			minComponent = 2;
+			maxComponent = 4;
 		}
 	}
 }

@@ -191,16 +191,16 @@ package
 		protected var nextLevel:String = "";
 		protected var hasSlides:Boolean = false;
 		
-		public static var plasmid:Plasmid = new Plasmid();
+		public static var plasmid:Plasmid;
 		
 		// Intro sequence functions
-		
+
 		public function Level() 
 		{
 			bottomMenu.x = 0;
 			bottomMenu.y = 348;
 			this.addChild(bottomMenu);
-			this.addEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
+			this.addEventListener(Event.REMOVED_FROM_STAGE, removeListeners);	
 		}
 		
 		protected function runIntro(title:String, scenario:String):void
@@ -285,11 +285,12 @@ package
 			this.removeChild(introTitleText);
 			this.removeChild(darken);
 			
+			plasmid = new Plasmid(minComponent, maxComponent, componentOrder);
 			plasmid.name = "plasmid";
 			plasmid.alpha = 1;
 			plasmid.x = 0;
 			plasmid.y = 0;
-
+			
 			this.addChild(plasmid);
 			
 			createBtn.y = 20;
@@ -424,7 +425,7 @@ package
 			this.addChild(content);
 			
 			errorText.setText(hint);
-			if (getSequenceLength() > winningSequence.length) {
+			if (currentSequence.length > winningSequence.length) {
 				errorText.setText("<p>You've added too many parts to the plasmid!</p>");
 			}
 			this.addChild(errorText);
@@ -442,14 +443,11 @@ package
 			this.removeChild(goBtn);
 		}
 		
-		// Undo button functions
-		
 		private function undoFunction(e:MouseEvent):void
 		{
-			var arrowNum:int = getSequenceLength();
-			
-			if (arrowNum > 0) {
-				removeComponent();
+			if ( plasmid.canRemove() ) {
+				currentSequence.pop();
+				plasmid.removeArrow();
 			}
 		}
 		
@@ -468,42 +466,37 @@ package
 		
 		public static var components:Components = new Components();
 		
+		protected var componentOrder:Array;
+		
+		protected var minComponent:int;
+		
+		protected var maxComponent:int;
+		
 		protected var componentCategories:Array;
 		
 		protected var winningSequence:Array;
-			
-		public static var currentSequence:Array = new Array();
 		
 		protected var availableComponents:Array;
 		
+		public static var currentSequence:Array = new Array();
+		
 		public static function addComponent(currentCategory:int,buttonName:String):void
 		{
-			if ( currentSequence.length < 8) {
+			if ( plasmid.canAdd() ) {			
 				var id:String = components.getComponentId(currentCategory, buttonName);
 				var color:uint = components.componentColors[currentCategory];
 				var colorH:uint = components.componentHColors[currentCategory];
 				
 				currentSequence.push(id);
-				plasmid.addArrow(color,colorH,buttonName);
+				plasmid.addArrow(color,colorH,buttonName);	
 			}
 		}
 		
-		public static function removeComponent():void
-		{	
-			currentSequence.pop();
-			plasmid.removeArrow();
-		}
-		
-		public static function getSequenceLength():int
-		{	
-			return currentSequence.length;
-		}
-		
+		//Should reset entire level??
 		public static function resetSequence():void
 		{	
 			currentSequence = [];
 			plasmid.resetArrows();
 		}
-
 	}
 }

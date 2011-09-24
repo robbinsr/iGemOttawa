@@ -49,6 +49,10 @@ package
 			Main.backgroundImage.changeBackground(3);
 			plasmid.changePlasmid(2);
 			runIntroWithSlides(levelName, scenario, scenario2);
+			
+			componentOrder = new Array(7,6,5,4,1,2,3,0);
+			minComponent = 0;
+			maxComponent = 4;
 		}
 	}
 }
