@@ -39,6 +39,7 @@ package
 			runIntroSlowDarken(levelName, scenario);
 			
 			componentOrder = new Array(0,2,4,6,1,3,5,7);
+			preExistingComponents = new Array(5,"AmpR",5,"AmpR");
 			minComponent = 2;
 			maxComponent = 4;
 		}
