@@ -290,8 +290,11 @@ package
 			plasmid.alpha = 1;
 			plasmid.x = 0;
 			plasmid.y = 0;
-			
 			this.addChild(plasmid);
+			for (var ii:int = 0; ii < preExistingComponents.length;) {
+				addComponent(preExistingComponents[ii++],preExistingComponents[ii++]);
+			}
+			
 			
 			createBtn.y = 20;
 			createBtn.x = 530;
@@ -467,6 +470,8 @@ package
 		public static var components:Components = new Components();
 		
 		protected var componentOrder:Array;
+		
+		protected var preExistingComponents:Array;
 		
 		protected var minComponent:int;
 		
