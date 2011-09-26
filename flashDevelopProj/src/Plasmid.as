@@ -202,8 +202,7 @@ package
 		private var componentOrder:Array;
 		private var currentArrowIndex:Number;
 		private var lastPlasmid:String = "bacteria1";
-		
-		
+		private var arrowTypes:Array = [];
 		
 		public function Plasmid(_minComponent:int, _maxComponent:int, _componentOrder:Array) 
 		{				
@@ -218,7 +217,6 @@ package
 			componentDescription.textColor = 0x111111;
 			componentDescription.visible = false;
 			this.addChild(componentDescription);
-			
 			
 			bacteria1.alpha = 1;
 			bacteria1.x = 287;
@@ -310,6 +308,9 @@ package
 		}
 		
 		public function addArrow(color:uint, colorH:uint, name:String, currentCategory:int):void {
+			
+			arrowTypes.push(currentCategory);
+			
 			var newColour:ColorTransform = new ColorTransform(0, 0, 0, 1, color >> 16 & 0xff, color >> 8 & 0xff, color & 0xff, 0);
 			var newColourHover:ColorTransform = new ColorTransform(0, 0, 0, 1, colorH >> 16 & 0xff, colorH >> 8 & 0xff, colorH & 0xff, 0);
 			var arrowNum:int = componentOrder[currentArrowIndex++];
@@ -333,9 +334,14 @@ package
 		
 		public function removeArrow():void {
 			var arrowNum:int = componentOrder[--currentArrowIndex];
-			this["arrowBtn" + arrowNum].removeEventListener(MouseEvent.ROLL_OVER, showDescription);
-			this["arrowBtn" + arrowNum].addEventListener(MouseEvent.ROLL_OUT, hideDescription);
-			TweenLite.to(this["arrowBtn" + arrowNum], 0.25, {alpha:0, visible:false});
+			var arrowLast:int = arrowTypes.pop();
+			var arrowBtnName:String = "lineBtn" + arrowNum;
+			if (arrowLast == 0 || arrowLast == 5) {
+				arrowBtnName = "arrowBtn" + arrowNum;
+			}
+			this[arrowBtnName].removeEventListener(MouseEvent.ROLL_OVER, showDescription);
+			this[arrowBtnName].addEventListener(MouseEvent.ROLL_OUT, hideDescription);
+			TweenLite.to(this[arrowBtnName], 0.25, {alpha:0, visible:false});
 		}
 		
 		public function resetArrows():void {
