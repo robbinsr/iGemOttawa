@@ -51,6 +51,28 @@ package
 		public var undoBtn:SimpleButton = new SimpleButton(
 		undoBtnImg, undoBtnHImg, undoBtnHImg, undoBtnImg);
 		
+		[Embed(source='../lib/clear.png')]
+		public var clearBtnClass:Class;
+		public var clearBtnImg:Bitmap = new clearBtnClass();
+		
+		[Embed(source='../lib/clear_h.png')]
+		public var clearBtnHClass:Class;
+		public var clearBtnHImg:Bitmap = new clearBtnHClass();
+		
+		public var clearBtn:SimpleButton = new SimpleButton(
+		clearBtnImg, clearBtnHImg, clearBtnHImg, clearBtnImg);
+		
+		[Embed(source='../lib/info.png')]
+		public var infoBtnClass:Class;
+		public var infoBtnImg:Bitmap = new infoBtnClass();
+		
+		[Embed(source='../lib/info_h.png')]
+		public var infoBtnHClass:Class;
+		public var infoBtnHImg:Bitmap = new infoBtnHClass();
+		
+		public var infoBtn:SimpleButton = new SimpleButton(
+		infoBtnImg, infoBtnHImg, infoBtnHImg, infoBtnImg);
+		
 		[Embed(source='../lib/skip.png')]
 		public var skipBtnClass:Class;
 		public var skipBtnImg:Bitmap = new skipBtnClass();

@@ -17,6 +17,7 @@ package
 	{
 		public function Level6()
 		{
+			this.currentLevel = "Level6";
 			this.levelName = "<p>Level 6</p>";
 			this.nextLevel = "Level7";
 			
