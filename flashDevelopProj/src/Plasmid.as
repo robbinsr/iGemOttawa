@@ -281,10 +281,7 @@ package
 			for (var i:Number = 0; i < 8; i++) {
 				this["arrowBtn" + i].visible = false;
 				this["arrowBtn" + i].alpha = 0;
-				this.addChild(this["arrowBtn" + i])
-			}
-			
-			for (var i:Number = 0; i < 8; i++) {
+				this.addChild(this["arrowBtn" + i]);
 				this["lineBtn" + i].visible = false;
 				this["lineBtn" + i].alpha = 0;
 				this.addChild(this["lineBtn" + i])
@@ -315,29 +312,23 @@ package
 		public function addArrow(color:uint, colorH:uint, name:String, currentCategory:int):void {
 			var newColour:ColorTransform = new ColorTransform(0, 0, 0, 1, color >> 16 & 0xff, color >> 8 & 0xff, color & 0xff, 0);
 			var newColourHover:ColorTransform = new ColorTransform(0, 0, 0, 1, colorH >> 16 & 0xff, colorH >> 8 & 0xff, colorH & 0xff, 0);
-			trace(currentCategory);
+			var arrowNum:int = componentOrder[currentArrowIndex++];
+			
+			var arrowName:String = "line" + arrowNum;
+			var arrowBtnName:String = "lineBtn" + arrowNum;
+			
 			if(currentCategory == 0 || currentCategory == 5) {
-				var arrowNum:int = componentOrder[currentArrowIndex++];
-				var arrowName:String = "arrow" + arrowNum;
-				this[arrowName].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName].width, this[arrowName].height), newColour);
-				this[arrowName + "h"].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName + "h"].width, this[arrowName + "h"].height), newColourHover);
-				this["arrowBtn" + arrowNum].name = name;
-				this["arrowBtn" + arrowNum].visible = true;
-				TweenLite.to(this["arrowBtn" + arrowNum], 0.75, {alpha:1} );
-				this["arrowBtn" + arrowNum].addEventListener(MouseEvent.ROLL_OVER, showDescription);
-				this["arrowBtn" + arrowNum].addEventListener(MouseEvent.ROLL_OUT, hideDescription);
+				arrowName = "arrow" + arrowNum;
+				arrowBtnName = "arrowBtn" + arrowNum;
 			}
-			else {
-				var lineNum:int = componentOrder[currentArrowIndex++];
-				var lineName:String = "line" + lineNum;
-				this[lineName].bitmapData.colorTransform(new Rectangle(0, 0, this[lineName].width, this[lineName].height), newColour);
-				this[lineName + "h"].bitmapData.colorTransform(new Rectangle(0, 0, this[lineName + "h"].width, this[lineName + "h"].height), newColourHover);
-				this["lineBtn" + lineNum].name = name;
-				this["lineBtn" + lineNum].visible = true;
-				TweenLite.to(this["lineBtn" + lineNum], 0.75, {alpha:1} );
-				this["lineBtn" + lineNum].addEventListener(MouseEvent.ROLL_OVER, showDescription);
-				this["lineBtn" + lineNum].addEventListener(MouseEvent.ROLL_OUT, hideDescription);
-			}
+			
+			this[arrowName].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName].width, this[arrowName].height), newColour);
+			this[arrowName + "h"].bitmapData.colorTransform(new Rectangle(0, 0, this[arrowName + "h"].width, this[arrowName + "h"].height), newColourHover);
+			this[arrowBtnName].name = name;
+			this[arrowBtnName].visible = true;
+			TweenLite.to(this[arrowBtnName], 0.75, {alpha:1} );
+			this[arrowBtnName].addEventListener(MouseEvent.ROLL_OVER, showDescription);
+			this[arrowBtnName].addEventListener(MouseEvent.ROLL_OUT, hideDescription);
 		}
 		
 		public function removeArrow():void {
