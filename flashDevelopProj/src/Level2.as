@@ -29,7 +29,6 @@ package
 			"coding sequence. Remember when building a device to always select a promoter first " +
 			"before selecting a coding sequence.</p>";
 			
-			// To do: Add next button for sliding between scenario text
 			var scenario2:String = "<p>E.C. seems to be using a lot of energy expressing this " +
 			"ampicillin resistance gene and the media he is growing in has run low in ampicillin " +
 			"concentration. Help him conserve energy by clicking on the promoter icon located on " +
