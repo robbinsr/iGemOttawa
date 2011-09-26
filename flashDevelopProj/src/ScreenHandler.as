@@ -3,7 +3,8 @@
 	import flash.display.Sprite;
 	import flash.display.MovieClip;
 	import flash.events.Event;
-
+	import flash.utils.getDefinitionByName;
+	
 	public class ScreenHandler extends Sprite
 	{
 		private var splashScreen:SplashScreen;
@@ -16,6 +17,9 @@
 		private var level5:Level5;
 		private var level6:Level6;
 		private var level7:Level7;
+		private var level8:Level8;
+		private var level9:Level9;
+		private var level10:Level10;
 		
 		private var newScreenName:String = "";
 		
@@ -68,77 +72,17 @@
 			screenLayer.removeChild(oldScreen);
 		}
 		
-		private function makeNewScreen():void
+		private function makeNewScreen():void 
 		{
-			switch(newScreenName){
-				case "SplashScreen":
-					splashScreen = new SplashScreen();
-					screenLayer.addChild(splashScreen);
-				break;
-				case "MainMenu":
-					mainMenu = new MainMenu();
-					screenLayer.addChild(mainMenu);
-				break;
-				case "Tutorial":
-					tutorial = new Tutorial();
-					screenLayer.addChild(tutorial);
-				break;
-				case "Level1":
-					level1 = new Level1();
-					screenLayer.addChild(level1);
-				break;
-				case "Level2":
-					level2 = new Level2();
-					screenLayer.addChild(level2);
-				break;
-				case "Level3":
-					level3 = new Level3();
-					screenLayer.addChild(level3);
-				break;
-				case "Level4":
-					level4 = new Level4();
-					screenLayer.addChild(level4);
-				break;
-				case "Level5":
-					level5 = new Level5();
-					screenLayer.addChild(level5);
-				break;
-				case "Level6":
-					level6 = new Level6();
-					screenLayer.addChild(level6);
-				break;
-				case "Level7":
-					level7 = new Level7();
-					screenLayer.addChild(level7);
-				break;
-				default:
-					mainMenu = new MainMenu();
-					screenLayer.addChild(mainMenu);
-				break;
-			}
+			var screenClass:Class = getDefinitionByName(newScreenName) as Class;
+			var firstLetter:String = newScreenName.substring(0, 1);
+			var restLetters:String = newScreenName.substring(1, newScreenName.length);
+			var screenNameLowerCase:String = firstLetter.toLowerCase() + restLetters;
+			
+			this[screenNameLowerCase] = new screenClass();
+			
+			screenLayer.addChild(this[screenNameLowerCase]);
 			newScreenName = "";
 		}
-		
-
-		/*private function makeNewScreen():void 
-		  {
-			trace(newScreenName);
-		   var firstLetter:String = newScreenName.substring(0,1);
-		   var restLetters:String = newScreenName.substring(1,newScreenName.length);
-		   var screenNameLowerCase:String = firstLetter.toLowerCase() + restLetters;
-			trace(screenNameLowerCase);
-
-			// It doesn't like how I use the "new" keyword infront of this[newScreenName]()
-			// this[newScreenName]() can be used to call a function, but
-			// new this[newScreenName](); won't initialize
-			// Look into it later.
-			
-		   this[screenNameLowerCase] = new this[newScreenName]();
-		   screenLayer.addChild(this[screenNameLowerCase]);
-
-		   newScreenName = "";
-		}*/
-
-		
 	}
 }
