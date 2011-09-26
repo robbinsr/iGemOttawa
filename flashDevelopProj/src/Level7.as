@@ -33,9 +33,9 @@ package
 			this.hint = "<p>You have to match the right repressor to the correct operator. Also, you " +
 			"want to make sure that when IPTG is present E.C. glows brightly!</p>";
 			
-			this.availableComponents = new Array("1.0", "1.1", "1.2", "2.0", "2.1", "2.2", "4.0", "4.1", "4.2");
+			this.availableComponents = new Array("0.7", "0.9", "0.10", "1.0", "1.1", "1.2", "2.0", "2.1", "2.2", "4.0", "4.1", "4.2");
 			
-			this.componentCategories = new Array("1","2","4");
+			this.componentCategories = new Array("0", "1","2","4");
 			this.winningSequence = new Array("2.0", "0.1", "1.2", "4.0");
 			
 			Main.backgroundImage.changeBackground(3);
@@ -43,7 +43,7 @@ package
 			runIntro(levelName, scenario);
 			
 			componentOrder = new Array(0,1,7,3);
-			preExistingComponents = new Array(2,"High-exp",0,"BFP");
+			preExistingComponents = new Array(2,"TDH3",0,"BFP");
 			minComponent = 2;
 			maxComponent = 4;
 		}
