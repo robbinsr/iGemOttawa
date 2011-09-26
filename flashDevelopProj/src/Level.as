@@ -245,7 +245,6 @@ package
 			
 			var categoryId:int;
 			var buttonName:String;
-			trace(this.componentCategories.length);
 			for (var i:int = 0; i < this.componentCategories.length; i++) {
 				categoryId = this.componentCategories[i];
 				switch(categoryId)
@@ -451,7 +450,7 @@ package
 				var colorH:uint = components.componentHColors[currentCategory];
 				
 				currentSequence.push(id);
-				plasmid.addArrow(color,colorH,buttonName);	
+				plasmid.addArrow(color,colorH,buttonName,currentCategory);	
 			}
 		}
 		
