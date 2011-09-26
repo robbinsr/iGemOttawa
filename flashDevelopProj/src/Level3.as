@@ -36,11 +36,16 @@ package
 			this.availableComponents = new Array("0.0", "0.1", "0.2");
 			
 			this.componentCategories = new Array("0");
-			this.winningSequence = new Array("0.0");
+			this.winningSequence = new Array("2.2","0.0");
 			
 			Main.backgroundImage.changeBackground(4);
 			plasmid.changePlasmid(4);
 			runIntro(levelName, scenario);
+			
+			componentOrder = new Array(0,1,2,3,4,5,6,7);
+			preExistingComponents = new Array(2,"Low-exp");
+			minComponent = 1;
+			maxComponent = 8;
 		}
 	}
 }

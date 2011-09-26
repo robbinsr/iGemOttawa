@@ -185,11 +185,11 @@ package
 		}
 		
 		public function canAdd():Boolean {
-			return (currentArrowIndex != maxComponent);
+			return (currentArrowIndex < maxComponent);
 		}
 		
 		public function canRemove():Boolean {
-			return (currentArrowIndex != minComponent);
+			return (currentArrowIndex > minComponent);
 		}
 		
 		public function changePlasmid(i:int):void
