@@ -11,10 +11,10 @@ package
 		private var operators:Array = new Array("tetO", "TRE", "lacO", "LasO", "CinO", "CIO");
 		private var promoters:Array = new Array("TDH3", "ALD6", "MYO2", "pArsR", "ADH1", "YEF3");
 		private var reporters:Array = new Array("");
-		private var repressors:Array = new Array("lacI", "c1 rep", "c2 rep", "TetR", "CI");
+		private var repressors:Array = new Array("lacI", "TetR", "CI");
 		private var resGenes:Array = new Array("AmpR", "ChlR", "KanR");
 		private var terminators:Array = new Array("Terminator");
-		private var activators:Array = new Array("VP16", "ToxR", "appY", "LasR", "CinR", "TetR-VP16");
+		private var activators:Array = new Array("LasR", "CinR", "TetR-VP16");
 		
 		// Component Descriptions
 		
@@ -52,8 +52,6 @@ package
 		private var YEF3_desc:String = "This is a yeast promoter that has medium expression";
 		
 		private var lacI_desc:String = "Lactose induced repressor from E. coli";
-		private var c1rep_desc:String = "2";
-		private var c2rep_desc:String = "3";
 		private var TetR_desc:String = "Tetracycline induced repressor from transposon Tn10";
 		private var CI_desc:String = "Repressor from E.coli phage lambda";
 		
@@ -63,9 +61,6 @@ package
 		
 		private var Terminator_desc:String = "3";
 		
-		private var VP16_desc:String = "1";
-		private var ToxR_desc:String = "2";
-		private var appY_desc:String = "3";
 		private var LasR_desc:String = "Inducible activator from P. aeruginosa";
 		private var CinR_desc:String = "Inducible activator from Rhizobium leguminosarum";
 		private var TetRVP16_desc:String = "Tetracycline induced repressor fused with the activation " + 

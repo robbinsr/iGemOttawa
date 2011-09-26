@@ -44,11 +44,9 @@ package
 			Main.backgroundImage.changeBackground(1);
 			plasmid.changePlasmid(1);
 			runIntro(levelName, scenario);
-
-			//4. operator + " " + " " + space + rep
 			
 			componentOrder = new Array(0,1,7,3);
-			preExistingComponents = new Array(2,"Low-exp",0,"-galactosidase");
+			preExistingComponents = new Array(2,"MYO2",0,"-galactosidase");
 			minComponent = 2;
 			maxComponent = 4;
 		}
