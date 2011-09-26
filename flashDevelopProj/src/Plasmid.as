@@ -116,6 +116,83 @@ package
 		private var arrowBtn6:SimpleButton = new SimpleButton(arrow6, arrow6h, arrow6h, arrow6);
 		private var arrowBtn7:SimpleButton = new SimpleButton(arrow7, arrow7h, arrow7h, arrow7);
 		
+		// Plasmid Lines
+		
+		[Embed(source='../lib/plasmid/1l.png')]
+		public var line0Class:Class;
+		public var line0:Bitmap = new line0Class();
+		
+		[Embed(source='../lib/plasmid/2l.png')]
+		public var line1Class:Class;
+		public var line1:Bitmap = new line1Class();
+		
+		[Embed(source='../lib/plasmid/3l.png')]
+		public var line2Class:Class;
+		public var line2:Bitmap = new line2Class();
+		
+		[Embed(source='../lib/plasmid/4l.png')]
+		public var line3Class:Class;
+		public var line3:Bitmap = new line3Class();
+		
+		[Embed(source='../lib/plasmid/5l.png')]
+		public var line4Class:Class;
+		public var line4:Bitmap = new line4Class();
+		
+		[Embed(source='../lib/plasmid/6l.png')]
+		public var line5Class:Class;
+		public var line5:Bitmap = new line5Class();
+		
+		[Embed(source='../lib/plasmid/7l.png')]
+		public var line6Class:Class;
+		public var line6:Bitmap = new line6Class();
+		
+		[Embed(source='../lib/plasmid/8l.png')]
+		public var line7Class:Class;
+		public var line7:Bitmap = new line7Class();
+		
+		// Plasmid Lines on Hover
+		
+		[Embed(source='../lib/plasmid/1lh.png')]
+		public var line0hClass:Class;
+		public var line0h:Bitmap = new line0hClass();
+		
+		[Embed(source='../lib/plasmid/2lh.png')]
+		public var line1hClass:Class;
+		public var line1h:Bitmap = new line1hClass();
+		
+		[Embed(source='../lib/plasmid/3lh.png')]
+		public var line2hClass:Class;
+		public var line2h:Bitmap = new line2hClass();
+		
+		[Embed(source='../lib/plasmid/4lh.png')]
+		public var line3hClass:Class;
+		public var line3h:Bitmap = new line3hClass();
+		
+		[Embed(source='../lib/plasmid/5lh.png')]
+		public var line4hClass:Class;
+		public var line4h:Bitmap = new line4hClass();
+		
+		[Embed(source='../lib/plasmid/6lh.png')]
+		public var line5hClass:Class;
+		public var line5h:Bitmap = new line5hClass();
+		
+		[Embed(source='../lib/plasmid/7lh.png')]
+		public var line6hClass:Class;
+		public var line6h:Bitmap = new line6hClass();
+		
+		[Embed(source='../lib/plasmid/8lh.png')]
+		public var line7hClass:Class;
+		public var line7h:Bitmap = new line7hClass();
+		
+		private var lineBtn0:SimpleButton = new SimpleButton(line0, line0h, line0h, line0);
+		private var lineBtn1:SimpleButton = new SimpleButton(line1, line1h, line1h, line1);
+		private var lineBtn2:SimpleButton = new SimpleButton(line2, line2h, line2h, line2);
+		private var lineBtn3:SimpleButton = new SimpleButton(line3, line3h, line3h, line3);
+		private var lineBtn4:SimpleButton = new SimpleButton(line4, line4h, line4h, line4);
+		private var lineBtn5:SimpleButton = new SimpleButton(line5, line5h, line5h, line5);
+		private var lineBtn6:SimpleButton = new SimpleButton(line6, line6h, line6h, line6);
+		private var lineBtn7:SimpleButton = new SimpleButton(line7, line7h, line7h, line7);
+		
 		private var componentDescription:TextField = new TextField();
 		
 		// Tracking
