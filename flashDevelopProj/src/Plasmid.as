@@ -247,29 +247,29 @@ package
 			arrowBtn7.x = 315;
 			arrowBtn7.y = 65;
 			
-			lineBtn0.x = 389;
+			lineBtn0.x = 390;
 			lineBtn0.y = 71;
 			
-			lineBtn1.x = 454;
-			lineBtn1.y = 101;
+			lineBtn1.x = 453;
+			lineBtn1.y = 99;
 			
 			lineBtn2.x = 458;
 			lineBtn2.y = 177;
 			
-			lineBtn3.x = 391;
-			lineBtn3.y = 242;
+			lineBtn3.x = 392;
+			lineBtn3.y = 238;
 			
-			lineBtn4.x = 321;
-			lineBtn4.y = 247;
+			lineBtn4.x = 319;
+			lineBtn4.y = 245;
 			
-			lineBtn5.x = 276;
-			lineBtn5.y = 177;
+			lineBtn5.x = 278;
+			lineBtn5.y = 181;
 			
-			lineBtn6.x = 283;
-			lineBtn6.y = 109;
+			lineBtn6.x = 284;
+			lineBtn6.y = 107;
 			
-			lineBtn7.x = 315;
-			lineBtn7.y = 65;
+			lineBtn7.x = 314;
+			lineBtn7.y = 66;
 			
 			currentArrowIndex = 0;
 			minComponent = _minComponent;
