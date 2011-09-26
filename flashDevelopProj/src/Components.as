@@ -71,25 +71,25 @@ package
 		);
 		
 		public var componentColors:Array = new Array(
-			0xFF0000, 
-			0x00FF00, 
-			0x0000FF, 
+			0x0053b3, 
+			0xd35b00, 
+			0x047501, 
 			0x0FF000, 
-			0x000FF0, 
-			0xAA1133, 
+			0xaf052e, 
+			0x17ae9a, 
 			0x2299BB,
-			0xFFFFFF
+			0xcec70b
 		);	
 		
 		public var componentHColors:Array = new Array(
+			0x0088e5,
+			0xe38e1a,
+			0x2ba826,
 			0xFFFFFF,
+			0xd61f4b, 
+			0x35d1bc,
 			0xFFFFFF,
-			0xFFFFFF,
-			0xFFFFFF,
-			0xFFFFFF, 
-			0xFFFFFF,
-			0xFFFFFF,
-			0xFFFFFF
+			0xeae31c
 		);	
 		
 		// Component Methods
