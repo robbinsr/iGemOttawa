@@ -109,6 +109,7 @@ package
 		
 		protected var levelEndText:String = "";
 		protected var hint:String = "";
+		protected var currentLevel:String = "";
 		protected var levelName:String = "";
 		protected var nextLevel:String = "";
 		protected var hasSlides:Boolean = false;
@@ -129,29 +130,20 @@ package
 		{	
 			this.addChild(darken);
 			
-			hCentre(content);
-			content.y = 35;
-			this.addChild(content);
+			runIntroGeneral();
 			
 			introTitleText.setText(title);
 			this.addChild(introTitleText);
 			
 			introText.setText(scenario);
 			this.addChild(introText);
-			
-			goBtn.y = 213;
-			goBtn.x = 415;
-			this.addChild(goBtn);
-			goBtn.addEventListener(MouseEvent.CLICK, goFunction);
 		}
 		
 		protected function runIntroWithSlides(title:String, scenario:String, scenario2:String):void
 		{	
 			this.addChild(darken);
 			
-			hCentre(content);
-			content.y = 35;
-			this.addChild(content);
+			runIntroGeneral();
 			
 			introTitleText.setText(title);
 			this.addChild(introTitleText);
@@ -159,11 +151,6 @@ package
 			introText.setText(scenario);
 			introText2.setText(scenario2);
 			this.addChild(introText);
-			
-			goBtn.y = 213;
-			goBtn.x = 415;
-			this.addChild(goBtn);
-			goBtn.addEventListener(MouseEvent.CLICK, goFunction);
 			
 			nextBtn.y = 213;
 			nextBtn.x = 345;
@@ -177,15 +164,20 @@ package
 			this.addChild(darken);
 			TweenLite.to(darken, 1, { x:0, y:0, alpha:1 } );
 			
-			hCentre(content);
-			content.y = 35;
-			this.addChild(content);
+			runIntroGeneral();
 			
 			introTitleText.setText(title);
 			this.addChild(introTitleText);
 			
 			introText.setText(scenario);
 			this.addChild(introText);
+		}
+
+		protected function runIntroGeneral():void
+		{				
+			hCentre(content);
+			content.y = 35;
+			this.addChild(content);
 			
 			goBtn.y = 213;
 			goBtn.x = 415;
@@ -230,6 +222,18 @@ package
 			this.addChild(undoBtn);
 			TweenLite.to(undoBtn, 1, { delay:1, alpha:1 } );
 			
+			clearBtn.y = 20;
+			clearBtn.x = 390;
+			clearBtn.addEventListener(MouseEvent.CLICK, clearFunction);
+			this.addChild(clearBtn);
+			TweenLite.to(clearBtn, 1, { delay:1, alpha:1 } );
+			
+			infoBtn.y = 20;
+			infoBtn.x = 320;
+			infoBtn.addEventListener(MouseEvent.CLICK, infoFunction);
+			this.addChild(infoBtn);
+			TweenLite.to(infoBtn, 1, { delay:1, alpha:1 } );
+			
 			var categoryId:int;
 			var buttonName:String;
 			trace(this.componentCategories.length);
@@ -263,7 +267,7 @@ package
 						break;
 				}
 				this[buttonName].x = 85 * int(i) + 10;
-				this[buttonName].y = 315;
+				this[buttonName].y = 310;
 				this[buttonName].alpha = 0;
 				this[buttonName].name = categoryId;
 				this[buttonName].addEventListener(MouseEvent.CLICK, popupMenuFunction);
@@ -316,6 +320,9 @@ package
 			content.y = 35;
 			this.addChild(content);
 			
+			introTitleText.setText(this.levelName);
+			this.addChild(introTitleText);
+			
 			outroText.setText(levelEndText);
 			this.addChild(outroText);
 			
@@ -334,6 +341,8 @@ package
 			goBtn.removeEventListener(MouseEvent.CLICK, goToNextLevel);
 			createBtn.removeEventListener(MouseEvent.CLICK, createFunction);
 			undoBtn.removeEventListener(MouseEvent.CLICK, undoFunction);
+			infoBtn.removeEventListener(MouseEvent.CLICK, infoFunction);
+			clearBtn.removeEventListener(MouseEvent.CLICK, clearFunction);
 			this.removeEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 		}
 		
@@ -374,6 +383,22 @@ package
 				currentSequence.pop();
 				plasmid.removeArrow();
 			}
+		}
+		
+		private function clearFunction(e:MouseEvent):void
+		{
+			for ( var i:int = 0; i < 14; i++) {
+				if ( plasmid.canRemove() ) {
+					currentSequence.pop();
+					plasmid.removeArrow();
+				}
+			}
+		}
+		
+		private function infoFunction(e:MouseEvent):void
+		{
+			resetSequence();
+			Main.screens.switchTo(currentLevel);
 		}
 		
 		// Popup Menu	
