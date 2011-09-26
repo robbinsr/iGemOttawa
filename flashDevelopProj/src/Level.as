@@ -31,151 +31,73 @@ package
 		private var bottomMenuClass:Class;
 		private var bottomMenu:Bitmap = new bottomMenuClass();
 		
-		[Embed(source='../lib/levelInterface/codingseq.png')]
+		[Embed(source='../lib/levelInterface2/codingseq.png')]
 		private var codingseqBtnClass:Class;
 		private var codingseqBtnImg:Bitmap = new codingseqBtnClass();
 		
-		[Embed(source='../lib/levelInterface/codingseq_h.png')]
+		[Embed(source='../lib/levelInterface2/codingseq_h.png')]
 		private var codingseqBtnHClass:Class;
 		private var codingseqBtnHImg:Bitmap = new codingseqBtnHClass();
 		
-		[Embed(source='../lib/levelInterface/codingseq_g.png')]
-		private var codingseqBtnGClass:Class;
-		private var codingseqBtnGImg:Bitmap = new codingseqBtnGClass();
-		
-		[Embed(source='../lib/levelInterface/operator.png')]
+		[Embed(source='../lib/levelInterface2/operator.png')]
 		private var operatorBtnClass:Class;
 		private var operatorBtnImg:Bitmap = new operatorBtnClass();
 		
-		[Embed(source='../lib/levelInterface/operator_h.png')]
+		[Embed(source='../lib/levelInterface2/operator_h.png')]
 		private var operatorBtnHClass:Class;
 		private var operatorBtnHImg:Bitmap = new operatorBtnHClass();
 		
-		[Embed(source='../lib/levelInterface/operator_g.png')]
-		private var operatorBtnGClass:Class;
-		private var operatorBtnGImg:Bitmap = new operatorBtnGClass();
-		
-		[Embed(source='../lib/levelInterface/promoter.png')]
+		[Embed(source='../lib/levelInterface2/promoter.png')]
 		private var promoterBtnClass:Class;
 		private var promoterBtnImg:Bitmap = new promoterBtnClass();
 		
-		[Embed(source='../lib/levelInterface/promoter_h.png')]
+		[Embed(source='../lib/levelInterface2/promoter_h.png')]
 		private var promoterBtnHClass:Class;
 		private var promoterBtnHImg:Bitmap = new promoterBtnHClass();
 		
-		[Embed(source='../lib/levelInterface/promoter_g.png')]
-		private var promoterBtnGClass:Class;
-		private var promoterBtnGImg:Bitmap = new promoterBtnGClass();
-		
-		[Embed(source='../lib/levelInterface/reporter.png')]
-		private var reporterBtnClass:Class;
-		private var reporterBtnImg:Bitmap = new reporterBtnClass();
-		
-		[Embed(source='../lib/levelInterface/reporter_h.png')]
-		private var reporterBtnHClass:Class;
-		private var reporterBtnHImg:Bitmap = new reporterBtnHClass();
-		
-		[Embed(source='../lib/levelInterface/reporter_g.png')]
-		private var reporterBtnGClass:Class;
-		private var reporterBtnGImg:Bitmap = new reporterBtnGClass();
-		
-		[Embed(source='../lib/levelInterface/repressor.png')]
+		[Embed(source='../lib/levelInterface2/repressor.png')]
 		private var repressorBtnClass:Class;
 		private var repressorBtnImg:Bitmap = new repressorBtnClass();
 		
-		[Embed(source='../lib/levelInterface/repressor_h.png')]
+		[Embed(source='../lib/levelInterface2/repressor_h.png')]
 		private var repressorBtnHClass:Class;
 		private var repressorBtnHImg:Bitmap = new repressorBtnHClass();
 		
-		[Embed(source='../lib/levelInterface/repressor_g.png')]
-		private var repressorBtnGClass:Class;
-		private var repressorBtnGImg:Bitmap = new repressorBtnGClass();
-		
-		[Embed(source='../lib/levelInterface/resgenes.png')]
+		[Embed(source='../lib/levelInterface2/resgenes.png')]
 		private var resgenesBtnClass:Class;
 		private var resgenesBtnImg:Bitmap = new resgenesBtnClass();
 		
-		[Embed(source='../lib/levelInterface/resgenes_h.png')]
+		[Embed(source='../lib/levelInterface2/resgenes_h.png')]
 		private var resgenesBtnHClass:Class;
 		private var resgenesBtnHImg:Bitmap = new resgenesBtnHClass();
 		
-		[Embed(source='../lib/levelInterface/resgenes_g.png')]
-		private var resgenesBtnGClass:Class;
-		private var resgenesBtnGImg:Bitmap = new resgenesBtnGClass();
-		
-		[Embed(source='../lib/levelInterface/terminator.png')]
-		private var terminatorBtnClass:Class;
-		private var terminatorBtnImg:Bitmap = new terminatorBtnClass();
-		
-		[Embed(source='../lib/levelInterface/terminator_h.png')]
-		private var terminatorBtnHClass:Class;
-		private var terminatorBtnHImg:Bitmap = new terminatorBtnHClass();
-		
-		[Embed(source='../lib/levelInterface/terminator_g.png')]
-		private var terminatorBtnGClass:Class;
-		private var terminatorBtnGImg:Bitmap = new terminatorBtnGClass();
-		
-		[Embed(source='../lib/levelInterface/activator.png')]
+		[Embed(source='../lib/levelInterface2/activator.png')]
 		private var activatorBtnClass:Class;
 		private var activatorBtnImg:Bitmap = new activatorBtnClass();
 		
-		[Embed(source='../lib/levelInterface/activator_h.png')]
+		[Embed(source='../lib/levelInterface2/activator_h.png')]
 		private var activatorBtnHClass:Class;
 		private var activatorBtnHImg:Bitmap = new activatorBtnHClass();
-		
-		[Embed(source='../lib/levelInterface/activator_g.png')]
-		private var activatorBtnGClass:Class;
-		private var activatorBtnGImg:Bitmap = new activatorBtnGClass();
 		
 		// Simple Buttons, including Greyed versions
 		
 		private var codingseqBtn:SimpleButton = new SimpleButton(
 		codingseqBtnImg, codingseqBtnHImg, codingseqBtnHImg, codingseqBtnImg);
 		
-		private var codingseqBtnG:SimpleButton = new SimpleButton(
-		codingseqBtnGImg, codingseqBtnGImg, codingseqBtnGImg, codingseqBtnGImg);
-		
 		private var operatorBtn:SimpleButton = new SimpleButton(
 		operatorBtnImg, operatorBtnHImg, operatorBtnHImg, operatorBtnImg);
-		
-		private var operatorBtnG:SimpleButton = new SimpleButton(
-		operatorBtnGImg, operatorBtnGImg, operatorBtnGImg, operatorBtnGImg);
 		
 		private var promoterBtn:SimpleButton = new SimpleButton(
 		promoterBtnImg, promoterBtnHImg, promoterBtnHImg, promoterBtnImg);
 		
-		private var promoterBtnG:SimpleButton = new SimpleButton(
-		promoterBtnGImg, promoterBtnGImg, promoterBtnGImg, promoterBtnGImg);
-		
-		private var reporterBtn:SimpleButton = new SimpleButton(
-		reporterBtnImg, reporterBtnHImg, reporterBtnHImg, reporterBtnImg);
-		
-		private var reporterBtnG:SimpleButton = new SimpleButton(
-		reporterBtnGImg, reporterBtnGImg, reporterBtnGImg, reporterBtnGImg);
-		
 		private var repressorBtn:SimpleButton = new SimpleButton(
 		repressorBtnImg, repressorBtnHImg, repressorBtnHImg, repressorBtnImg);
-		
-		private var repressorBtnG:SimpleButton = new SimpleButton(
-		repressorBtnGImg, repressorBtnGImg, repressorBtnGImg, repressorBtnGImg);
 		
 		private var resgenesBtn:SimpleButton = new SimpleButton(
 		resgenesBtnImg, resgenesBtnHImg, resgenesBtnHImg, resgenesBtnImg);
 		
-		private var resgenesBtnG:SimpleButton = new SimpleButton(
-		resgenesBtnGImg, resgenesBtnGImg, resgenesBtnGImg, resgenesBtnGImg);
-		
-		private var terminatorBtn:SimpleButton = new SimpleButton(
-		terminatorBtnImg, terminatorBtnHImg, terminatorBtnHImg, terminatorBtnImg);
-		
-		private var terminatorBtnG:SimpleButton = new SimpleButton(
-		terminatorBtnGImg, terminatorBtnGImg, terminatorBtnGImg, terminatorBtnGImg);
-		
 		private var activatorBtn:SimpleButton = new SimpleButton(
 		activatorBtnImg, activatorBtnHImg, activatorBtnHImg, activatorBtnImg);
-		
-		private var activatorBtnG:SimpleButton = new SimpleButton(
-		activatorBtnGImg, activatorBtnGImg, activatorBtnGImg, activatorBtnGImg);
 		
 		// Other variables
 		
@@ -187,6 +109,7 @@ package
 		
 		protected var levelEndText:String = "";
 		protected var hint:String = "";
+		protected var currentLevel:String = "";
 		protected var levelName:String = "";
 		protected var nextLevel:String = "";
 		protected var hasSlides:Boolean = false;
@@ -207,29 +130,20 @@ package
 		{	
 			this.addChild(darken);
 			
-			hCentre(content);
-			content.y = 35;
-			this.addChild(content);
+			runIntroGeneral();
 			
 			introTitleText.setText(title);
 			this.addChild(introTitleText);
 			
 			introText.setText(scenario);
 			this.addChild(introText);
-			
-			goBtn.y = 213;
-			goBtn.x = 415;
-			this.addChild(goBtn);
-			goBtn.addEventListener(MouseEvent.CLICK, goFunction);
 		}
 		
 		protected function runIntroWithSlides(title:String, scenario:String, scenario2:String):void
 		{	
 			this.addChild(darken);
 			
-			hCentre(content);
-			content.y = 35;
-			this.addChild(content);
+			runIntroGeneral();
 			
 			introTitleText.setText(title);
 			this.addChild(introTitleText);
@@ -237,11 +151,6 @@ package
 			introText.setText(scenario);
 			introText2.setText(scenario2);
 			this.addChild(introText);
-			
-			goBtn.y = 213;
-			goBtn.x = 415;
-			this.addChild(goBtn);
-			goBtn.addEventListener(MouseEvent.CLICK, goFunction);
 			
 			nextBtn.y = 213;
 			nextBtn.x = 345;
@@ -255,15 +164,20 @@ package
 			this.addChild(darken);
 			TweenLite.to(darken, 1, { x:0, y:0, alpha:1 } );
 			
-			hCentre(content);
-			content.y = 35;
-			this.addChild(content);
+			runIntroGeneral();
 			
 			introTitleText.setText(title);
 			this.addChild(introTitleText);
 			
 			introText.setText(scenario);
 			this.addChild(introText);
+		}
+
+		protected function runIntroGeneral():void
+		{				
+			hCentre(content);
+			content.y = 35;
+			this.addChild(content);
 			
 			goBtn.y = 213;
 			goBtn.x = 415;
@@ -308,6 +222,18 @@ package
 			this.addChild(undoBtn);
 			TweenLite.to(undoBtn, 1, { delay:1, alpha:1 } );
 			
+			clearBtn.y = 20;
+			clearBtn.x = 390;
+			clearBtn.addEventListener(MouseEvent.CLICK, clearFunction);
+			this.addChild(clearBtn);
+			TweenLite.to(clearBtn, 1, { delay:1, alpha:1 } );
+			
+			infoBtn.y = 20;
+			infoBtn.x = 320;
+			infoBtn.addEventListener(MouseEvent.CLICK, infoFunction);
+			this.addChild(infoBtn);
+			TweenLite.to(infoBtn, 1, { delay:1, alpha:1 } );
+			
 			var categoryId:int;
 			var buttonName:String;
 			trace(this.componentCategories.length);
@@ -341,7 +267,7 @@ package
 						break;
 				}
 				this[buttonName].x = 85 * int(i) + 10;
-				this[buttonName].y = 360;
+				this[buttonName].y = 310;
 				this[buttonName].alpha = 0;
 				this[buttonName].name = categoryId;
 				this[buttonName].addEventListener(MouseEvent.CLICK, popupMenuFunction);
@@ -394,6 +320,9 @@ package
 			content.y = 35;
 			this.addChild(content);
 			
+			introTitleText.setText(this.levelName);
+			this.addChild(introTitleText);
+			
 			outroText.setText(levelEndText);
 			this.addChild(outroText);
 			
@@ -412,6 +341,8 @@ package
 			goBtn.removeEventListener(MouseEvent.CLICK, goToNextLevel);
 			createBtn.removeEventListener(MouseEvent.CLICK, createFunction);
 			undoBtn.removeEventListener(MouseEvent.CLICK, undoFunction);
+			infoBtn.removeEventListener(MouseEvent.CLICK, infoFunction);
+			clearBtn.removeEventListener(MouseEvent.CLICK, clearFunction);
 			this.removeEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 		}
 		
@@ -452,6 +383,22 @@ package
 				currentSequence.pop();
 				plasmid.removeArrow();
 			}
+		}
+		
+		private function clearFunction(e:MouseEvent):void
+		{
+			for ( var i:int = 0; i < 14; i++) {
+				if ( plasmid.canRemove() ) {
+					currentSequence.pop();
+					plasmid.removeArrow();
+				}
+			}
+		}
+		
+		private function infoFunction(e:MouseEvent):void
+		{
+			resetSequence();
+			Main.screens.switchTo(currentLevel);
 		}
 		
 		// Popup Menu	
