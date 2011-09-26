@@ -50,9 +50,10 @@ package
 			plasmid.changePlasmid(2);
 			runIntroWithSlides(levelName, scenario, scenario2);
 			
-			componentOrder = new Array(7,6,5,4,1,2,3,0);
+			componentOrder = new Array(0,1,2,3,4,5,6,7);
+			preExistingComponents = new Array();
 			minComponent = 0;
-			maxComponent = 4;
+			maxComponent = 8;
 		}
 	}
 }
