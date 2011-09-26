@@ -47,7 +47,7 @@ package
 		private var TDH3_desc:String = "This is a yeast promoter that has high expression";
 		private var ALD6_desc:String = "This is a yeast promoter that has medium expression";
 		private var MYO2_desc:String = "This is a yeast promoter that has low expression";
-		private var pArsR_desc:String = "3";
+		private var pArsR_desc:String = "A promoter negatively regulated by ArsR not bound to arsenic";
 		private var ADH1_desc:String = "This is a yeast promoter that has high expression";
 		private var YEF3_desc:String = "This is a yeast promoter that has medium expression";
 		
@@ -55,9 +55,9 @@ package
 		private var TetR_desc:String = "Tetracycline induced repressor from transposon Tn10";
 		private var CI_desc:String = "Repressor from E.coli phage lambda";
 		
-		private var AmpR_desc:String = "1";
-		private var ChlR_desc:String = "2";
-		private var KanR_desc:String = "3";
+		private var AmpR_desc:String = "The protein that digests ampicillin to an inactive form";
+		private var ChlR_desc:String = "The protein that digests chloramphenicol to an inactive form";
+		private var KanR_desc:String = "The protein that digests kanamycin to an inactive form";
 		
 		private var Terminator_desc:String = "3";
 		
