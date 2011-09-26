@@ -33,17 +33,13 @@ package
 			
 			this.hint = "<p>-Remember that E.C. can’t produce too much ArsR because conditions " +
 			"will become toxic and it also can’t produce too little ArsR otherwise it will be " +
-			"out competed by ArsB.<br />" +
-			"-Remember that we are building a transcriptional unit in order for our device to " +
-			"function; this means a part to allow transcription of our coding sequence, the " +
-			"coding sequence itself which is followed by a terminator to prevent further " +
-			"transcription beyond the coding sequence.</p>";
+			"out competed by ArsB.</p>";
 			
-			this.availableComponents = new Array("0.0", "0.1", "0.2", "0.3", "0.4", "1.0", "1.1", "1.2", "2.0", "2.1", "2.2", 
+			this.availableComponents = new Array("0.13", "0.4", "0.14", "1.0", "1.1", "1.2", "2.4", "2.1", "2.2", 
 			"4.0", "4.1", "4.2", "5.0", "5.1", "5.2", "6.0", "7.0", "7.1", "7.2");
 			
-			this.componentCategories = new Array("0","1","2","4","5","6","7");
-			this.winningSequence = new Array("2.1", "0.4", "6.0");
+			this.componentCategories = new Array("0","1","2","4","5","7");
+			this.winningSequence = new Array("2.1", "0.4");
 			
 			Main.backgroundImage.changeBackground(3);
 			plasmid.changePlasmid(2);

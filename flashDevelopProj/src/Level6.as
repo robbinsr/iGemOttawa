@@ -33,10 +33,10 @@ package
 			"it has to produce a lot of the protein to make E.C. shine. <br />" +
 			"-Also ensure that you have used the right colour to interest E.C.</p>";
 			
-			this.availableComponents = new Array("2.0", "2.1", "2.2", "0.0", "0.1", "0.2");
+			this.availableComponents = new Array("0.6", "0.7", "0.8", "2.0", "2.1", "2.2");
 			
 			this.componentCategories = new Array("2","0");
-			this.winningSequence = new Array("2.0", "0.1");
+			this.winningSequence = new Array("2.0", "0.7");
 			
 			Main.backgroundImage.changeBackground(3);
 			plasmid.changePlasmid(2);
