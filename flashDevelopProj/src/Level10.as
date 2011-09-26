@@ -32,16 +32,13 @@ package
 			
 			this.hint = "<p>-Remember that we want GVP expression to be inducible in the presence " +
 			"of high concentrations of arsenic. Our ArsR protein is associated with high concentrations " +
-			"of this arsenic because it sequesters arsenic, what promoter is responsive to it?<br />" +
-			"Remember that we are building a transcriptional unit in order for our device to function; " +
-			"this means a part to allow transcription of our coding sequence, the coding sequence itself " +
-			"which is followed by a terminator to prevent further transcription beyond the coding sequence.</p>";
+			"of this arsenic because it sequesters arsenic, what promoter is responsive to it?</p>";
 			
-			this.availableComponents = new Array("0.1", "0.2", "0.3", "0.4", "0.5", "1.0", "1.1", "1.2", "2.0", "2.1", "2.2", "2.3",
+			this.availableComponents = new Array("0.15", "0.16", "0.5", "1.0", "1.1", "1.2", "2.0", "2.1", "2.2", "2.3",
 			"4.0", "4.1", "4.2", "5.0", "5.1", "5.2", "6.0", "7.0", "7.1", "7.2");
 			
-			this.componentCategories = new Array("0","1","2","4","5","6","7");
-			this.winningSequence = new Array("2.3", "0.5", "6.0");
+			this.componentCategories = new Array("0","1","2","4","5","7");
+			this.winningSequence = new Array("2.3", "0.5");
 			
 			Main.backgroundImage.changeBackground(3);
 			plasmid.changePlasmid(2);

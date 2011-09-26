@@ -31,16 +31,13 @@ package
 			this.levelEndText = "<p>Good job, now E.C. is actively importing high quantities of " +
 			"Arsenic into its cytosol!</p>";
 			this.hint = "<p>-Remember that we want a high quantity of GlpF being produced, how would we " + 
-			"achieve this?<br />-Remember that we are building a transcriptional unit in order for our " +
-			"device to function; this means a part to allow transcription of our coding sequence, the coding " +
-			"sequence itself which is followed by a terminator to prevent further transcription beyond the " +
-			"coding sequence.</p>";
+			"achieve this?</p>";
 			
-			this.availableComponents = new Array("0.0", "0.1", "0.2", "0.3", "1.0", "1.1", "1.2", "2.0", "2.1", "2.2", 
-			"4.0", "4.1", "4.2", "5.0", "5.1", "5.2", "6.0", "7.0", "7.1", "7.2");
+			this.availableComponents = new Array("0.11", "0.4", "0.12", "1.0", "1.1", "1.2", "2.4", "2.5", "2.2", 
+			"4.0", "4.1", "4.2", "5.0", "5.1", "5.2", "7.0", "7.1", "7.2");
 			
-			this.componentCategories = new Array("0","1","2","4","5","6","7");
-			this.winningSequence = new Array("2.0", "0.3", "6.0");
+			this.componentCategories = new Array("0","1","2","4","5","7");
+			this.winningSequence = new Array("2.4", "0.3");
 			
 			Main.backgroundImage.changeBackground(3);
 			plasmid.changePlasmid(2);
