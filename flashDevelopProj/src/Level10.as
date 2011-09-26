@@ -46,6 +46,11 @@ package
 			Main.backgroundImage.changeBackground(3);
 			plasmid.changePlasmid(2);
 			runIntro(levelName, scenario);
+			
+			componentOrder = new Array(0,1,2,3,4,5,6,7);
+			preExistingComponents = new Array();
+			minComponent = 0;
+			maxComponent = 8;
 		}
 	}
 }

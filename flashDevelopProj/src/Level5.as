@@ -36,12 +36,17 @@ package
 			
 			this.availableComponents = new Array("1.0", "1.1", "1.2", "4.0", "4.1", "4.2", "7.5");
 			
-			this.componentCategories = new Array("1","4", "7");
-			this.winningSequence = new Array("7.5", "1.1");
+			this.componentCategories = new Array("1", "4", "7");
+			this.winningSequence = new Array("2.2", "0.0", "7.5", "1.1");
 			
 			Main.backgroundImage.changeBackground(3);
 			plasmid.changePlasmid(1);
 			runIntro(levelName, scenario);
+			
+			componentOrder = new Array(0,1,7,3);
+			preExistingComponents = new Array(2,"Low-exp",0,"-galactosidase");
+			minComponent = 2;
+			maxComponent = 4;
 		}
 	}
 }
