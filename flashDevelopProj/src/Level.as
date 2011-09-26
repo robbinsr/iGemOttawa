@@ -113,6 +113,7 @@ package
 		protected var levelName:String = "";
 		protected var nextLevel:String = "";
 		protected var hasSlides:Boolean = false;
+		protected var slide:int = 1;
 		
 		public static var plasmid:Plasmid;
 		
@@ -191,10 +192,18 @@ package
 			this.removeChild(goBtn);
 			this.removeChild(content);
 			
-			if(hasSlides)
-				this.removeChild(introText2);
-			else
+			if (hasSlides) {
+				if (slide == 1) {
+					this.removeChild(introText);
+					this.removeChild(nextBtn);
+				}
+				else {
+					this.removeChild(introText2);
+				}
+			}
+			else {
 				this.removeChild(introText);
+			}
 				
 			this.removeChild(introTitleText);
 			this.removeChild(darken);
@@ -281,6 +290,7 @@ package
 			this.removeChild(nextBtn);
 			this.removeChild(introText);
 			this.addChild(introText2);
+			this.slide = 2;
 		}
 		
 		// Create button functions
@@ -338,6 +348,7 @@ package
 		
 		private function removeListeners(e:Event):void 
 		{
+			nextBtn.removeEventListener(MouseEvent.CLICK, nextFunction);
 			goBtn.removeEventListener(MouseEvent.CLICK, goToNextLevel);
 			createBtn.removeEventListener(MouseEvent.CLICK, createFunction);
 			undoBtn.removeEventListener(MouseEvent.CLICK, undoFunction);
