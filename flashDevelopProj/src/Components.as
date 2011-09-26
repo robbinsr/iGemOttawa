@@ -7,9 +7,9 @@ package
 	{		
 		// Component Names
 		
-		private var codingSequences:Array = new Array("-galactosidase", "BFP", "GFP", "GlpF", "ArsR", "GVP");
+		private var codingSequences:Array = new Array("-galactosidase", "nitrate reductase I", "RNA polymerase", "GlpF", "ArsR", "GVP", "YFP", "BFP", "GFP", "mCherry", "CFP", "UCP1", "GluR0", "pabA","Streptavidin", "crtB", "LacY");
 		private var operators:Array = new Array("tetO", "TRE", "lacO", "LasO", "CinO", "CIO");
-		private var promoters:Array = new Array("High-exp", "Medium-exp", "Low-exp", "pArsR");
+		private var promoters:Array = new Array("TDH3", "ALD6", "MYO2", "pArsR", "ADH1", "YEF3");
 		private var reporters:Array = new Array("");
 		private var repressors:Array = new Array("lacI", "c1 rep", "c2 rep", "TetR", "CI");
 		private var resGenes:Array = new Array("AmpR", "ChlR", "KanR");
@@ -18,13 +18,25 @@ package
 		
 		// Component Descriptions
 		
-		private var galactosidase_desc:String = "1";
-		private var BFP_desc:String = "1";
-		private var GFP_desc:String = "1";
-		private var GlpF_desc:String = "1";
-		private var ArsR_desc:String = "1";
-		private var GVP_desc:String = "1";
-
+		private var galactosidase_desc:String = "An enzyme that catalyzes hydrolysis of disaccharides of glactose";
+		private var nitratereductaseI_desc:String = "A molybdoenzyme responsible for the reduction of nitrates into nitrites";
+		private var RNApolymerase_desc:String = "Produces RNA molecules by catalyzing the formation of phosphodiester bonds between nucleoside triphosphates";
+		private var GlpF_desc:String = "An aquaglyceroporin, a type of membrane channel";
+		private var ArsR_desc:String = "Metal sensor protein and transcriptional repressor that represses the expression of operons linked to stress-inducing concentrations of di- and multivalent heavy metal ions";
+		private var GVP_desc:String = "The protein responsible for production of gas vesicle in the cell";
+		private var YFP_desc:String = "A fluorescent protein with maximum absorption at 514 nm and maximum emission at 527 nm";
+		private var BFP_desc:String = "A fluorescent protein with maximum absorption at 380 nm and maximum emission at 440 nm";
+		private var GFP_desc:String = "A fluorescent protein with maximum absorption at 488 nm and maximum emission at 509 nm";
+		private var mCherry_desc:String = "A fluorescent protein with maximum absorption at 587 nm and maximum emission at 610 nm";
+		private var CFP_desc:String = "A fluorescent protein with maximum absorption at 435 nm and maximum emission at 475 nm";
+		private var UCP1_desc:String = "An uncoupling protein that transports H+ ions with a gradient across the membrane producing heat";
+		private var GluR0_desc:String = "A glutamate-gated K+ channel for intake of potassium";
+		private var pabA_desc:String = "A protein involved in biosynthesis of p-aminobenzoic acid from chorismate";
+		private var Streptavidin_desc:String = "Binds biotin with a high affinity: Kd ^(10-14)";
+		private var crtB_desc:String = "The enzyme responsible for the conversion of geranylgeranyl diphosphate into phytoene in the carotenoid biosynthesis pathway";
+		private var LacY_desc:String = "The lactose permease membrane protein which allows the internalization of lactose";
+		
+		
 		private var tetO_desc:String = "Operator site responsive to TetR";
 		private var TRE_desc:String = "operator site responsive to TetR-VP16";
 		private var lacO_desc:String = "Operator site responsive to Lac";
@@ -32,12 +44,14 @@ package
 		private var CinO_desc:String = "Operator site responsive to CinR";
 		private var CIO_desc:String = "Operator site responsive to CI";
 		
-		private var Highexp_desc:String = "1";
-		private var Mediumexp_desc:String = "2";
-		private var Lowexp_desc:String = "3";
+		private var TDH3_desc:String = "This is a yeast promoter that has high expression";
+		private var ALD6_desc:String = "This is a yeast promoter that has medium expression";
+		private var MYO2_desc:String = "This is a yeast promoter that has low expression";
 		private var pArsR_desc:String = "3";
+		private var ADH1_desc:String = "This is a yeast promoter that has high expression";
+		private var YEF3_desc:String = "This is a yeast promoter that has medium expression";
 		
-		private var lacI_desc:String = "Lactose induced repressor from <i>E. coli</i>";
+		private var lacI_desc:String = "Lactose induced repressor from E. coli";
 		private var c1rep_desc:String = "2";
 		private var c2rep_desc:String = "3";
 		private var TetR_desc:String = "Tetracycline induced repressor from transposon Tn10";
@@ -52,8 +66,8 @@ package
 		private var VP16_desc:String = "1";
 		private var ToxR_desc:String = "2";
 		private var appY_desc:String = "3";
-		private var LasR_desc:String = "Inducible activator from <i>P. aeruginosa</i>";
-		private var CinR_desc:String = "Inducible activator from <i>Rhizobium leguminosarum</i>";
+		private var LasR_desc:String = "Inducible activator from P. aeruginosa";
+		private var CinR_desc:String = "Inducible activator from Rhizobium leguminosarum";
 		private var TetRVP16_desc:String = "Tetracycline induced repressor fused with the activation " + 
 		"domain VP16. Will behave as an activator";
 		
