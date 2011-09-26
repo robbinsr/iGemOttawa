@@ -444,7 +444,6 @@ package
 			}
 		}
 		
-		//Should reset entire level??
 		public static function resetSequence():void
 		{	
 			currentSequence = [];
