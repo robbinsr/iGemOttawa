@@ -29,20 +29,16 @@ package
 			
 			// Add new styles as required
 			if (textStyle == 1) {
-				css = "p {font-size: 11pt; color: #dddddd; font-family: Tahoma;}" +
-				"strong { font-weight: bold; display: inline; }";
-				css2 = "p {font-size: 11pt; color: #555555; font-family: Tahoma;}" +
-				"strong { font-weight: bold; display: inline; }";
+				css = "p {font-size: 11pt; color: #dddddd; font-family: Tahoma;}";
+				css2 = "p {font-size: 11pt; color: #555555; font-family: Tahoma;}";
 			}
 			else if (textStyle == 2) {
 				css = "p {font-size: 14pt; color: #efefef; font-family: Helvetica, Arial; font-weight: bold;}";
 				css2 = "p {font-size: 14pt; color: #101010; font-family: Helvetica, Arial; font-weight: bold;}";
 			}
 			else {
-				css = "p {font-size: 11pt; color: #ebebeb; font-family: Tahoma;}" +
-				"strong { font-weight: bold; display: inline; }";
-				css2 = "p {font-size: 11pt; color: #101010; font-family: Tahoma;}" +
-				"strong { font-weight: bold; display: inline; }";
+				css = "p {font-size: 11pt; color: #ebebeb; font-family: Tahoma;}";
+				css2 = "p {font-size: 11pt; color: #101010; font-family: Tahoma;}";
 			}
 			
 			var style:StyleSheet = new StyleSheet();
