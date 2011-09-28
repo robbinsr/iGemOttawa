@@ -19,7 +19,7 @@ package
 		{
 			this.currentLevel = "Level10";
 			this.levelName = "<p>Level 10</p>";
-			this.nextLevel = "Level11";
+			this.nextLevel = "MainMenu";
 			
 			var scenario:String = "<p>The only thing left to do is to construct a device that will " +
 			"allow E.C. to escape while removing a hazardous heavy metal from drinking water. A " +
@@ -38,16 +38,16 @@ package
 			"4.0", "4.1", "4.2", "5.0", "5.1", "5.2", "6.0", "7.0", "7.1", "7.2");
 			
 			this.componentCategories = new Array("0","1","2","4","5","7");
-			this.winningSequence = new Array("2.3", "0.5");
+			this.winningSequence = new Array("2.4", "0.3", "2.1", "0.4", "2.3", "0.5");
 			
 			Main.backgroundImage.changeBackground(3);
 			plasmid.changePlasmid(2);
 			runIntro(levelName, scenario);
 			
-			componentOrder = new Array(0,1,2,3,4,5,6,7);
-			preExistingComponents = new Array();
-			minComponent = 0;
-			maxComponent = 8;
+			componentOrder = new Array(0,1,3,4,6,7);
+			preExistingComponents = new Array(2, "ADH1", 0, "GlpF", 2, "ALD6", 0, "ArsR");
+			minComponent = 4;
+			maxComponent = 6;
 		}
 	}
 }
