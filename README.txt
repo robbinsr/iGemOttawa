@@ -1,6 +1,4 @@
-First 7 levels are done (i think) the ordering in the email
-didn't mention the actual names of the components so I based
-it off what we have, not sure it they're correct.
-
-We still need the block type components to show, proper coloring
-and I just noticed there's no ending "You win!" type sequence.
+Level sequences are done. After level 10
+it returns straight to the main menu, so 
+maybe there needs to be some sort of "You
+win!" type page?
