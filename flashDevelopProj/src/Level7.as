@@ -36,7 +36,7 @@ package
 			this.availableComponents = new Array("0.7", "0.9", "0.10", "1.0", "1.1", "1.2", "2.0", "2.1", "2.2", "4.0", "4.1", "4.2");
 			
 			this.componentCategories = new Array("0", "1","2","4");
-			this.winningSequence = new Array("2.0", "0.1", "1.2", "4.0");
+			this.winningSequence = new Array("2.0", "0.7", "1.2", "4.0");
 			
 			Main.backgroundImage.changeBackground(3);
 			plasmid.changePlasmid(2);

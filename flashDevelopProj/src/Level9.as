@@ -39,16 +39,16 @@ package
 			"4.0", "4.1", "4.2", "5.0", "5.1", "5.2", "6.0", "7.0", "7.1", "7.2");
 			
 			this.componentCategories = new Array("0","1","2","4","5","7");
-			this.winningSequence = new Array("2.1", "0.4");
+			this.winningSequence = new Array("2.4", "0.3","2.1", "0.4");
 			
 			Main.backgroundImage.changeBackground(3);
 			plasmid.changePlasmid(2);
 			runIntro(levelName, scenario);
 			
-			componentOrder = new Array(0,1,2,3,4,5,6,7);
-			preExistingComponents = new Array();
-			minComponent = 0;
-			maxComponent = 8;
+			componentOrder = new Array(0,1,3,4);
+			preExistingComponents = new Array(2,"ADH1",0,"GLpF");
+			minComponent = 2;
+			maxComponent = 4;
 		}
 	}
 }
