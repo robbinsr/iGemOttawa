@@ -46,7 +46,7 @@ package
 			runIntro(levelName, scenario);
 			
 			componentOrder = new Array(0,1,3,4);
-			preExistingComponents = new Array(2,"ADH1",0,"GLpF");
+			preExistingComponents = new Array(2,"ADH1",0,"GlpF");
 			minComponent = 2;
 			maxComponent = 4;
 		}
