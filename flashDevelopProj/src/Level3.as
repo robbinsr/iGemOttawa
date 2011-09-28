@@ -21,9 +21,7 @@ package
 			this.levelName = "<p>Level 3</p>";
 			this.nextLevel = "Level4";
 			
-			var scenario:String = "<p>There is usually more than one transcriptional unit on a plasmid. " +
-			"Each of these transcriptional units contains its own promoter, coding sequence, and " +
-			"terminator. In order to study E.C.’s ability to adapt to various metabolic conditions, Dr. " +
+			var scenario:String = "<p>In order to study E.C.’s ability to adapt to various metabolic conditions, Dr. " +
 			"Power has exhausted all the energy sources in E.C.’s medium except for lactose. Since E.C.’s " +
 			"intrinsic lactose processing machinery is deficient, you need to help him out. -galactosidase " +
 			"codes for a protein that breaks lactose down into useful subunits. Choose the right coding " +
