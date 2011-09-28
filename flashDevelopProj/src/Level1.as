@@ -19,7 +19,7 @@ package
 		{
 			this.currentLevel = "Level1";
 			this.levelName = "<p>Level 1</p>";
-			this.nextLevel = "Level2";
+			this.nextLevel = "Level9";
 			
 			var scenario:String = "<p>Dr. Power has plated our bacterial friend E.C. onto a Petri " +
 			"dish containing the antibiotic ampicillin, a drug that is toxic to E.C. In order for " +

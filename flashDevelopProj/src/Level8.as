@@ -33,7 +33,7 @@ package
 			this.hint = "<p>-Remember that we want a high quantity of GlpF being produced, how would we " + 
 			"achieve this?</p>";
 			
-			this.availableComponents = new Array("0.11", "0.4", "0.12", "1.0", "1.1", "1.2", "2.4", "2.5", "2.2", 
+			this.availableComponents = new Array("0.11", "0.3", "0.12", "1.0", "1.1", "1.2", "2.4", "2.5", "2.2", 
 			"4.0", "4.1", "4.2", "5.0", "5.1", "5.2", "7.0", "7.1", "7.2");
 			
 			this.componentCategories = new Array("0","1","2","4","5","7");
@@ -46,7 +46,7 @@ package
 			componentOrder = new Array(0,1,2,3,4,5,6,7);
 			preExistingComponents = new Array();
 			minComponent = 0;
-			maxComponent = 8;
+			maxComponent = 2;
 		}
 	}
 }
