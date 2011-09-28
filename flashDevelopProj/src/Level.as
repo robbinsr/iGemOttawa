@@ -386,6 +386,7 @@ package
 			this.removeChild(darken);
 			this.removeChild(content);
 			this.removeChild(errorText);
+			this.removeChild(introTitleText);
 			goBtn.removeEventListener(MouseEvent.CLICK, closeErrorMessage);
 			this.removeChild(goBtn);
 		}
