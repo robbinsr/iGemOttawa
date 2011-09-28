@@ -368,6 +368,9 @@ package
 			content.y = 35;
 			this.addChild(content);
 			
+			introTitleText.setText("<p>Error!</p>");
+			this.addChild(introTitleText);
+			
 			errorText.setText(hint);
 			if (currentSequence.length > winningSequence.length) {
 				errorText.setText("<p>You've added too many parts to the plasmid!</p>");

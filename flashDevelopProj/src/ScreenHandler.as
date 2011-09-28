@@ -20,6 +20,7 @@
 		private var level8:Level8;
 		private var level9:Level9;
 		private var level10:Level10;
+		private var youWin:YouWin;
 		
 		private var newScreenName:String = "";
 		

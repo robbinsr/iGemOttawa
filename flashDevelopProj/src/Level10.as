@@ -19,7 +19,7 @@ package
 		{
 			this.currentLevel = "Level10";
 			this.levelName = "<p>Level 10</p>";
-			this.nextLevel = "MainMenu";
+			this.nextLevel = "YouWin";
 			
 			var scenario:String = "<p>The only thing left to do is to construct a device that will " +
 			"allow E.C. to escape while removing a hazardous heavy metal from drinking water. A " +
