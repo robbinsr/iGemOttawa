@@ -20,10 +20,10 @@ package
 		private var gameLogoClass:Class;
 		private var gameLogo:Bitmap = new gameLogoClass();
 		
-		private var slide1:String = "<p>Welcome to \"The E. coli Diaries,\" a game imagined and created by the iGEM uOttawa team. " +
+		private var slide1:String = "<p>Welcome to \"Gears of Evolution,\" a game imagined and created by the iGEM uOttawa team. " +
 		"This game aims to provide an interactive, educational medium for those interested in augmenting their knowledge of the" +
 		" basic principles of Synthetic Biology. The iGEM uOttawa team hopes that you would enjoy helping E.C. past his adversaries" +
-		" and we would welcome all your feedback. Thank you for playing \"The E. coli Diaries.\"</p>";
+		" and we would welcome all your feedback. Thank you for playing \"Gears of Evolution.\"</p>";
 		
 		private var slide2:String = "<p>E.C. is a generic laboratory strain E. coli individual who has been unfortunate enough " + 
 		"to be picked by the mad scientist, Dr. Power. In addition to his propensity to oppress helpless bacteria, Dr. Power " +
@@ -41,7 +41,7 @@ package
 		"combination of these BioBricks in tandem, we call this a device.</p>";
 		
 		private var slide5:String = "<p>These BioBricks will have many different functions and within the context of this game " +
-		"we will classify them into 7 different categories: antibiotic resistance genes, promoters, terminators, coding " +
+		"we will classify them into 7 different categories: antibiotic resistance genes, promoters, coding " +
 		"sequences, operators, repressors and activators. If you wish to assist E.C. you will have to build viable devices out " + 
 		"of these BioBricks in order to foil Dr. Power’s plans of bacterial oppression.</p>";
 		
