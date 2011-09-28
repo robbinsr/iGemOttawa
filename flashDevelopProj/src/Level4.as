@@ -46,7 +46,7 @@ package
 			runIntro(levelName, scenario);
 			
 			componentOrder = new Array(0,1,7,3);
-			preExistingComponents = new Array(2,"MYO2",0,"-galactosidase");
+			preExistingComponents = new Array(2,"MYO2",0,"&#976;-galactosidase");
 			minComponent = 2;
 			maxComponent = 4;
 		}

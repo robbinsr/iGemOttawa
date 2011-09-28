@@ -48,7 +48,7 @@ package
 			runIntroWithSlides(levelName, scenario, scenario2);
 			
 			componentOrder = new Array(0,1,7,3);
-			preExistingComponents = new Array(2,"MYO2",0,"-galactosidase");
+			preExistingComponents = new Array(2,"MYO2",0,"tetA");
 			minComponent = 2;
 			maxComponent = 4;
 		}
