@@ -55,7 +55,7 @@ package
 			componentDescription.y = 190;
 			componentDescription.wordWrap = true;
 			componentDescription.width = 160;
-			componentDescription.height = 300;
+			componentDescription.height = 120;
 			componentDescription.textColor = 0x111111;
 			this.addChild(componentDescription);
 			

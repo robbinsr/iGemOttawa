@@ -305,7 +305,7 @@ package
 		}
 		
 		private function checkWinConditions():Boolean
-		{	
+		{
 			if (currentSequence.length != winningSequence.length) {
 				return false;
 			}
