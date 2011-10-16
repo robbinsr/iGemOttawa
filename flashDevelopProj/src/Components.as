@@ -7,7 +7,7 @@ package
 	{		
 		// Component Names
 		
-		private var codingSequences:Array = new Array("\u03B2-galactosidase", "nitrate reductase I", "RNA polymerase", "GlpF", "ArsR", "GVP", "YFP", "BFP", "GFP", "mCherry", "CFP", "UCP1", "GluR0", "pabA","Streptavidin", "crtB", "LacY");
+		private var codingSequences:Array = new Array("\u03B2-galactosidase", "nitrate reductase I", "RNA polymerase", "GlpF", "ArsR", "GVP", "YFP", "BFP", "GFP", "mCherry", "CFP", "UCP1", "GluR0", "pabA","Streptavidin", "crtB", "LacY", "tetA");
 		private var operators:Array = new Array("tetO", "TRE", "lacO", "LasO", "CinO", "CIO");
 		private var promoters:Array = new Array("TDH3", "ALD6", "MYO2", "pArsR", "ADH1", "YEF3");
 		private var reporters:Array = new Array("");
@@ -35,7 +35,7 @@ package
 		private var Streptavidin_desc:String = "Binds biotin with a high affinity: Kd ^(10-14)";
 		private var crtB_desc:String = "The enzyme responsible for the conversion of geranylgeranyl diphosphate into phytoene in the carotenoid biosynthesis pathway";
 		private var LacY_desc:String = "The lactose permease membrane protein which allows the internalization of lactose";
-		
+		private var tetA_desc:String = "";
 		
 		private var tetO_desc:String = "Operator site responsive to TetR";
 		private var TRE_desc:String = "operator site responsive to TetR-VP16";
