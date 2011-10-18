@@ -50,13 +50,18 @@ package
 		
 		public function PopupMenu() 
 		{
+			var fontType:TextFormat = new TextFormat();
+			fontType.font = "Verdana";
+			fontType.size = 10;
+			
 			componentDescription.name = "Description_Text";
 			componentDescription.x = 10;
 			componentDescription.y = 190;
 			componentDescription.wordWrap = true;
 			componentDescription.width = 160;
 			componentDescription.height = 120;
-			componentDescription.textColor = 0x111111;
+			componentDescription.textColor = 0xffffff;
+			componentDescription.defaultTextFormat = fontType;
 			this.addChild(componentDescription);
 			
 			this.name = "PopupMenu";

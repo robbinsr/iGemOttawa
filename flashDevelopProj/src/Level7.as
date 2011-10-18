@@ -38,8 +38,8 @@ package
 			this.componentCategories = new Array("0", "1","2","4");
 			this.winningSequence = new Array("2.0", "0.7", "1.2", "4.0");
 			
-			Main.backgroundImage.changeBackground(3);
-			plasmid.changePlasmid(2);
+			Main.backgroundImage.changeBackground(4);
+			plasmid.changePlasmid(3);
 			runIntro(levelName, scenario);
 			
 			componentOrder = new Array(0,1,7,3);
