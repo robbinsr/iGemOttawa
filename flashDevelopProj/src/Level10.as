@@ -40,7 +40,7 @@ package
 			this.componentCategories = new Array("0","1","2","4","5","7");
 			this.winningSequence = new Array("2.4", "0.3", "2.1", "0.4", "2.3", "0.5");
 			
-			Main.backgroundImage.changeBackground(3);
+			Main.backgroundImage.changeBackground(2);
 			plasmid.changePlasmid(2);
 			runIntro(levelName, scenario);
 			

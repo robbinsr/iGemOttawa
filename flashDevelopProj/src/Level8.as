@@ -39,8 +39,8 @@ package
 			this.componentCategories = new Array("0","1","2","4","5","7");
 			this.winningSequence = new Array("2.4", "0.3");
 			
-			Main.backgroundImage.changeBackground(3);
-			plasmid.changePlasmid(2);
+			Main.backgroundImage.changeBackground(2);
+			plasmid.changePlasmid(4);
 			runIntro(levelName, scenario);
 			
 			componentOrder = new Array(0,1,2,3,4,5,6,7);

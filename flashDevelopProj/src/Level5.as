@@ -43,7 +43,7 @@ package
 			
 			this.hasSlides = true;
 			
-			Main.backgroundImage.changeBackground(3);
+			Main.backgroundImage.changeBackground(1);
 			plasmid.changePlasmid(1);
 			runIntroWithSlides(levelName, scenario, scenario2);
 			
