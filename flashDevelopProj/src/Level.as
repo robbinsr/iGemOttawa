@@ -117,6 +117,8 @@ package
 		
 		public static var plasmid:Plasmid;
 		
+		private var buttonNameText:TextField = new TextField();
+		
 		// Intro sequence functions
 
 		public function Level() 
@@ -279,9 +281,68 @@ package
 				this[buttonName].alpha = 0;
 				this[buttonName].name = categoryId;
 				this[buttonName].addEventListener(MouseEvent.CLICK, popupMenuFunction);
+				this[buttonName].addEventListener(MouseEvent.ROLL_OVER, buttonTextHover);
+				this[buttonName].addEventListener(MouseEvent.ROLL_OUT, buttonTextHoverOut);
 				this.addChild(this[buttonName]);
 				TweenLite.to(this[buttonName], 1, { delay:i, alpha:1 } );
 			}
+		}
+// WOOOOOOO HERERERUH ASOIUDH AOIUSH OAIUS doia DOUIAh
+		private function buttonTextHover(e:MouseEvent):void
+		{
+			var button:int = e.target.name;
+			var buttonName:String = "";
+			switch(button)
+			{
+				case(0):
+					buttonName = "Coding Seq";
+					break;
+				case(1):
+					buttonName = "Operators";
+					break;
+				case(2):
+					buttonName = "Promoters";
+					break;
+				case(3):
+					buttonName = "Reporters";
+					break;
+				case(4):
+					buttonName = "Repressors";
+					break;
+				case(5):
+					buttonName = "Res. Genes";
+					break;
+				case(6):
+					buttonName = "Terminators";
+					break;
+				case(7):
+					buttonName = "Activators";
+					break;
+			}
+			
+			var fontType:TextFormat = new TextFormat();
+			fontType.font = "Verdana";
+			fontType.size = 10;
+			fontType.align = "center";
+
+			buttonNameText.text = buttonName;
+			buttonNameText.x = e.target.x;
+			buttonNameText.y = e.target.y - 10;
+			buttonNameText.wordWrap = true;
+			buttonNameText.width = 85;
+			buttonNameText.height = 15;
+			buttonNameText.textColor = 0xffffff;
+			buttonNameText.alpha = 0;
+			buttonNameText.setTextFormat(fontType);
+			buttonNameText.selectable = false;
+			this.addChild(buttonNameText);
+			TweenLite.to(buttonNameText, 1, { alpha: 0.8, y: (e.target.y - 25) } );
+		}
+		
+		private function buttonTextHoverOut(e:MouseEvent):void
+		{
+			TweenLite.to(buttonNameText, 1, { alpha:0 } );
+			this.removeChild(buttonNameText);
 		}
 		
 		private function nextFunction(e:MouseEvent):void

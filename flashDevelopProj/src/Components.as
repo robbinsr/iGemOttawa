@@ -35,7 +35,6 @@ package
 		private var Streptavidin_desc:String = "Binds biotin with a high affinity: Kd ^(10-14)";
 		private var crtB_desc:String = "The enzyme responsible for the conversion of geranylgeranyl diphosphate into phytoene in the carotenoid biosynthesis pathway";
 		private var LacY_desc:String = "The lactose permease membrane protein which allows the internalization of lactose";
-		private var tetA_desc:String = "";
 		
 		private var tetO_desc:String = "Operator site responsive to TetR";
 		private var TRE_desc:String = "operator site responsive to TetR-VP16";
