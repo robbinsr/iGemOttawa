@@ -208,14 +208,21 @@ package
 		{				
 			TweenPlugin.activate([VisiblePlugin]);
 			
+			var fontType:TextFormat = new TextFormat();
+			fontType.font = "Verdana";
+			fontType.size = 10;
+			fontType.bold = true;
+			
 			componentDescription.name = "Description_Text";
-			componentDescription.x = 510;
-			componentDescription.y = 100;
+			componentDescription.x = 500;
+			componentDescription.y = 90;
 			componentDescription.wordWrap = true;
 			componentDescription.width = 160;
 			componentDescription.height = 300;
-			componentDescription.textColor = 0x111111;
+			componentDescription.alpha = 0.8;
+			componentDescription.textColor = 0x000000;
 			componentDescription.visible = false;
+			componentDescription.defaultTextFormat = fontType;
 			this.addChild(componentDescription);
 			
 			bacteria1.alpha = 1;
