@@ -178,6 +178,8 @@ package
 
 		protected function runIntroGeneral():void
 		{				
+			pauseTimer();
+			
 			hCentre(content);
 			content.y = 35;
 			this.addChild(content);
@@ -285,6 +287,8 @@ package
 				this[buttonName].addEventListener(MouseEvent.ROLL_OUT, buttonTextHoverOut);
 				this.addChild(this[buttonName]);
 				TweenLite.to(this[buttonName], 1, { delay:i, alpha:1 } );
+				
+				unpauseTimer();
 			}
 		}
 // WOOOOOOO HERERERUH ASOIUDH AOIUSH OAIUS doia DOUIAh
@@ -474,6 +478,15 @@ package
 		{
 			resetSequence();
 			Main.screens.switchTo(currentLevel);
+		}
+		
+		// Timer pause and unpause
+		private function pauseTimer():void {
+			Main.backgroundImage.pauseTimer();
+		}
+		
+		private function unpauseTimer():void {
+			Main.backgroundImage.unpauseTimer();
 		}
 		
 		// Popup Menu	
