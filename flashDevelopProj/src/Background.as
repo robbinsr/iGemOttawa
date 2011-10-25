@@ -40,8 +40,6 @@ package
 		private var startTime:Number;
 		private var pauseTime:Number
 		private var nowTime:Number;
-		
-		
 		private var timerPaused:Boolean;
 		private var currentMinutes:int;
 		private var currentSeconds:int;
@@ -66,17 +64,13 @@ package
 			this.addEventListener(Event.ENTER_FRAME, scrollIMG2); 
 			
 			
-			//Timer
-			startTime = new Date().getTime();
-			timerPaused = false;
+			// Timer properties
 			currentTime = "00:00";
 			currentMinutes = 0;
 			currentSeconds = 0;
 			timeText = new TextField();
 			timeText.x = 500;
 			timeText.y = 100;
-			addChild(timeText);
-			this.addEventListener(Event.ENTER_FRAME, updateTime);
 		}
 		
 		public function scrollIMG(e:Event):void 
@@ -110,6 +104,13 @@ package
 			this.addChildAt(this[backgroundImage],0);
 		}
 		
+		public function startTimer():void {
+			startTime = new Date().getTime();
+			addChild(timeText);
+			timerPaused = false;
+			this.addEventListener(Event.ENTER_FRAME, updateTime);
+		}
+		
 		public function pauseTimer():void {
 			timerPaused = true;
 			pauseTime = new Date().getTime();
@@ -122,9 +123,9 @@ package
 		
 		public function updateTime(e:Event):void {
 			if(!timerPaused){
-				nowTime = new Date().getTime() / 1000;				
-				currentSeconds = (nowTime - startTime/1000) % 60;
-				currentMinutes = (nowTime - startTime/1000) / 60;
+				nowTime = new Date().getTime();				
+				currentSeconds = (nowTime - startTime)/1000 % 60;
+				currentMinutes = (nowTime - startTime) / 60000;
 				currentTime = (currentMinutes < 10? "0" + currentMinutes:currentMinutes) + ":";
 				currentTime += (currentSeconds < 10? "0" + currentSeconds:currentSeconds);
 				timeText.text = currentTime;
