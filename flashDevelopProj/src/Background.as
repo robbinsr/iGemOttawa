@@ -37,7 +37,12 @@ package
 		private var bgs3:Bitmap = new scrollBG2();
 		private var bgs4:Bitmap = new scrollBG2();
 		
-		private var startTime:Date;
+		private var startTime:Number;
+		private var pauseTime:Number
+		private var nowTime:Number;
+		
+		
+		private var timerPaused:Boolean;
 		private var currentMinutes:int;
 		private var currentSeconds:int;
 		private var currentTime:String;
@@ -60,13 +65,16 @@ package
 			bgs4.x = bgs3.width;
 			this.addEventListener(Event.ENTER_FRAME, scrollIMG2); 
 			
-			startTime = new Date();
+			
+			//Timer
+			startTime = new Date().getTime();
+			timerPaused = false;
 			currentTime = "00:00";
 			currentMinutes = 0;
 			currentSeconds = 0;
 			timeText = new TextField();
-			timeText.x = 300;
-			timeText.y = 50;
+			timeText.x = 500;
+			timeText.y = 100;
 			addChild(timeText);
 			this.addEventListener(Event.ENTER_FRAME, updateTime);
 		}
@@ -102,13 +110,25 @@ package
 			this.addChildAt(this[backgroundImage],0);
 		}
 		
+		public function pauseTimer():void {
+			timerPaused = true;
+			pauseTime = new Date().getTime();
+		}
+		
+		public function unpauseTimer():void {
+			startTime += (new Date().getTime() - pauseTime);
+			timerPaused = false;
+		}
+		
 		public function updateTime(e:Event):void {
-			var nowTime:Date = new Date();
-			currentSeconds = (nowTime.getTime()/1000 - startTime.getTime()/1000) % 60;
-			currentMinutes = (nowTime.getTime() / 1000 - startTime.getTime() / 1000) / 60;
-			currentTime = (currentMinutes < 10? "0" + currentMinutes:currentMinutes) + ":";
-			currentTime += (currentSeconds < 10? "0" + currentSeconds:currentSeconds);
-			timeText.text = currentTime;
+			if(!timerPaused){
+				nowTime = new Date().getTime() / 1000;				
+				currentSeconds = (nowTime - startTime/1000) % 60;
+				currentMinutes = (nowTime - startTime/1000) / 60;
+				currentTime = (currentMinutes < 10? "0" + currentMinutes:currentMinutes) + ":";
+				currentTime += (currentSeconds < 10? "0" + currentSeconds:currentSeconds);
+				timeText.text = currentTime;
+			}
 		}	
 	}
 }
