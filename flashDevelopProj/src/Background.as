@@ -3,6 +3,7 @@ package
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.display.Bitmap;
+	import flash.text.TextField;
 	import flash.display.MovieClip;
 	
 	// Example use:
@@ -36,6 +37,12 @@ package
 		private var bgs3:Bitmap = new scrollBG2();
 		private var bgs4:Bitmap = new scrollBG2();
 		
+		private var startTime:Date;
+		private var currentMinutes:int;
+		private var currentSeconds:int;
+		private var currentTime:String;
+		private var timeText:TextField;
+		
 		public function Background(bg:int) 
 		{
 			var backgroundImage:String = "bg" + bg;
@@ -52,6 +59,17 @@ package
 			bgs3.x = 0;
 			bgs4.x = bgs3.width;
 			this.addEventListener(Event.ENTER_FRAME, scrollIMG2); 
+			
+			startTime = new Date();
+			currentTime = "00:00";
+			currentMinutes = 0;
+			currentSeconds = 0;
+			timeText = new TextField();
+			timeText.x = 300;
+			timeText.y = 50;
+			timeText.text = currentTime;
+			this.addChild(timeText);
+			this.addEventListener(Event.ENTER_FRAME, updateTime);
 		}
 		
 		public function scrollIMG(e:Event):void 
@@ -85,6 +103,11 @@ package
 			this.addChildAt(this[backgroundImage],0);
 		}
 		
+		public function updateTime(e:Event):void {
+			var nowTime:Date = new Date();
+			currentSeconds = (nowTime.getTime()/1000 - startTime.getTime()/1000) % 60;
+			currentMinutes = (nowTime.getTime()/1000 - startTime.getTime()/1000) / 60;
+			timeText.text = currentMinutes + ":" + currentSeconds;
+		}	
 	}
-
 }
