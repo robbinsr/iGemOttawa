@@ -178,8 +178,6 @@ package
 
 		protected function runIntroGeneral():void
 		{				
-			pauseTimer();
-			
 			hCentre(content);
 			content.y = 35;
 			this.addChild(content);
@@ -361,6 +359,7 @@ package
 		private function createFunction(e:MouseEvent):void
 		{
 			if (checkWinConditions()) {
+				pauseTimer();
 				runOutro(levelEndText);
 			}
 			else {
@@ -475,8 +474,10 @@ package
 		
 		private function infoFunction(e:MouseEvent):void
 		{
+			Main.backgroundImage.pauseTimer();
 			resetSequence();
 			Main.screens.switchTo(currentLevel);
+			
 		}
 		
 		// Timer pause and unpause
