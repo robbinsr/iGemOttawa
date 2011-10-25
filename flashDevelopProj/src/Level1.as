@@ -36,7 +36,10 @@ package
 			this.componentCategories = new Array("5");
 			this.winningSequence = new Array("5.0");
 			
+			// The only time startTimer is ever called, this initializes it
+			Main.backgroundImage.startTimer();
 			Main.backgroundImage.changeBackground(2);
+			
 			runIntroSlowDarken(levelName, scenario);
 			
 			componentOrder = new Array(0,1,2,3,4,5,6,7);

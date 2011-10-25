@@ -287,7 +287,6 @@ package
 				this[buttonName].addEventListener(MouseEvent.ROLL_OUT, buttonTextHoverOut);
 				this.addChild(this[buttonName]);
 				TweenLite.to(this[buttonName], 1, { delay:i, alpha:1 } );
-				
 				unpauseTimer();
 			}
 		}
