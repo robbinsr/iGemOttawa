@@ -67,8 +67,7 @@ package
 			timeText = new TextField();
 			timeText.x = 300;
 			timeText.y = 50;
-			timeText.text = currentTime;
-			this.addChild(timeText);
+			addChild(timeText);
 			this.addEventListener(Event.ENTER_FRAME, updateTime);
 		}
 		
@@ -106,8 +105,10 @@ package
 		public function updateTime(e:Event):void {
 			var nowTime:Date = new Date();
 			currentSeconds = (nowTime.getTime()/1000 - startTime.getTime()/1000) % 60;
-			currentMinutes = (nowTime.getTime()/1000 - startTime.getTime()/1000) / 60;
-			timeText.text = currentMinutes + ":" + currentSeconds;
+			currentMinutes = (nowTime.getTime() / 1000 - startTime.getTime() / 1000) / 60;
+			currentTime = (currentMinutes < 10? "0" + currentMinutes:currentMinutes) + ":";
+			currentTime += (currentSeconds < 10? "0" + currentSeconds:currentSeconds);
+			timeText.text = currentTime;
 		}	
 	}
 }
