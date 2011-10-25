@@ -4,7 +4,11 @@ package
 	import flash.events.Event;
 	import flash.display.Bitmap;
 	import flash.text.TextField;
+	import flash.text.TextFormat;
 	import flash.display.MovieClip;
+	import com.greensock.TweenLite;
+	import com.greensock.plugins.TweenPlugin; 
+	import com.greensock.plugins.VisiblePlugin; 
 	
 	// Example use:
 	// Main.backgroundImage.changeBackground(2);
@@ -44,6 +48,7 @@ package
 		private var currentMinutes:int;
 		private var currentSeconds:int;
 		private var currentTime:String;
+		private var timeForm:TextFormat;
 		private var timeText:TextField;
 		
 		public function Background(bg:int) 
@@ -63,14 +68,21 @@ package
 			bgs4.x = bgs3.width;
 			this.addEventListener(Event.ENTER_FRAME, scrollIMG2); 
 			
-			
 			// Timer properties
-			currentTime = "00:00";
-			currentMinutes = 0;
-			currentSeconds = 0;
 			timeText = new TextField();
-			timeText.x = 500;
-			timeText.y = 100;
+			timeText.x = 200;
+			timeText.y = 20;
+			timeText.textColor = 0xffffff;
+			timeText.selectable = false;
+			timeForm = new TextFormat();
+			timeForm.bold = true;
+			timeForm.size = 20;
+			timeText.setTextFormat(timeForm);
+			
+			startTime = new Date().getTime();
+			pauseTimer();
+			addChild(timeText);
+			this.addEventListener(Event.ENTER_FRAME, updateTime);
 		}
 		
 		public function scrollIMG(e:Event):void 
@@ -104,21 +116,17 @@ package
 			this.addChildAt(this[backgroundImage],0);
 		}
 		
-		public function startTimer():void {
-			startTime = new Date().getTime();
-			addChild(timeText);
-			timerPaused = false;
-			this.addEventListener(Event.ENTER_FRAME, updateTime);
-		}
-		
 		public function pauseTimer():void {
 			timerPaused = true;
 			pauseTime = new Date().getTime();
+			TweenLite.to(timeText, 0.5, {alpha:0, visible:false});
 		}
 		
 		public function unpauseTimer():void {
 			startTime += (new Date().getTime() - pauseTime);
 			timerPaused = false;
+			timeText.alpha = 1;
+			timeText.visible = true;
 		}
 		
 		public function updateTime(e:Event):void {
