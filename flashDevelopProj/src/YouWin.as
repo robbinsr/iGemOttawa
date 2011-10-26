@@ -27,7 +27,7 @@ package
 		private var slide2:String = "<p>We at uOttawa iGem hope you enjoyed the game! Expect more levels, as well as " +
 		"an iPhone app soon!</p>";
 		
-		private var tutorialText:TextShadow;
+		private var text:TextShadow;
 		
 		private static var slideState:int = 1;
 		
@@ -39,7 +39,7 @@ package
 			timeString += finalSeconds + " seconds.";
 			slide1 += timeString + "</p>";
 			
-			tutorialText = new TextShadow(slide1,126,97,350,110,0);
+			text = new TextShadow(slide1,126,97,350,110,0);
 			
 			Main.backgroundImage.resetTimer();
 			Main.backgroundImage.pauseTimer();
@@ -52,7 +52,7 @@ package
 			gameLogo.y = 60;
 			this.addChild(gameLogo);
 			
-			this.addChild(tutorialText);
+			this.addChild(text);
 			
 			nextBtn.y = 213;
 			nextBtn.x = 345;
@@ -71,18 +71,14 @@ package
 			this.addEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 		}
 		
-		private function nextFunction(e:MouseEvent):void
-		{
-			if (slideState < 2) 
-			{
-				slideState += 1;
-				tutorialText.setText(this["slide" + slideState]);
-				
-				if (slideState == 2) {
-					this.removeChild(skipBtn);
-					this.removeChild(nextBtn);
-					this.addChild(goBtn);
-				}
+		private function nextFunction(e:MouseEvent):void{
+			if (slideState < 2) {
+				slideState++;
+				text.setText(this["slide" + slideState]);
+			}else{
+				this.removeChild(skipBtn);
+				this.removeChild(nextBtn);
+				this.addChild(goBtn);
 			}
 		}
 		
