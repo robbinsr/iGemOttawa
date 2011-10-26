@@ -72,17 +72,18 @@ package
 			timeText = new TextField();
 			timeText.x = 200;
 			timeText.y = 20;
-			timeText.textColor = 0xffffff;
 			timeText.selectable = false;
+			
 			timeForm = new TextFormat();
 			timeForm.bold = true;
 			timeForm.size = 20;
-			timeText.setTextFormat(timeForm);
+			timeForm.color = 0xFFFFFF;
+			timeText.defaultTextFormat = timeForm;
 			
 			startTime = new Date().getTime();
 			pauseTimer();
 			addChild(timeText);
-			this.addEventListener(Event.ENTER_FRAME, updateTime);
+			this.addEventListener(Event.ENTER_FRAME, updateTimer);
 		}
 		
 		public function scrollIMG(e:Event):void 
@@ -116,6 +117,10 @@ package
 			this.addChildAt(this[backgroundImage],0);
 		}
 		
+		public function resetTimer():void {
+			startTime = new Date().getTime();
+		}
+		
 		public function pauseTimer():void {
 			timerPaused = true;
 			pauseTime = new Date().getTime();
@@ -129,15 +134,19 @@ package
 			timeText.visible = true;
 		}
 		
-		public function updateTime(e:Event):void {
+		public function updateTimer(e:Event):void {
 			if(!timerPaused){
 				nowTime = new Date().getTime();				
 				currentSeconds = (nowTime - startTime)/1000 % 60;
-				currentMinutes = (nowTime - startTime) / 60000;
+				currentMinutes = (nowTime - startTime)/60000;
 				currentTime = (currentMinutes < 10? "0" + currentMinutes:currentMinutes) + ":";
 				currentTime += (currentSeconds < 10? "0" + currentSeconds:currentSeconds);
 				timeText.text = currentTime;
 			}
 		}	
+		
+		public function getTimer():int {
+			return (nowTime - startTime)/1000;
+		}
 	}
 }
