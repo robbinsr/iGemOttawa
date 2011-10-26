@@ -19,18 +19,31 @@ package
 		[Embed(source='../lib/logo.png')]
 		private var gameLogoClass:Class;
 		private var gameLogo:Bitmap = new gameLogoClass();
+		private var finalTime:int = Main.backgroundImage.getTimer();
+		private var timeString:String; 
 		
-		private var slide1:String = "<p>Congraulations! You beat Gears of Evolution!</p>";
+		private var slide1:String = "<p>Congraulations! You beat Gears of Evolution!\n\nYour final time was ";
 		
 		private var slide2:String = "<p>We at uOttawa iGem hope you enjoyed the game! Expect more levels, as well as " +
 		"an iPhone app soon!</p>";
 		
-		private var tutorialText:TextShadow = new TextShadow(slide1,126,97,350,110,0);
+		private var tutorialText:TextShadow;
 		
 		private static var slideState:int = 1;
 		
-		public function YouWin() 
+		public function YouWin()
 		{	
+			var finalMinutes:int = finalTime/60;
+			var finalSeconds:int = finalTime%60;
+			timeString = (finalMinutes > 0? finalMinutes+" minutes, ":"");
+			timeString += finalSeconds + " seconds.";
+			slide1 += timeString + "</p>";
+			
+			tutorialText = new TextShadow(slide1,126,97,350,110,0);
+			
+			Main.backgroundImage.resetTimer();
+			Main.backgroundImage.pauseTimer();
+			
 			hCentre(content);
 			content.y = 35;
 			this.addChild(content);
@@ -38,7 +51,7 @@ package
 			gameLogo.x = 127;
 			gameLogo.y = 60;
 			this.addChild(gameLogo);
-
+			
 			this.addChild(tutorialText);
 			
 			nextBtn.y = 213;
