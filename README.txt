@@ -17,3 +17,13 @@ on the next screen then removes the rest of the UI buttons. It's minor
 but I don't think there's much we can do about it without things
 getting really messy. I'll look into it later, it looks good enough for
 now.
+
+
+---------------------------------------------------------------------
+
+-Wrote some handy debug code in main for tracking all children and
+children of children, recursively. Trying to track down why resetting 
+from "YouWin" causes things to screw up. Also using this code to check 
+for stray instances and I'll addapt it later to look for stray event 
+listeners that get added and don't get removed, because I have a feeling
+there are a few.

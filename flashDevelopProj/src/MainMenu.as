@@ -47,7 +47,6 @@
 		{
 			playBtn.removeEventListener(MouseEvent.CLICK, playFunction);
 			this.removeEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
-			
 		}
 	}
 }
