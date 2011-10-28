@@ -29,10 +29,12 @@ package
 		
 		private var text:TextShadow;
 		
-		private static var slideState:int = 1;
+		private var slideState:int = 1;
 		
 		public function YouWin()
 		{	
+			Main.backgroundImage.changeBackground(1);
+			
 			var finalMinutes:int = finalTime/60;
 			var finalSeconds:int = finalTime%60;
 			timeString = (finalMinutes > 0? finalMinutes+" minutes, ":"");

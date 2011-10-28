@@ -47,7 +47,7 @@ package
 		
 		private var tutorialText:TextShadow = new TextShadow(slide1,126,97,350,110,0);
 		
-		private static var slideState:int = 1;
+		private var slideState:int = 1;
 		
 		public function Tutorial() 
 		{	
