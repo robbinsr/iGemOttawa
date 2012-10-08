@@ -288,7 +288,7 @@ package
 				unpauseTimer();
 			}
 		}
-// WOOOOOOO HERERERUH ASOIUDH AOIUSH OAIUS doia DOUIAh
+
 		private function buttonTextHover(e:MouseEvent):void
 		{
 			var button:int = e.target.name;

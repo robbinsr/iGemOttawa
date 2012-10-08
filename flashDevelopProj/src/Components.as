@@ -7,7 +7,7 @@ package
 	{		
 		// Component Names
 		
-		private var codingSequences:Array = new Array("\u03B2-galactosidase", "nitrate reductase I", "RNA polymerase", "GlpF", "ArsR", "GVP", "YFP", "BFP", "GFP", "mCherry", "CFP", "UCP1", "GluR0", "pabA","Streptavidin", "crtB", "LacY", "tetA");
+		private var codingSequences:Array = new Array("\u03B2-galactosidase", "nitrate reductase I", "RNA polymerase", "GlpF", "ArsR", "GVP", "YFP", "BFP", "GFP", "mCherry", "CFP", "UCP1", "GluR0", "pabA","Streptavidin", "crtB", "LacY");
 		private var operators:Array = new Array("tetO", "TRE", "lacO", "LasO", "CinO", "CIO");
 		private var promoters:Array = new Array("TDH3", "ALD6", "MYO2", "pArsR", "ADH1", "YEF3");
 		private var reporters:Array = new Array("");
