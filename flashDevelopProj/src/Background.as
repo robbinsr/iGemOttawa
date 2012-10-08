@@ -70,14 +70,16 @@ package
 			
 			// Timer properties
 			timeText = new TextField();
-			timeText.x = 200;
+			timeText.x = 270;
 			timeText.y = 20;
+			timeText.antiAliasType = "advanced";
 			timeText.selectable = false;
 			
 			timeForm = new TextFormat();
 			timeForm.bold = true;
-			timeForm.size = 20;
-			timeForm.color = 0xFFFFFF;
+			timeForm.size = 12;
+			timeForm.color = 0x000000;
+			timeForm.font = "Tahoma";
 			timeText.defaultTextFormat = timeForm;
 			
 			startTime = new Date().getTime();
@@ -130,7 +132,7 @@ package
 		public function unpauseTimer():void {
 			startTime += (new Date().getTime() - pauseTime);
 			timerPaused = false;
-			timeText.alpha = 1;
+			timeText.alpha = 0.5;
 			timeText.visible = true;
 		}
 		
