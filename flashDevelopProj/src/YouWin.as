@@ -22,14 +22,10 @@ package
 		private var finalTime:int = Main.backgroundImage.getTimer();
 		private var timeString:String; 
 		
-		private var slide1:String = "<p>Congraulations! You beat Gears of Evolution!\n\nYour final time was ";
-		
-		private var slide2:String = "<p>We at uOttawa iGem hope you enjoyed the game! Expect more levels, as well as " +
-		"an iPhone app soon!</p>";
+		private var slide:String = "<p>Congraulations! You beat Gears of Evolution! Your final time was ";
+		private var slideEnd:String = "We at uOttawa iGem hope you enjoyed the game!</p>";
 		
 		private var text:TextShadow;
-		
-		private var slideState:int = 1;
 		
 		public function YouWin()
 		{	
@@ -38,10 +34,10 @@ package
 			var finalMinutes:int = finalTime/60;
 			var finalSeconds:int = finalTime%60;
 			timeString = (finalMinutes > 0? finalMinutes+" minutes, ":"");
-			timeString += finalSeconds + " seconds.";
-			slide1 += timeString + "</p>";
+			timeString += finalSeconds + " seconds. ";
+			slide += timeString + slideEnd;
 			
-			text = new TextShadow(slide1,126,97,350,110,0);
+			text = new TextShadow(slide,126,97,350,110,0);
 			
 			Main.backgroundImage.resetTimer();
 			Main.backgroundImage.pauseTimer();
@@ -56,32 +52,12 @@ package
 			
 			this.addChild(text);
 			
-			nextBtn.y = 213;
-			nextBtn.x = 345;
-			nextBtn.addEventListener(MouseEvent.CLICK, nextFunction);
-			this.addChild(nextBtn);
-			
-			skipBtn.y = 213;
-			skipBtn.x = 415;
-			skipBtn.addEventListener(MouseEvent.CLICK, skipFunction);
-			this.addChild(skipBtn);
-			
 			goBtn.y = 213;
 			goBtn.x = 415;
 			goBtn.addEventListener(MouseEvent.CLICK, skipFunction);
+			this.addChild(goBtn);
 			
 			this.addEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
-		}
-		
-		private function nextFunction(e:MouseEvent):void{
-			if (slideState < 2) {
-				slideState++;
-				text.setText(this["slide" + slideState]);
-			}else{
-				this.removeChild(skipBtn);
-				this.removeChild(nextBtn);
-				this.addChild(goBtn);
-			}
 		}
 		
 		private function skipFunction(e:MouseEvent):void
@@ -91,8 +67,6 @@ package
 		
 		private function removeListeners(e:Event):void 
 		{
-			nextBtn.removeEventListener(MouseEvent.CLICK, nextFunction);
-			skipBtn.removeEventListener(MouseEvent.CLICK, skipFunction);
 			goBtn.removeEventListener(MouseEvent.CLICK, skipFunction);
 			this.removeEventListener(Event.REMOVED_FROM_STAGE, removeListeners);
 		}

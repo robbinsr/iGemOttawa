@@ -36,7 +36,7 @@ package
 			this.hint = "<p> Activators are sometimes inducible by a certain drug, which activator " +
 			"is best suited to the current conditions and which operator best corresponds to it?</p>";
 			
-			this.availableComponents = new Array("0.0", "0.1", "0.17", "1.0", "1.1", "1.2", "4.0", "4.1", "4.2", "7.0", "7.1", "7.2");
+			this.availableComponents = new Array("0.0", "0.1", "1.0", "1.1", "1.2", "4.0", "4.1", "4.2", "7.0", "7.1", "7.2");
 			
 			this.componentCategories = new Array("0", "1", "4", "7");
 			this.winningSequence = new Array("2.2", "0.17", "1.1", "7.2");
